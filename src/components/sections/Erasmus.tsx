@@ -1,7 +1,7 @@
 "use client";
 
 import { erasmusData } from "@/lib/data";
-import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { GraduationCap, Globe2, BookOpen } from "lucide-react";
 
 const gradeColor = (grade: string) => {
@@ -100,53 +100,47 @@ export default function Erasmus() {
                 </span>
               </div>
 
-              <StaggerContainer staggerDelay={0.08}>
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b border-[#1e1e1e]">
-                      <th className="text-left px-6 py-3 font-display text-[10px] uppercase tracking-widest text-[#6b6b6b]">
-                        Matière
-                      </th>
-                      <th className="text-center px-4 py-3 font-display text-[10px] uppercase tracking-widest text-[#6b6b6b]">
-                        ECTS
-                      </th>
-                      <th className="text-center px-4 py-3 font-display text-[10px] uppercase tracking-widest text-[#6b6b6b]">
-                        Note
-                      </th>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-[#1e1e1e]">
+                    <th className="text-left px-6 py-3 font-display text-[10px] uppercase tracking-widest text-[#6b6b6b]">
+                      Matière
+                    </th>
+                    <th className="text-center px-4 py-3 font-display text-[10px] uppercase tracking-widest text-[#6b6b6b]">
+                      ECTS
+                    </th>
+                    <th className="text-center px-4 py-3 font-display text-[10px] uppercase tracking-widest text-[#6b6b6b]">
+                      Note
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {erasmusData.courses.map((course, i) => (
+                    <tr key={i} className="border-b border-[#1a1a1a] last:border-0 hover:bg-[#1a1a1a]/50 transition-colors duration-150">
+                      <td className="px-6 py-4">
+                        <div className="font-display text-sm font-medium text-white">
+                          {course.name}
+                        </div>
+                        {course.code !== "[À COMPLÉTER]" && (
+                          <div className="font-display text-[11px] text-[#6b6b6b] mt-0.5">
+                            {course.code}
+                          </div>
+                        )}
+                      </td>
+                      <td className="px-4 py-4 text-center">
+                        <span className="font-display font-bold text-sm text-[#FFD300]">
+                          {course.ects}
+                        </span>
+                      </td>
+                      <td className="px-4 py-4 text-center">
+                        <span className={`inline-block font-display font-bold text-xs px-2.5 py-1 rounded-md border ${gradeColor(course.gradeECTS)}`}>
+                          {course.gradeECTS} ({course.gradeLocal}/6)
+                        </span>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {erasmusData.courses.map((course, i) => (
-                      <StaggerItem key={i}>
-                        <tr className="border-b border-[#1a1a1a] last:border-0 hover:bg-[#1a1a1a]/50 transition-colors duration-150">
-                          <td className="px-6 py-4">
-                            <div className="font-display text-sm font-medium text-white">
-                              {course.name}
-                            </div>
-                            {course.code !== "[À COMPLÉTER]" && (
-                              <div className="font-display text-[11px] text-[#6b6b6b] mt-0.5">
-                                {course.code}
-                              </div>
-                            )}
-                          </td>
-                          <td className="px-4 py-4 text-center">
-                            <span className="font-display font-bold text-sm text-[#FFD300]">
-                              {course.ects}
-                            </span>
-                          </td>
-                          <td className="px-4 py-4 text-center">
-                            <span
-                              className={`inline-block font-display font-bold text-xs px-2.5 py-1 rounded-md border ${gradeColor(course.gradeECTS)}`}
-                            >
-                              {course.gradeECTS} ({course.gradeLocal}/6)
-                            </span>
-                          </td>
-                        </tr>
-                      </StaggerItem>
-                    ))}
-                  </tbody>
-                </table>
-              </StaggerContainer>
+                  ))}
+                </tbody>
+              </table>
 
               {/* Total */}
               <div className="px-6 py-4 border-t border-[#272727] bg-[#0c0c0c]/50 flex items-center justify-between">
