@@ -1,0 +1,162 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown, MapPin, Mail } from "lucide-react";
+import { personal, stats } from "@/lib/data";
+
+export default function Hero() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
+
+  return (
+    <section
+      id="hero"
+      ref={ref}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+    >
+      {/* Grille de fond */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `linear-gradient(#FFD300 1px, transparent 1px), linear-gradient(90deg, #FFD300 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Halo jaune */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#FFD300]/5 blur-[120px] pointer-events-none" />
+
+      <motion.div
+        style={{ opacity, y }}
+        className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto"
+      >
+        {/* Badge formation */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#272727] bg-[#141414] text-xs font-display font-medium text-[#9a9a9a] uppercase tracking-widest"
+        >
+          <span className="w-2 h-2 rounded-full bg-[#FFD300] animate-pulse" />
+          {personal.iut} · {personal.universite}
+        </motion.div>
+
+        {/* Nom principal */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="font-display font-extrabold text-[clamp(3rem,10vw,8rem)] leading-none tracking-tight mb-4"
+        >
+          <span className="text-white">{personal.firstName} </span>
+          <span className="text-[#FFD300]">{personal.lastName}</span>
+        </motion.h1>
+
+        {/* Formation */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="font-display text-lg md:text-xl text-[#9a9a9a] font-medium mb-2"
+        >
+          {personal.formation}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
+          className="font-display text-base text-[#FFD300]/80 font-medium mb-8"
+        >
+          {personal.parcours}
+        </motion.p>
+
+        {/* Accroche */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="font-serif italic text-[#9a9a9a] text-lg md:text-xl max-w-2xl leading-relaxed mb-12"
+        >
+          &ldquo;{personal.accroche}&rdquo;
+        </motion.p>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.65 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 w-full max-w-3xl"
+        >
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center p-4 rounded-xl border border-[#272727] bg-[#141414] hover:border-[#FFD300]/40 transition-colors duration-300"
+            >
+              <span className="font-display font-bold text-2xl md:text-3xl text-[#FFD300]">
+                {stat.value}
+              </span>
+              <span className="font-display text-xs text-[#6b6b6b] mt-1 text-center uppercase tracking-wide">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.75 }}
+          className="flex flex-wrap items-center justify-center gap-4 mb-4"
+        >
+          <a
+            href={`mailto:${personal.email}`}
+            className="inline-flex items-center gap-2 font-display font-bold px-6 py-3 rounded-xl bg-[#FFD300] text-[#0c0c0c] hover:bg-[#e6be00] transition-all duration-200 text-sm"
+          >
+            <Mail size={16} />
+            {personal.email}
+          </a>
+          <button
+            onClick={() => document.querySelector("#parcours")?.scrollIntoView({ behavior: "smooth" })}
+            className="inline-flex items-center gap-2 font-display font-medium px-6 py-3 rounded-xl border border-[#272727] text-[#9a9a9a] hover:border-[#FFD300]/50 hover:text-white transition-all duration-200 text-sm"
+          >
+            Voir mon parcours
+          </button>
+        </motion.div>
+
+        {/* Location + dispo */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.85 }}
+          className="flex items-center gap-4 text-xs text-[#6b6b6b] font-display"
+        >
+          <span className="flex items-center gap-1">
+            <MapPin size={12} />
+            {personal.location}
+          </span>
+          <span>·</span>
+          <span className="text-[#FFD300]/70">{personal.dispo}</span>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#6b6b6b]"
+      >
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+        >
+          <ArrowDown size={20} />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
