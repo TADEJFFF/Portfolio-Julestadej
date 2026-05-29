@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#272727] bg-[#141414] text-xs font-display font-medium text-[#9a9a9a] uppercase tracking-widest"
+          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#272727] bg-[#141414] text-xs font-display font-medium text-[#9a9a9a] uppercase tracking-widest"
         >
           <span className="w-2 h-2 rounded-full bg-[#FFD300] animate-pulse" />
           {personal.iut} · {personal.universite}
@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="font-display font-extrabold text-[clamp(2.5rem,8vw,6.5rem)] leading-none tracking-tight mb-2"
+          className="font-display font-extrabold text-[clamp(2.5rem,8vw,6.5rem)] leading-none tracking-tight mb-3"
         >
           <span className="text-white">{personal.firstName} </span>
           <span className="text-[#FFD300]">{personal.lastName}</span>
@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="font-display text-sm text-[#FFD300]/80 font-medium mb-4"
+          className="font-display text-sm text-[#FFD300]/80 font-medium mb-6"
         >
           {personal.parcours}
         </motion.p>
@@ -78,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="font-serif italic text-[#9a9a9a] text-base md:text-lg max-w-2xl leading-relaxed mb-5"
+          className="font-serif italic text-[#9a9a9a] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
         >
           &ldquo;{personal.accroche}&rdquo;
         </motion.p>
@@ -88,12 +88,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.65 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5 w-full max-w-3xl"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-7 w-full max-w-3xl"
         >
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center p-3 rounded-xl border border-[#272727] bg-[#141414] hover:border-[#FFD300]/40 transition-colors duration-300"
+              className="flex flex-col items-center py-2.5 px-3 rounded-xl border border-[#272727] bg-[#141414] hover:border-[#FFD300]/40 transition-colors duration-300"
             >
               <span className="font-display font-bold text-2xl md:text-3xl text-[#FFD300]">
                 {stat.value}
@@ -114,7 +114,7 @@ export default function Hero() {
         >
           <a
             href={`mailto:${personal.email}`}
-            className="inline-flex items-center gap-2 font-display font-bold px-6 py-3 rounded-xl bg-[#FFD300] text-[#0c0c0c] hover:bg-[#e6be00] transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 font-display font-bold px-5 py-2.5 rounded-xl bg-[#FFD300] text-[#0c0c0c] hover:bg-[#e6be00] transition-all duration-200 text-sm"
           >
             <Mail size={16} />
             {personal.email}
@@ -123,14 +123,14 @@ export default function Hero() {
             href="/cv-jules-tadej-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-display font-medium px-6 py-3 rounded-xl border border-[#FFD300]/40 text-[#FFD300] hover:bg-[#FFD300]/10 hover:border-[#FFD300]/70 transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#FFD300]/40 text-[#FFD300] hover:bg-[#FFD300]/10 hover:border-[#FFD300]/70 transition-all duration-200 text-sm"
           >
             <Download size={16} />
             Télécharger mon CV
           </a>
           <button
             onClick={() => document.querySelector("#parcours")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex items-center gap-2 font-display font-medium px-6 py-3 rounded-xl border border-[#272727] text-[#9a9a9a] hover:border-[#FFD300]/50 hover:text-white transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#272727] text-[#9a9a9a] hover:border-[#FFD300]/50 hover:text-white transition-all duration-200 text-sm"
           >
             Voir mon parcours
           </button>
