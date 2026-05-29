@@ -58,7 +58,6 @@ export const parcours = [
     events: [
       "Spécialisation GEMA : entrepreneuriat, marketing, management",
       "Breathe&Go → Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation",
-      "Projet marketing Caroll",
       "Fashion DAY : organisation et animation du défilé de mode (SAE Événementiel)",
       "Stage Caroll — Assistant Marketing Opérationnel (Janv.–Fév. 2025)",
     ],
