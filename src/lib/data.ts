@@ -86,7 +86,6 @@ export const parcours = [
       "Stage UFIDF/FFF : prospection B2B, cartographie, animation réseau",
       "SAE Clariane : plan de communication corporate",
       "SAE UltraTonic : management de l'innovation (expansion USA)",
-      "Développement outil de géocodage Python/Leaflet.js",
     ],
     highlight: false,
     current: true,
@@ -173,18 +172,18 @@ export const stageFFF = {
     "Benchmark des organisations professionnelles CGAD IDF",
     "Analyse des services aux adhérents UFIDF",
     "Présentation au Conseil d'Administration UFIDF (9 avril 2026)",
+    "Présentation au Conseil d'Administration FFF (18 mai 2026)",
     "Animation des boucles WhatsApp membres et événements FFF",
     "Organisation du concours MAF (Meilleur Apprenti de France)",
     "Aide à l'organisation du Salon du Fromage",
     "Mise en place d'une enquête de satisfaction adhérents",
   ],
   livrables: [
-    "Liste qualifiée des entreprises de crèmerie-fromagerie en IDF",
+    "Liste qualifiée des entreprises de crèmerie-fromagerie en France",
     "Tableau comparatif benchmark CGAD (synthèse + recommandations)",
-    "Présentation au CA UFIDF — 9 avril 2026",
+    "Présentation au CA FFF — 18 mai 2026",
     "Calendrier et rapports de visites terrain",
     "Cartographie interactive membres (Python + Leaflet.js)",
-    "Rapport de stage SAE601 — Jules TADEJ",
     "Synthèse globale et restitution finale (10 juillet 2026)",
   ],
   outils: ["Python", "Leaflet.js", "Excel · Power Query", "Logiciel 4D", "WhatsApp Business"],
@@ -250,7 +249,7 @@ export const projets = [
       "Stage de fin de BUT GEA GEMA au sein de l'Union des Fromagers de l'Île-de-France (80 %) et de la Fédération des Fromagers de France (20 %). Prospection B2B des crèmeries-fromageries, cartographie interactive, animation réseau adhérents, soutien au Salon du Fromage et au concours MAF.",
     resultats: [
       "Cartographie interactive Python + Leaflet.js",
-      "Présentation au CA UFIDF — 9 avril 2026",
+      "Présentation au CA FFF — 18 mai 2026",
       "Benchmark CGAD livré avec recommandations",
     ],
     lien: "",
@@ -312,7 +311,6 @@ export const competencesBUT = [
     preuves: [
       "Benchmark UFIDF : analyse des organisations professionnelles CGAD",
       "Business Plan Breathe&Go : modèle financier et prévisionnel complet",
-      "Soutenance comptabilité et proposition de valeur BUT1/BUT2",
     ],
   },
   {
@@ -334,7 +332,7 @@ export const competencesBUT = [
     preuves: [
       "UltraTonic : accompagnement du changement, mapping Mitchell",
       "Clariane : employee advocacy, communication interne RH",
-      "Présentation CA UFIDF devant les administrateurs (9 avril 2026)",
+      "Présentation CA UFIDF (9 avril) et CA FFF (18 mai 2026)",
     ],
   },
 ];

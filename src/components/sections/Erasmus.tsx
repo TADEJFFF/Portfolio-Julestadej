@@ -2,7 +2,7 @@
 
 import { erasmusData } from "@/lib/data";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { GraduationCap, Globe2, BookOpen } from "lucide-react";
+import { GraduationCap, Globe2, BookOpen, FileText } from "lucide-react";
 
 const gradeColor = (grade: string) => {
   if (grade === "A") return "text-emerald-400 bg-emerald-400/10 border-emerald-400/20";
@@ -142,12 +142,23 @@ export default function Erasmus() {
                 </tbody>
               </table>
 
-              {/* Total */}
+              {/* Total + lien Transcript */}
               <div className="px-6 py-4 border-t border-[#272727] bg-[#0c0c0c]/50 flex items-center justify-between">
                 <span className="font-display text-sm text-[#9a9a9a]">Total validé</span>
-                <span className="font-display font-extrabold text-[#FFD300] text-lg">
-                  {erasmusData.totalEcts} ECTS
-                </span>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="/transcript-of-records-erasmus.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-display text-xs font-medium text-[#FFD300]/70 hover:text-[#FFD300] transition-colors duration-200"
+                  >
+                    <FileText size={13} />
+                    Transcript of Records
+                  </a>
+                  <span className="font-display font-extrabold text-[#FFD300] text-lg">
+                    {erasmusData.totalEcts} ECTS
+                  </span>
+                </div>
               </div>
             </div>
           </AnimatedSection>
