@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { projets } from "@/lib/data";
 import { StaggerContainer, StaggerItem, AnimatedSection } from "@/components/ui/AnimatedSection";
-import { Trophy } from "lucide-react";
+import { Trophy, ExternalLink } from "lucide-react";
 
 const FILTERS = ["Tous", "BUT 1", "BUT 2", "BUT 3"] as const;
 type Filter = (typeof FILTERS)[number];
@@ -108,7 +108,7 @@ export default function Projets() {
                 )}
 
                 {/* Compétences */}
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 mb-3">
                   {projet.competences.map((c) => (
                     <span
                       key={c}
@@ -118,6 +118,20 @@ export default function Projets() {
                     </span>
                   ))}
                 </div>
+
+                {/* Lien externe si disponible */}
+                {projet.lien && (
+                  <a
+                    href={projet.lien}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 font-display text-xs font-medium text-[#FFD300] hover:text-white transition-colors duration-200 mt-auto"
+                  >
+                    <ExternalLink size={12} />
+                    Voir le projet
+                  </a>
+                )}
               </div>
             </StaggerItem>
           ))}

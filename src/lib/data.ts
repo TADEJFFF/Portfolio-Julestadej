@@ -9,7 +9,7 @@ export const personal = {
   email: "tadejjules@gmail.com",
   phone: "+33 7 83 74 27 84",
   location: "Vitry-sur-Seine (94), France",
-  linkedin: "[À COMPLÉTER — URL LinkedIn]",
+  linkedin: "https://www.linkedin.com/in/jules-tadej-107612295",
   formation: "BUT Gestion des Entreprises et des Administrations",
   parcours: "GEMA — Management, Entrepreneuriat et Management d'Activités",
   iut: "IUT de Paris – Rives de Seine",
@@ -45,7 +45,6 @@ export const parcours = [
     lieu: "IUT de Paris – Rives de Seine",
     events: [
       "Fondements GEA : comptabilité, économie, management",
-      "SAE Breathe&Go : genèse du projet entrepreneurial",
       "Stage Radio FG — mars/avril 2024",
       "60 crédits ECTS validés",
     ],
@@ -60,7 +59,8 @@ export const parcours = [
       "Spécialisation GEMA : entrepreneuriat, marketing, management",
       "Breathe&Go → Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation",
       "Projet marketing Caroll",
-      "Stage Caroll — Assistant Marketing Opérationnel (Jan.–Mars 2025)",
+      "Fashion DAY : organisation et animation du défilé de mode (SAE Événementiel)",
+      "Stage Caroll — Assistant Marketing Opérationnel (Janv.–Fév. 2025)",
     ],
     highlight: false,
     current: false,
@@ -72,7 +72,7 @@ export const parcours = [
     events: [
       "Cours intégralement en anglais (FEBA)",
       "34 ECTS validés · 5 mentions A sur 6 matières",
-      "Projet MoveOn : entreprise sociale d'économie circulaire",
+      "FEBA Social Room : site web pour financer la salle sociale de la faculté",
       "Immersion totale en environnement international",
     ],
     highlight: true,
@@ -201,6 +201,7 @@ export const projets = [
     description:
       "Dispositif bloque-volant intelligent avec éthylotest intégré pour prévenir la conduite en état d'ivresse. Né d'un vécu personnel (2 accidents en 2023). Business plan complet, stratégie marketing Instagram/TikTok, livret investisseur.",
     resultats: ["🏆 Prix de l'entrepreneuriat 2ᵉ année", "🥇 1ᵉʳ Prix de l'innovation"],
+    lien: "",
     competences: ["Entrepreneuriat", "Business Plan", "Marketing digital", "Pitch", "Réseaux sociaux"],
     featured: true,
   },
@@ -210,8 +211,9 @@ export const projets = [
     nom: "Stage Caroll",
     categorie: "Stage · Marketing opérationnel",
     description:
-      "3 mois (janv.–mars 2025) chez Caroll à Paris. Assistant Marketing Opérationnel : benchmarks web/physiques/newsletters, gestion hotline marketing, analyse des soldes et comportement client (Power BI, ClientFit). Mapping concurrentiel.",
+      "2 mois (janv.–fév. 2025) chez Caroll à Paris. Assistant Marketing Opérationnel : benchmarks web/physiques/newsletters, gestion hotline marketing, analyse des soldes et comportement client (Power BI, ClientFit). Mapping concurrentiel.",
     resultats: ["Mapping concurrentiel livré", "Analyse comportement client soldes"],
+    lien: "",
     competences: ["Marketing opérationnel", "Power BI", "Analyse de données", "Benchmark"],
     featured: false,
   },
@@ -223,6 +225,7 @@ export const projets = [
     description:
       "1 mois (mars-avril 2024) chez Radio FG, 51 rue de Rivoli, Paris. Mission : développer la marque FG DanceOne sur Instagram et TikTok pour les 18-25 ans. Veille concurrentielle sur 30+ radios et médias nationaux et internationaux.",
     resultats: ["Stratégie réseaux sociaux remise au PDG", "Veille sur 30+ médias"],
+    lien: "",
     competences: ["Community management", "Stratégie réseaux sociaux", "Veille concurrentielle"],
     featured: false,
   },
@@ -234,18 +237,39 @@ export const projets = [
     description:
       "Plan de communication corporate pour Clariane (groupe médico-social, ex-Korian). Rôle : Communication interne RH. Axe stratégique : transformer les collaborateurs en ambassadeurs (employee advocacy). Audit e-réputation Glassdoor/Trustpilot.",
     resultats: ["Plan de communication 6 pages livré", "Audit e-réputation complet"],
+    lien: "",
     competences: ["Communication corporate", "E-réputation", "Employee advocacy", "Plan de comm"],
     featured: false,
   },
   {
-    id: "moveon",
+    id: "stage-fff",
     but: "BUT 3",
-    nom: "MoveOn (Sofia)",
-    categorie: "Projet Erasmus · Économie circulaire",
+    nom: "Stage UFIDF / FFF",
+    categorie: "Stage · Développement commercial",
     description:
-      "Projet intégralement réalisé en anglais à Sofia (2026) : entreprise sociale « MoveOn – Circular Furniture for All ». Redistribution de meubles usagés (déménagements/successions) au profit de sans-abri accédant à un logement, créant de l'emploi inclusif.",
-    resultats: ["Livrable écrit complet en anglais", "Présentation PowerPoint réalisée"],
-    competences: ["Entrepreneuriat social", "Économie circulaire", "Anglais académique", "Business Model"],
+      "Stage de fin de BUT GEA GEMA au sein de l'Union des Fromagers de l'Île-de-France (80 %) et de la Fédération des Fromagers de France (20 %). Prospection B2B des crèmeries-fromageries, cartographie interactive, animation réseau adhérents, soutien au Salon du Fromage et au concours MAF.",
+    resultats: [
+      "Cartographie interactive Python + Leaflet.js",
+      "Présentation au CA UFIDF — 9 avril 2026",
+      "Benchmark CGAD livré avec recommandations",
+    ],
+    lien: "",
+    competences: ["Prospection B2B", "Cartographie Python/Leaflet.js", "Gestion de réseau", "Animation événementielle"],
+    featured: false,
+  },
+  {
+    id: "feba-social-room",
+    but: "BUT 3",
+    nom: "FEBA Social Room",
+    categorie: "Projet Erasmus · Entrepreneuriat social",
+    description:
+      "Projet réalisé intégralement en anglais à Sofia University (2025/2026) : création d'un site web pour promouvoir et financer une salle sociale au sein de la Faculty of Economics and Business Administration (FEBA). Campagne de dons, témoignages étudiants, appel à la communauté alumni.",
+    resultats: [
+      "Site Google Sites publié en ligne",
+      "Campagne de dons & témoignages étudiants",
+    ],
+    lien: "https://sites.google.com/view/social-room-feba/home",
+    competences: ["Entrepreneuriat social", "Communication digitale", "Anglais académique", "Gestion de projet"],
     featured: false,
   },
   {
@@ -259,6 +283,7 @@ export const projets = [
       "Événement organisé et animé de A à Z",
       "Contenu réseaux sociaux produit et diffusé",
     ],
+    lien: "",
     competences: ["Organisation événementielle", "Community management", "Prise de parole en public", "Communication digitale"],
     featured: false,
   },
@@ -270,6 +295,7 @@ export const projets = [
     description:
       "Note de synthèse sur la stratégie d'expansion internationale d'UltraTonic (fitness B2B connecté) vers Boston et Philadelphie. Accompagnement du changement, mapping Mitchell parties prenantes, communication interne.",
     resultats: ["Note de synthèse réalisée", "Analyse parties prenantes Mitchell"],
+    lien: "",
     competences: ["Management de l'innovation", "Stratégie internationale", "Accompagnement du changement"],
     featured: false,
   },
@@ -296,8 +322,8 @@ export const competencesBUT = [
       "Identifier des opportunités, concevoir, déployer et piloter une activité en mobilisant des compétences d'entrepreneuriat et d'innovation.",
     preuves: [
       "Breathe&Go : Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation (BUT2)",
-      "MoveOn (Sofia) : entreprise sociale conçue en anglais",
-      "SAE Événementiel : idéation de 3 concepts opérationnels",
+      "FEBA Social Room (Sofia) : site web et campagne de dons, conçu en anglais",
+      "Fashion DAY : organisation et animation d'un défilé de A à Z (BUT2)",
     ],
   },
   {

@@ -45,13 +45,18 @@ export default function Contact() {
         <AnimatedSection delay={0.2} className="mb-12">
           <div className="flex flex-wrap justify-center gap-4">
             {/* LinkedIn */}
-            <div className="flex items-center gap-3 px-5 py-3 rounded-xl border border-[#272727] bg-[#141414]">
-              <Link2 size={16} className="text-[#6b6b6b]" />
+            <a
+              href={personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-5 py-3 rounded-xl border border-[#272727] bg-[#141414] hover:border-[#FFD300]/40 hover:bg-[#FFD300]/5 transition-all duration-200"
+            >
+              <Link2 size={16} className="text-[#FFD300]/70" />
               <div className="text-left">
                 <div className="font-display text-[10px] text-[#6b6b6b] uppercase tracking-widest">LinkedIn</div>
-                <div className="font-display text-sm text-[#9a9a9a] italic">{personal.linkedin}</div>
+                <div className="font-display text-sm text-white font-medium">jules-tadej-107612295</div>
               </div>
-            </div>
+            </a>
 
             {/* Localisation */}
             <div className="flex items-center gap-3 px-5 py-3 rounded-xl border border-[#272727] bg-[#141414]">
