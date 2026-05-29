@@ -251,10 +251,10 @@ export const projets = [
   {
     id: "defile-mode",
     but: "BUT 2",
-    nom: "Défilé de mode — SAE Événementiel",
-    categorie: "Événementiel · SAE S3/S4",
+    nom: "Fashion DAY",
+    categorie: "Événementiel · SAE Tronc commun BUT2",
     description:
-      "Organisation et animation d'un défilé de mode dans le cadre de la SAE Événementiel (BUT2, S3-S4). Triple casquette : coordination logistique de l'événement, création de contenu pour les réseaux sociaux (avant/pendant/après), et animation de la soirée en tant que speaker/présentateur.",
+      "Organisation et animation du Fashion DAY, défilé de mode réalisé dans le cadre de la SAE Événementiel en tronc commun (BUT2). Triple casquette : coordination logistique de l'événement, création de contenu pour les réseaux sociaux (avant/pendant/après), et animation de la soirée en tant que speaker/présentateur.",
     resultats: [
       "Événement organisé et animé de A à Z",
       "Contenu réseaux sociaux produit et diffusé",
