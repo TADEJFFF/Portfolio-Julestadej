@@ -249,6 +249,20 @@ export const projets = [
     featured: false,
   },
   {
+    id: "defile-mode",
+    but: "BUT 2",
+    nom: "Défilé de mode — SAE Événementiel",
+    categorie: "Événementiel · SAE S3/S4",
+    description:
+      "Organisation et animation d'un défilé de mode dans le cadre de la SAE Événementiel (BUT2, S3-S4). Triple casquette : coordination logistique de l'événement, création de contenu pour les réseaux sociaux (avant/pendant/après), et animation de la soirée en tant que speaker/présentateur.",
+    resultats: [
+      "Événement organisé et animé de A à Z",
+      "Contenu réseaux sociaux produit et diffusé",
+    ],
+    competences: ["Organisation événementielle", "Community management", "Prise de parole en public", "Communication digitale"],
+    featured: false,
+  },
+  {
     id: "ultratonic",
     but: "BUT 3",
     nom: "Innovation — UltraTonic USA",
