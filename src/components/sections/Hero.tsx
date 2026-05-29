@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, MapPin, Mail } from "lucide-react";
+import { ArrowDown, MapPin, Mail, Download } from "lucide-react";
 import { personal, stats } from "@/lib/data";
 
 export default function Hero() {
@@ -118,6 +118,15 @@ export default function Hero() {
           >
             <Mail size={16} />
             {personal.email}
+          </a>
+          <a
+            href="/cv-jules-tadej-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-display font-medium px-6 py-3 rounded-xl border border-[#FFD300]/40 text-[#FFD300] hover:bg-[#FFD300]/10 hover:border-[#FFD300]/70 transition-all duration-200 text-sm"
+          >
+            <Download size={16} />
+            Télécharger mon CV
           </a>
           <button
             onClick={() => document.querySelector("#parcours")?.scrollIntoView({ behavior: "smooth" })}

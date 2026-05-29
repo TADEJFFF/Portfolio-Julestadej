@@ -2,7 +2,7 @@
 
 import { parcours } from "@/lib/data";
 import { StaggerContainer, StaggerItem, AnimatedSection } from "@/components/ui/AnimatedSection";
-import { CheckCircle2, Circle } from "lucide-react";
+import { CheckCircle2, Circle, FileText } from "lucide-react";
 
 export default function Parcours() {
   return (
@@ -96,6 +96,24 @@ export default function Parcours() {
                             </li>
                           ))}
                         </ul>
+
+                        {/* Relevés de notes */}
+                        {step.releves && step.releves.length > 0 && (
+                          <div className="mt-4 pt-4 border-t border-[#1e1e1e] flex flex-wrap gap-2">
+                            {step.releves.map((releve) => (
+                              <a
+                                key={releve.url}
+                                href={releve.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 font-display text-[10px] font-medium px-2.5 py-1.5 rounded-lg border border-[#272727] bg-[#0c0c0c] text-[#6b6b6b] hover:text-[#FFD300] hover:border-[#FFD300]/30 transition-all duration-200"
+                              >
+                                <FileText size={10} />
+                                {releve.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { projets } from "@/lib/data";
 import { StaggerContainer, StaggerItem, AnimatedSection } from "@/components/ui/AnimatedSection";
-import { Trophy, ExternalLink } from "lucide-react";
+import { Trophy, ExternalLink, Download } from "lucide-react";
 
 const FILTERS = ["Tous", "BUT 1", "BUT 2", "BUT 3"] as const;
 type Filter = (typeof FILTERS)[number];
@@ -119,7 +119,7 @@ export default function Projets() {
                   ))}
                 </div>
 
-                {/* Lien externe si disponible */}
+                {/* Lien / document si disponible */}
                 {projet.lien && (
                   <a
                     href={projet.lien}
@@ -128,8 +128,8 @@ export default function Projets() {
                     onClick={(e) => e.stopPropagation()}
                     className="inline-flex items-center gap-1.5 font-display text-xs font-medium text-[#FFD300] hover:text-white transition-colors duration-200 mt-auto"
                   >
-                    <ExternalLink size={12} />
-                    Voir le projet
+                    {projet.lien.endsWith(".pdf") ? <Download size={12} /> : <ExternalLink size={12} />}
+                    {projet.lien.endsWith(".pdf") ? "Télécharger" : "Voir le projet"}
                   </a>
                 )}
               </div>

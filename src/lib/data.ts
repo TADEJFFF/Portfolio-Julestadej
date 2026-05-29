@@ -48,6 +48,10 @@ export const parcours = [
       "Stage Radio FG — mars/avril 2024",
       "60 crédits ECTS validés",
     ],
+    releves: [
+      { label: "Relevé S1", url: "/releves/semestre-1.pdf" },
+      { label: "Relevé S2", url: "/releves/semestre-2.pdf" },
+    ],
     highlight: false,
     current: false,
   },
@@ -60,6 +64,10 @@ export const parcours = [
       "Breathe&Go → Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation",
       "Fashion DAY : organisation et animation du défilé de mode (SAE Événementiel)",
       "Stage Caroll — Assistant Marketing Opérationnel (Janv.–Fév. 2025)",
+    ],
+    releves: [
+      { label: "Relevé S3", url: "/releves/semestre-3.pdf" },
+      { label: "Relevé S4", url: "/releves/semestre-4.pdf" },
     ],
     highlight: false,
     current: false,
@@ -74,6 +82,7 @@ export const parcours = [
       "FEBA Social Room : site web pour financer la salle sociale de la faculté",
       "Immersion totale en environnement international",
     ],
+    releves: [],
     highlight: true,
     current: false,
   },
@@ -86,6 +95,7 @@ export const parcours = [
       "SAE Clariane : plan de communication corporate",
       "SAE UltraTonic : management de l'innovation (expansion USA)",
     ],
+    releves: [],
     highlight: false,
     current: true,
   },
@@ -170,7 +180,6 @@ export const stageFFF = {
     "Actualisation et enrichissement de la base de données adhérents",
     "Benchmark des organisations professionnelles CGAD IDF",
     "Analyse des services aux adhérents UFIDF",
-    "Présentation au Conseil d'Administration UFIDF (9 avril 2026)",
     "Présentation au Conseil d'Administration FFF (18 mai 2026)",
     "Animation des boucles WhatsApp membres et événements FFF",
     "Organisation du concours MAF (Meilleur Apprenti de France)",
@@ -199,7 +208,7 @@ export const projets = [
     description:
       "Dispositif bloque-volant intelligent avec éthylotest intégré pour prévenir la conduite en état d'ivresse. Né d'un vécu personnel (2 accidents en 2023). Business plan complet, stratégie marketing Instagram/TikTok, livret investisseur.",
     resultats: ["🏆 Prix de l'entrepreneuriat 2ᵉ année", "🥇 1ᵉʳ Prix de l'innovation"],
-    lien: "",
+    lien: "/documents/livret-investisseur-breathego.pdf",
     competences: ["Entrepreneuriat", "Business Plan", "Marketing digital", "Pitch", "Réseaux sociaux"],
     featured: true,
   },
@@ -235,7 +244,7 @@ export const projets = [
     description:
       "Plan de communication corporate pour Clariane (groupe médico-social, ex-Korian). Rôle : Communication interne RH. Axe stratégique : transformer les collaborateurs en ambassadeurs (employee advocacy). Audit e-réputation Glassdoor/Trustpilot.",
     resultats: ["Plan de communication 6 pages livré", "Audit e-réputation complet"],
-    lien: "",
+    lien: "/documents/plan-comm-clariane.pdf",
     competences: ["Communication corporate", "E-réputation", "Employee advocacy", "Plan de comm"],
     featured: false,
   },
@@ -331,7 +340,7 @@ export const competencesBUT = [
     preuves: [
       "UltraTonic : accompagnement du changement, mapping Mitchell",
       "Clariane : employee advocacy, communication interne RH",
-      "Présentation CA UFIDF (9 avril) et CA FFF (18 mai 2026)",
+      "Présentation CA FFF (18 mai 2026)",
     ],
   },
 ];
