@@ -2,7 +2,7 @@
 
 import { stageFFF } from "@/lib/data";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
-import { Building2, MapPin, User2, Calendar, CheckSquare, Package, Wrench } from "lucide-react";
+import { Building2, MapPin, User2, Calendar, CheckSquare, Package, Wrench, Map, ExternalLink } from "lucide-react";
 
 export default function StageFFF() {
   return (
@@ -149,6 +149,31 @@ export default function StageFFF() {
               </span>
             ))}
           </div>
+        </AnimatedSection>
+
+        {/* Cartographie interactive */}
+        <AnimatedSection delay={0.2} className="mt-6">
+          <a
+            href="https://tadejfff.github.io/MAPIDFC/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between rounded-2xl border border-[#FFD300]/30 bg-[#141414] px-6 py-5 hover:border-[#FFD300]/70 hover:bg-[#FFD300]/5 transition-all duration-300 group"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 rounded-xl bg-[#FFD300]/10 border border-[#FFD300]/20 flex items-center justify-center flex-shrink-0">
+                <Map size={20} className="text-[#FFD300]" />
+              </div>
+              <div>
+                <div className="font-display font-bold text-white group-hover:text-[#FFD300] transition-colors duration-200">
+                  Cartographie interactive des fromagers IDF
+                </div>
+                <div className="font-display text-xs text-[#6b6b6b] mt-1">
+                  Livrable développé durant le stage · Python + Leaflet.js
+                </div>
+              </div>
+            </div>
+            <ExternalLink size={16} className="text-[#FFD300]/50 group-hover:text-[#FFD300] transition-colors duration-200 flex-shrink-0 ml-4" />
+          </a>
         </AnimatedSection>
       </div>
     </section>

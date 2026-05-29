@@ -220,7 +220,7 @@ export const projets = [
     description:
       "2 mois (janv.–fév. 2025) chez Caroll à Paris. Assistant Marketing Opérationnel : benchmarks web/physiques/newsletters, gestion hotline marketing, analyse des soldes et comportement client (Power BI, ClientFit). Mapping concurrentiel.",
     resultats: ["Mapping concurrentiel livré", "Analyse comportement client soldes"],
-    lien: "",
+    lien: "/documents/caroll-ecosystem.html",
     competences: ["Marketing opérationnel", "Power BI", "Analyse de données", "Benchmark"],
     featured: false,
   },
@@ -260,7 +260,7 @@ export const projets = [
       "Présentation au CA FFF — 18 mai 2026",
       "Benchmark CGAD livré avec recommandations",
     ],
-    lien: "",
+    lien: "https://tadejfff.github.io/MAPIDFC/",
     competences: ["Prospection B2B", "Cartographie Python/Leaflet.js", "Gestion de réseau", "Animation événementielle"],
     featured: false,
   },
@@ -302,7 +302,7 @@ export const projets = [
     description:
       "Note de synthèse sur la stratégie d'expansion internationale d'UltraTonic (fitness B2B connecté) vers Boston et Philadelphie. Accompagnement du changement, mapping Mitchell parties prenantes, communication interne.",
     resultats: ["Note de synthèse réalisée", "Analyse parties prenantes Mitchell"],
-    lien: "",
+    lien: "/documents/note-synthese-ultratonic.pdf",
     competences: ["Management de l'innovation", "Stratégie internationale", "Accompagnement du changement"],
     featured: false,
   },

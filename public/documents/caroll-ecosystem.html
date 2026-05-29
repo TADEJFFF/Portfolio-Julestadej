@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --black: #1a1a1a;
+    --white: #fafaf8;
+    --caroll-red: #c8102e;
+    --caroll-red-light: #f5e0e4;
+    --caroll-red-mid: #e8a0aa;
+    --gold: #b8933a;
+    --gold-light: #f5edd6;
+    --ink: #2d2d2d;
+    --muted: #6b6b6b;
+    --border: rgba(26,26,26,0.12);
+    --surface: rgba(26,26,26,0.04);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    padding: 0;
+  }
+
+  .wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 24px 40px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .header-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .caroll-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .caroll-sub {
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+  .caroll-tagline {
+    display: inline-block;
+    background: var(--caroll-red);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 2px;
+  }
+  .header-rule {
+    position: absolute;
+    bottom: -1px; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 2px;
+    background: var(--caroll-red);
+  }
+
+  /* ── GRID LAYOUT ── */
+  .grid-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .grid-bottom {
+    margin-top: 0;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--caroll-red);
+    border-radius: 10px 0 0 10px;
+  }
+  .card.gold::before { background: var(--gold); }
+  .card.neutral::before { background: var(--muted); }
+
+  .card-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  /* ── HISTORIQUE ── */
+  .stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .stat-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-bottom: none; }
+  .stat-key {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    min-width: 86px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .stat-val {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .stat-val.big {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--caroll-red);
+  }
+
+  /* ── BEAUMANOIR ── */
+  .beaumanoir-kpi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .kpi-box {
+    background: var(--gold-light);
+    border-radius: 6px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .kpi-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1.1;
+  }
+  .kpi-lbl {
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .quote-bm {
+    font-size: 11px;
+    font-style: italic;
+    color: var(--muted);
+    border-left: 2px solid var(--gold-light);
+    padding-left: 10px;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .brand-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .chip {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 3px 10px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    color: var(--ink);
+    background: var(--surface);
+  }
+  .chip.premium {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-light);
+  }
+
+  /* ── CONCURRENTS ── */
+  .concurrents-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .cc {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--ink);
+    letter-spacing: 0.2px;
+    transition: all 0.15s;
+  }
+  .cc:hover {
+    background: var(--caroll-red-light);
+    border-color: var(--caroll-red-mid);
+    color: var(--caroll-red);
+    cursor: default;
+  }
+  .cc.mass {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .cc.red { color: #c8102e; border-color: #e8a0aa; background: #fdf4f5; }
+
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0 14px;
+  }
+  .section-divider span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .section-divider::before, .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+</style>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">L'écosystème</div>
+    <div class="caroll-logo">CAROLL</div>
+    <div class="caroll-sub">Paris</div>
+    <div class="caroll-tagline">Prêt-à-porter féminin depuis 1963</div>
+    <div class="header-rule"></div>
+  </div>
+
+  <!-- TOP GRID: Historique + Beaumanoir -->
+  <div class="grid-top">
+
+    <!-- HISTORIQUE -->
+    <div class="card">
+      <div class="card-label">Historique &amp; chiffres clés</div>
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-key">Fondation</div>
+          <div class="stat-val big">1963</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-key">Fondateurs</div>
+          <div class="stat-val">R. Levy &amp; J. Bij</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-key">Activité</div>
+          <div class="stat-val">Confection femme</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-key">Employés</div>
+          <div class="stat-val">750</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-key">Magasins FR</div>
+          <div class="stat-val">287</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-key">International</div>
+          <div class="stat-val">141 · 8 pays</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-key">CA annuel</div>
+          <div class="stat-val big">550 M€</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-key">Capital social</div>
+          <div class="stat-val">21 M€</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEAUMANOIR -->
+    <div class="card gold">
+      <div class="card-label">Groupe Beaumanoir — depuis 2021</div>
+      <div class="beaumanoir-kpi">
+        <div class="kpi-box">
+          <div class="kpi-num">2,1 Md€</div>
+          <div class="kpi-lbl">CA 2022</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-num">13 000</div>
+          <div class="kpi-lbl">Collaborateurs</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-num">+2 500</div>
+          <div class="kpi-lbl">Magasins</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-num">13</div>
+          <div class="kpi-lbl">Marques</div>
+        </div>
+      </div>
+      <div class="quote-bm">"Rien n'est achevé, tout reste à construire"</div>
+      <div class="card-label" style="margin-bottom:8px">Marques du groupe</div>
+      <div class="brand-chips">
+        <span class="chip premium">Morgan</span>
+        <span class="chip premium">Caroll</span>
+        <span class="chip">Cache Cache</span>
+        <span class="chip">Bréal</span>
+        <span class="chip">Sarenza</span>
+        <span class="chip">Bonobo</span>
+        <span class="chip">La Halle</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCURRENTS -->
+  <div class="card neutral grid-bottom">
+    <div class="card-label">Concurrents — marché du prêt-à-porter féminin</div>
+
+    <div class="section-divider"><span>Haut de gamme</span></div>
+    <div class="concurrents-grid">
+      <span class="cc">Gérard Darel</span>
+      <span class="cc">ba&amp;sh</span>
+      <span class="cc">Maje</span>
+      <span class="cc">Sandro</span>
+      <span class="cc">Claudie Pierlot</span>
+      <span class="cc">Maison 123</span>
+      <span class="cc">IKKS</span>
+    </div>
+
+    <div class="section-divider"><span>Milieu de gamme</span></div>
+    <div class="concurrents-grid">
+      <span class="cc">Massimo Dutti</span>
+      <span class="cc">Comptoir des Cotonniers</span>
+      <span class="cc">Esprit</span>
+      <span class="cc">Promod</span>
+      <span class="cc">Etam</span>
+    </div>
+
+    <div class="section-divider"><span>Grande diffusion</span></div>
+    <div class="concurrents-grid">
+      <span class="cc mass">ZARA</span>
+      <span class="cc mass">MANGO</span>
+      <span class="cc mass red">H&amp;M</span>
+    </div>
+  </div>
+
+</div>
