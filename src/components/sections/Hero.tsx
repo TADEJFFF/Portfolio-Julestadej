@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#272727] bg-[#141414] text-xs font-display font-medium text-[#9a9a9a] uppercase tracking-widest"
+          className="mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#272727] bg-[#141414] text-xs font-display font-medium text-[#9a9a9a] uppercase tracking-widest"
         >
           <span className="w-2 h-2 rounded-full bg-[#FFD300] animate-pulse" />
           {personal.iut} · {personal.universite}
@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="font-display font-extrabold text-[clamp(3rem,10vw,8rem)] leading-none tracking-tight mb-4"
+          className="font-display font-extrabold text-[clamp(2.5rem,8vw,6.5rem)] leading-none tracking-tight mb-2"
         >
           <span className="text-white">{personal.firstName} </span>
           <span className="text-[#FFD300]">{personal.lastName}</span>
@@ -60,7 +60,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="font-display text-lg md:text-xl text-[#9a9a9a] font-medium mb-2"
+          className="font-display text-base md:text-lg text-[#9a9a9a] font-medium mb-1"
         >
           {personal.formation}
         </motion.p>
@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="font-display text-base text-[#FFD300]/80 font-medium mb-8"
+          className="font-display text-sm text-[#FFD300]/80 font-medium mb-4"
         >
           {personal.parcours}
         </motion.p>
@@ -78,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="font-serif italic text-[#9a9a9a] text-lg md:text-xl max-w-2xl leading-relaxed mb-12"
+          className="font-serif italic text-[#9a9a9a] text-base md:text-lg max-w-2xl leading-relaxed mb-5"
         >
           &ldquo;{personal.accroche}&rdquo;
         </motion.p>
@@ -88,12 +88,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.65 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 w-full max-w-3xl"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5 w-full max-w-3xl"
         >
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center p-4 rounded-xl border border-[#272727] bg-[#141414] hover:border-[#FFD300]/40 transition-colors duration-300"
+              className="flex flex-col items-center p-3 rounded-xl border border-[#272727] bg-[#141414] hover:border-[#FFD300]/40 transition-colors duration-300"
             >
               <span className="font-display font-bold text-2xl md:text-3xl text-[#FFD300]">
                 {stat.value}
@@ -110,7 +110,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.75 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-4"
+          className="flex flex-wrap items-center justify-center gap-3 mb-3"
         >
           <a
             href={`mailto:${personal.email}`}
