@@ -26,33 +26,34 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
     >
       {/* Header */}
       <div
-        className="flex items-center gap-4 px-6 py-5 border-b border-[#1e1e1e]"
+        className="px-6 py-5 border-b border-[#1e1e1e]"
         style={{ background: `linear-gradient(135deg, ${comp.accent}0a 0%, transparent 60%)` }}
       >
-        <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-          style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
-        >
-          <Icon size={18} style={{ color: comp.accent }} />
-        </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="font-display font-extrabold text-xl text-white leading-tight">{comp.titre}</h3>
-          <p className="font-display text-[10px] tracking-widest text-[#6b6b6b] mt-0.5 uppercase">
-            Référentiel BUT GEA GEMA
-          </p>
-        </div>
-        {/* Niveau atteint */}
-        <div
-          className="flex-shrink-0 text-center px-3 py-1.5 rounded-xl"
-          style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
-        >
-          <div className="font-display font-extrabold text-lg leading-none" style={{ color: comp.accent }}>
-            N{comp.niveauAtteint}
+        {/* Ligne 1 : icône + badge niveau */}
+        <div className="flex items-center justify-between mb-3">
+          <div
+            className="w-9 h-9 rounded-xl flex items-center justify-center"
+            style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
+          >
+            <Icon size={16} style={{ color: comp.accent }} />
           </div>
-          <div className="font-display text-[9px] uppercase tracking-wider text-[#6b6b6b] mt-0.5">
-            /{maxN}
+          <div
+            className="flex items-baseline gap-1 px-3 py-1.5 rounded-xl"
+            style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
+          >
+            <span className="font-display font-extrabold text-base leading-none" style={{ color: comp.accent }}>
+              N{comp.niveauAtteint}
+            </span>
+            <span className="font-display text-[9px] uppercase tracking-wider text-[#6b6b6b]">
+              /{maxN}
+            </span>
           </div>
         </div>
+        {/* Ligne 2 : titre */}
+        <h3 className="font-display font-extrabold text-2xl text-white leading-tight">{comp.titre}</h3>
+        <p className="font-display text-[10px] tracking-widest text-[#6b6b6b] mt-1 uppercase">
+          Référentiel BUT GEA GEMA
+        </p>
       </div>
 
       {/* Niveaux officiels */}
