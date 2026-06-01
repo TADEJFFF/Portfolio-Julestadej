@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { competences5, skills, type Competence5, type Niveau } from "@/lib/data";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import {
@@ -10,194 +11,178 @@ import {
 // ── Config badges maîtrise ────────────────────────────────────────────────────
 
 const maitriseCfg: Record<Niveau, { label: string; color: string; symbol: string }> = {
-  apprentissage: { label: "En apprentissage", color: "#4b4b4b", symbol: "○" },
+  apprentissage: { label: "En apprentissage", color: "#555555", symbol: "○" },
   acquis:        { label: "Acquis",           color: "#FFD300", symbol: "◑" },
   maitrise:      { label: "Maîtrisé",         color: "#34d399", symbol: "●" },
 };
 
-// ── Icônes par compétence ─────────────────────────────────────────────────────
-
 const compIcons = [Search, GitFork, Compass, Lightbulb, TrendingUp];
 
-// ── Carte compétence ──────────────────────────────────────────────────────────
-
-const etapeKeys = ["but1", "but2", "but3"] as const;
+const etapeKeys   = ["but1", "but2", "but3"] as const;
 const etapeLabels = ["BUT 1", "BUT 2", "BUT 3"] as const;
 
-function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.ElementType }) {
+// ── Contenu de la compétence active ──────────────────────────────────────────
+
+function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.ElementType }) {
   const maxN = comp.niveaux.length;
 
   return (
-    <div
-      className="rounded-2xl border bg-[#141414] overflow-hidden transition-colors duration-300 flex flex-col"
-      style={{ borderColor: "#272727" }}
-    >
-      {/* ── Header ── */}
-      <div
-        className="px-6 py-5 border-b border-[#1e1e1e]"
-        style={{ background: `linear-gradient(135deg, ${comp.accent}0a 0%, transparent 60%)` }}
-      >
-        <div className="flex items-center justify-between mb-3">
-          <div
-            className="w-9 h-9 rounded-xl flex items-center justify-center"
-            style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
-          >
-            <Icon size={16} style={{ color: comp.accent }} />
-          </div>
-          <div
-            className="flex items-baseline gap-1 px-3 py-1.5 rounded-xl"
-            style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
-          >
-            <span className="font-display font-extrabold text-base leading-none" style={{ color: comp.accent }}>
-              N{comp.niveauAtteint}
-            </span>
-            <span className="font-display text-[9px] uppercase tracking-wider text-[#888888]">
-              /{maxN}
-            </span>
-          </div>
-        </div>
-        <h3 className="font-display font-extrabold text-2xl text-white leading-tight">{comp.titre}</h3>
-        <p className="font-display text-[10px] tracking-widest text-[#888888] mt-1 uppercase">
-          Référentiel BUT GEA GEMA
-        </p>
-      </div>
+    <div className="rounded-2xl border border-[#272727] bg-[#141414] overflow-hidden">
+      <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#1e1e1e]">
 
-      {/* ── Niveaux + ACs avec badges ── */}
-      <div className="px-6 py-4 border-b border-[#1e1e1e]">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-4">
-          Apprentissages critiques
-        </p>
-        <div className="flex flex-col gap-4">
-          {comp.niveaux.map((niv) => {
-            const reached = niv.n <= comp.niveauAtteint;
-            const current = niv.n === comp.niveauAtteint;
-            return (
-              <div key={niv.n}>
-                {/* Label du niveau */}
-                <div className="flex items-center gap-2 mb-2">
-                  <div
-                    className="w-5 h-5 rounded-full flex items-center justify-center font-display font-bold text-[10px] flex-shrink-0"
-                    style={
-                      current
-                        ? { backgroundColor: comp.accent, color: "#0a0a0a" }
-                        : reached
-                        ? { backgroundColor: comp.accent + "30", color: comp.accent, border: `1px solid ${comp.accent}50` }
-                        : { backgroundColor: "#1e1e1e", color: "#3a3a3a", border: "1px solid #272727" }
-                    }
-                  >
-                    {niv.n}
+        {/* ── Colonne 1 : Apprentissages critiques ── */}
+        <div className="lg:col-span-2 p-7">
+          <div className="flex items-center gap-3 mb-6">
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+              style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
+            >
+              <Icon size={16} style={{ color: comp.accent }} />
+            </div>
+            <div>
+              <h3 className="font-display font-extrabold text-2xl text-white leading-tight">{comp.titre}</h3>
+              <p className="font-display text-[10px] tracking-widest text-[#888888] uppercase">Référentiel BUT GEA GEMA</p>
+            </div>
+            <div
+              className="ml-auto flex items-baseline gap-1 px-3 py-1.5 rounded-xl flex-shrink-0"
+              style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
+            >
+              <span className="font-display font-extrabold text-base leading-none" style={{ color: comp.accent }}>
+                N{comp.niveauAtteint}
+              </span>
+              <span className="font-display text-[9px] uppercase tracking-wider text-[#888888]">/{maxN}</span>
+            </div>
+          </div>
+
+          {/* Légende inline */}
+          <div className="flex flex-wrap gap-4 mb-6">
+            {(["maitrise", "acquis", "apprentissage"] as Niveau[]).map((n) => (
+              <span key={n} className="inline-flex items-center gap-1.5 font-display text-xs" style={{ color: maitriseCfg[n].color }}>
+                <span className="font-bold">{maitriseCfg[n].symbol}</span>
+                {maitriseCfg[n].label}
+              </span>
+            ))}
+          </div>
+
+          {/* Niveaux + ACs */}
+          <div className="flex flex-col gap-6">
+            {comp.niveaux.map((niv) => {
+              const reached = niv.n <= comp.niveauAtteint;
+              const current = niv.n === comp.niveauAtteint;
+              return (
+                <div key={niv.n}>
+                  {/* Header niveau */}
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div
+                      className="w-6 h-6 rounded-full flex items-center justify-center font-display font-bold text-[11px] flex-shrink-0"
+                      style={
+                        current
+                          ? { backgroundColor: comp.accent, color: "#0a0a0a" }
+                          : reached
+                          ? { backgroundColor: comp.accent + "30", color: comp.accent, border: `1px solid ${comp.accent}50` }
+                          : { backgroundColor: "#1e1e1e", color: "#444444", border: "1px solid #2a2a2a" }
+                      }
+                    >
+                      {niv.n}
+                    </div>
+                    <span
+                      className="font-display font-semibold text-sm"
+                      style={{ color: current ? "#ffffff" : reached ? "#b0b0b0" : "#444444" }}
+                    >
+                      {niv.titre}
+                      {current && (
+                        <span className="ml-2 text-[10px] font-bold uppercase tracking-wider" style={{ color: comp.accent }}>
+                          ← niveau atteint
+                        </span>
+                      )}
+                    </span>
                   </div>
-                  <span
-                    className="font-display font-semibold text-[11px] leading-tight"
-                    style={{ color: current ? "#ffffff" : reached ? "#b0b0b0" : "#3a3a3a" }}
-                  >
-                    {niv.titre}
-                    {current && (
-                      <span className="ml-1.5 font-bold text-[9px] uppercase tracking-wider" style={{ color: comp.accent }}>
-                        ← atteint
-                      </span>
-                    )}
-                  </span>
+
+                  {/* ACs */}
+                  <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2 pl-8">
+                    {niv.acs.map((ac) => {
+                      const cfg = maitriseCfg[ac.maitrise];
+                      return (
+                        <div key={ac.code} className="flex items-start gap-2">
+                          <span
+                            className="text-[13px] leading-none mt-0.5 flex-shrink-0 font-bold"
+                            style={{ color: cfg.color }}
+                            title={cfg.label}
+                          >
+                            {cfg.symbol}
+                          </span>
+                          <span className="font-serif text-[13px] text-[#b0b0b0] leading-relaxed">
+                            {ac.titre}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                {/* ACs avec badge de maîtrise */}
-                <div className="flex flex-col gap-1.5 pl-7">
-                  {niv.acs.map((ac) => {
-                    const cfg = maitriseCfg[ac.maitrise];
-                    return (
-                      <div key={ac.code} className="flex items-start gap-2">
-                        <span
-                          className="text-[12px] leading-none mt-0.5 flex-shrink-0 font-bold"
-                          style={{ color: cfg.color }}
-                          title={cfg.label}
-                        >
-                          {cfg.symbol}
-                        </span>
-                        <span className="font-serif text-[11px] text-[#888888] leading-relaxed">
-                          {ac.titre}
-                        </span>
-                      </div>
-                    );
-                  })}
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ── Colonne 2 : Progression + Preuves ── */}
+        <div className="p-7 flex flex-col gap-7">
+
+          {/* Progression */}
+          <div>
+            <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-4">
+              Montée en compétence
+            </p>
+            <div className="flex flex-col gap-4">
+              {etapeKeys.map((key, i) => (
+                <div key={key} className="flex gap-3">
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <div
+                      className="w-2 h-2 rounded-full mt-1"
+                      style={{
+                        backgroundColor: i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#272727",
+                        border: `1px solid ${i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#3a3a3a"}`,
+                      }}
+                    />
+                    {i < 2 && <div className="w-px flex-1 bg-[#1e1e1e] my-1" style={{ minHeight: 12 }} />}
+                  </div>
+                  <div className="pb-1">
+                    <span
+                      className="font-display font-bold text-[10px] uppercase tracking-widest block mb-1"
+                      style={{ color: i === 2 ? comp.accent : "#888888" }}
+                    >
+                      {etapeLabels[i]}
+                    </span>
+                    <p className="font-serif text-[13px] text-[#b0b0b0] leading-relaxed">
+                      {comp.progression[key]}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* ── Progression BUT1 → BUT2 → BUT3 ── */}
-      <div className="px-6 py-4 border-b border-[#1e1e1e] bg-[#0f0f0f]">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-3">
-          Montée en compétence
-        </p>
-        <div className="flex flex-col gap-3">
-          {etapeKeys.map((key, i) => (
-            <div key={key} className="flex gap-3">
-              <div className="flex flex-col items-center flex-shrink-0">
-                <div
-                  className="w-2 h-2 rounded-full mt-1"
-                  style={{
-                    backgroundColor: i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#272727",
-                    border: `1px solid ${i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#3a3a3a"}`,
-                  }}
-                />
-                {i < 2 && <div className="w-px flex-1 bg-[#1e1e1e] my-1" style={{ minHeight: 10 }} />}
-              </div>
-              <div className="pb-1">
-                <span
-                  className="font-display font-bold text-[10px] uppercase tracking-widest block mb-0.5"
-                  style={{ color: i === 2 ? comp.accent : "#888888" }}
-                >
-                  {etapeLabels[i]}
-                </span>
-                <p className="font-serif text-[11px] text-[#888888] leading-relaxed">
-                  {comp.progression[key]}
-                </p>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      {/* ── Preuves ── */}
-      <div className="px-6 py-4 flex-1">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-3">
-          Preuves concrètes
-        </p>
-        <div className="flex flex-col gap-2">
-          {comp.preuves.map((p, i) => (
-            <div key={i} className="flex items-start gap-2">
-              <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full" style={{ backgroundColor: comp.accent + "80" }} />
-              <span className="font-serif text-[11px] text-[#b0b0b0] leading-relaxed">{p}</span>
+          {/* Preuves */}
+          <div>
+            <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-4">
+              Preuves concrètes
+            </p>
+            <div className="flex flex-col gap-3">
+              {comp.preuves.map((p, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: comp.accent + "80" }} />
+                  <span className="font-serif text-[13px] text-[#b0b0b0] leading-relaxed">{p}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
         </div>
       </div>
-
     </div>
   );
 }
 
-// ── Légende ───────────────────────────────────────────────────────────────────
-
-function Legende() {
-  const niveaux: Niveau[] = ["maitrise", "acquis", "apprentissage"];
-  return (
-    <div className="flex flex-wrap items-center gap-3">
-      {niveaux.map((n) => {
-        const cfg = maitriseCfg[n];
-        return (
-          <span key={n} className="inline-flex items-center gap-1.5 font-display text-xs" style={{ color: cfg.color }}>
-            <span className="text-sm font-bold">{cfg.symbol}</span>
-            {cfg.label}
-          </span>
-        );
-      })}
-    </div>
-  );
-}
-
-// ── Grille skills techniques ──────────────────────────────────────────────────
+// ── Grille skills ─────────────────────────────────────────────────────────────
 
 const skillCategories = [
   { label: "Outils & Tech",    Icon: Wrench,    items: skills.outils,     color: "#FFD300" },
@@ -209,34 +194,66 @@ const skillCategories = [
 // ── Section principale ────────────────────────────────────────────────────────
 
 export default function Competences() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = competences5[activeIndex];
+  const ActiveIcon = compIcons[activeIndex];
+
   return (
     <section id="competences" className="section-padding bg-[#0c0c0c]">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* En-tête */}
-        <AnimatedSection className="mb-14">
+        <AnimatedSection className="mb-12">
           <span className="font-display text-xs font-bold text-[#FFD300] uppercase tracking-[0.2em] mb-3 block">
             Référentiel BUT GEA GEMA
           </span>
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
             Compétences
           </h2>
-          <p className="font-serif italic text-[#888888] text-lg max-w-2xl mb-5">
+          <p className="font-serif italic text-[#888888] text-lg max-w-2xl">
             Les 5 compétences officielles du référentiel BUT GEA GEMA — avec chaque apprentissage critique évalué honnêtement, de BUT 1 à BUT 3.
           </p>
-          <Legende />
         </AnimatedSection>
 
-        {/* 5 compétences */}
-        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16" staggerDelay={0.08}>
-          {competences5.map((comp, i) => (
-            <StaggerItem key={comp.id}>
-              <CompetenceCard comp={comp} Icon={compIcons[i]} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        {/* Tabs */}
+        <AnimatedSection className="mb-6">
+          <div className="flex flex-wrap gap-2">
+            {competences5.map((comp, i) => {
+              const Icon = compIcons[i];
+              const isActive = i === activeIndex;
+              return (
+                <button
+                  key={comp.id}
+                  onClick={() => setActiveIndex(i)}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-display font-bold text-sm transition-all duration-200"
+                  style={
+                    isActive
+                      ? {
+                          backgroundColor: comp.accent + "20",
+                          border: `1px solid ${comp.accent}60`,
+                          color: comp.accent,
+                        }
+                      : {
+                          backgroundColor: "#141414",
+                          border: "1px solid #272727",
+                          color: "#888888",
+                        }
+                  }
+                >
+                  <Icon size={14} />
+                  {comp.titre}
+                </button>
+              );
+            })}
+          </div>
+        </AnimatedSection>
 
-        {/* Divider skills */}
+        {/* Contenu actif */}
+        <AnimatedSection className="mb-16">
+          <CompetenceDetail key={active.id} comp={active} Icon={ActiveIcon} />
+        </AnimatedSection>
+
+        {/* Divider */}
         <AnimatedSection className="mb-10">
           <div className="flex items-center gap-4">
             <div className="flex-1 h-px bg-[#1e1e1e]" />
