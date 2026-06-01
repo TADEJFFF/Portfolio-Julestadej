@@ -82,7 +82,7 @@ export default function Erasmus() {
                   Langue d&apos;enseignement
                 </div>
                 <div className="font-display font-bold text-white">
-                  🇬🇧 {erasmusData.langue}
+                  {erasmusData.langue}
                 </div>
               </div>
             </div>
