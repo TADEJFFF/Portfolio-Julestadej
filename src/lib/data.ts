@@ -345,6 +345,183 @@ export const competencesBUT = [
   },
 ];
 
+// ─── RÉFÉRENTIEL GEA — MONTÉE EN COMPÉTENCES ────────────────────────────────
+
+export type Niveau = "apprentissage" | "acquis" | "maitrise";
+
+export interface SousCompetence {
+  titre: string;
+  niveau: Niveau;
+  preuves: string[];
+}
+
+export interface CompetenceGEA {
+  numero: string;
+  titre: string;
+  tagline: string;
+  progression: { but1: string; but2: string; but3: string };
+  sousCompetences: SousCompetence[];
+}
+
+export const competencesGEA: { tronc: CompetenceGEA[]; gema: CompetenceGEA[] } = {
+  tronc: [
+    {
+      numero: "01",
+      titre: "Gérer",
+      tagline: "Analyser · Piloter · Optimiser",
+      progression: {
+        but1: "Fondamentaux posés : comptabilité, économie, premiers outils d'analyse organisationnelle.",
+        but2: "Application concrète avec le business plan Breathe&Go et l'analyse des données clients chez Caroll (Power BI).",
+        but3: "Benchmark CGAD livré avec recommandations au CA FFF. Enquête satisfaction adhérents pilotée de A à Z.",
+      },
+      sousCompetences: [
+        {
+          titre: "Analyser la situation d'une organisation",
+          niveau: "maitrise",
+          preuves: ["Benchmark CGAD/UFIDF — recommandations CA FFF (2026)", "Analyse concurrentielle Caroll — Power BI + ClientFit"],
+        },
+        {
+          titre: "Gérer les ressources financières",
+          niveau: "acquis",
+          preuves: ["Business Plan Breathe&Go — modèle financier & prévisionnel"],
+        },
+        {
+          titre: "Gérer les ressources humaines",
+          niveau: "acquis",
+          preuves: ["Plan de communication RH Clariane (employee advocacy)", "SAE RH BUT 1 & BUT 2"],
+        },
+        {
+          titre: "Piloter la qualité et la performance",
+          niveau: "acquis",
+          preuves: ["Enquête satisfaction adhérents UFIDF", "Suivi KPIs marketing chez Caroll"],
+        },
+      ],
+    },
+    {
+      numero: "02",
+      titre: "Entreprendre",
+      tagline: "Identifier · Concevoir · Déployer",
+      progression: {
+        but1: "Première vraie prise d'initiative : stage Radio FG, analyse marché seul, stratégie réseaux remise au PDG.",
+        but2: "Breathe&Go : de l'idée (vécu personnel) au pitch investisseur. 2 prix remportés en fin de BUT 2.",
+        but3: "Stage FFF : prospection B2B terrain sur 100+ crèmeries IDF. Présentation nationale au CA FFF — 18 mai 2026.",
+      },
+      sousCompetences: [
+        {
+          titre: "Identifier des opportunités",
+          niveau: "maitrise",
+          preuves: ["Breathe&Go : né d'un accident vécu → 2 prix entrepreneuriat (2025)", "FEBA Social Room : initiative Erasmus menée en anglais"],
+        },
+        {
+          titre: "Concevoir et modéliser une activité",
+          niveau: "maitrise",
+          preuves: ["Business Plan complet Breathe&Go (BP + pitch + livret investisseur)", "Note de synthèse UltraTonic — expansion USA (Boston, Philadelphie)"],
+        },
+        {
+          titre: "Déployer commercialement",
+          niveau: "acquis",
+          preuves: ["Prospection B2B 100+ crèmeries IDF (UFIDF/FFF)", "Stratégie réseaux sociaux Radio FG — cible 18-25 ans"],
+        },
+      ],
+    },
+    {
+      numero: "03",
+      titre: "Manager",
+      tagline: "Fédérer · Conduire · Communiquer",
+      progression: {
+        but1: "Peu à l'aise pour prendre la parole. Les SAE en groupe au S2 déclenchent la prise de confiance.",
+        but2: "Fashion DAY : coordination logistique + speaker/présentateur devant un public — tournant décisif.",
+        but3: "Présentation au Conseil d'Administration FFF devant les élus nationaux. Erasmus : management en contexte multiculturel.",
+      },
+      sousCompetences: [
+        {
+          titre: "Fédérer une équipe",
+          niveau: "acquis",
+          preuves: ["Fashion DAY : coordination équipe événementielle de A à Z", "SAE BUT 1 S2 : prise de leadership en groupe"],
+        },
+        {
+          titre: "Conduire un projet",
+          niveau: "maitrise",
+          preuves: ["Breathe&Go — 2 semestres, de l'idée à la récompense", "Cartographie FFF — Python + Leaflet.js livré et déployé"],
+        },
+        {
+          titre: "Communiquer avec les parties prenantes",
+          niveau: "maitrise",
+          preuves: ["Présentation CA FFF — 18 mai 2026 (élus nationaux)", "Clariane : plan de comm interne RH, employee advocacy", "Erasmus Sofia : cours, projets et présentations 100% en anglais"],
+        },
+      ],
+    },
+  ],
+  gema: [
+    {
+      numero: "G1",
+      titre: "Performance opérationnelle",
+      tagline: "Analyser · Optimiser · Piloter les activités",
+      progression: {
+        but1: "Découverte des outils de gestion et de pilotage en cours et en SAE.",
+        but2: "Stage Caroll : benchmark web/physique/newsletter, analyse comportement client en conditions réelles.",
+        but3: "Cartographie Python livrée et déployée. Benchmark CGAD avec recommandations présenté au CA FFF.",
+      },
+      sousCompetences: [
+        {
+          titre: "Analyser et améliorer les processus",
+          niveau: "acquis",
+          preuves: ["Benchmark CGAD — synthèse + recommandations stratégiques", "Analyse soldes Caroll — ClientFit & Power BI"],
+        },
+        {
+          titre: "Piloter un projet terrain",
+          niveau: "maitrise",
+          preuves: ["Cartographie interactive Python + Leaflet.js (FFF)", "Organisation concours MAF & Salon du Fromage"],
+        },
+      ],
+    },
+    {
+      numero: "G2",
+      titre: "Entrepreneuriat & Innovation",
+      tagline: "Créer · Innover · Convaincre",
+      progression: {
+        but1: "Premiers projets collectifs. Curiosité entrepreneuriale présente mais pas encore concrétisée.",
+        but2: "Breathe&Go : de l'idée au livret investisseur. Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation.",
+        but3: "SAE UltraTonic : management de l'innovation (expansion USA). FEBA Social Room conduit en anglais à Sofia.",
+      },
+      sousCompetences: [
+        {
+          titre: "Générer et valoriser une idée",
+          niveau: "maitrise",
+          preuves: ["Breathe&Go → Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation (BUT 2)"],
+        },
+        {
+          titre: "Manager l'innovation",
+          niveau: "acquis",
+          preuves: ["UltraTonic USA : expansion Boston/Philadelphie, mapping Mitchell", "FEBA Social Room : projet numérique en anglais à Sofia"],
+        },
+      ],
+    },
+    {
+      numero: "G3",
+      titre: "Management des hommes",
+      tagline: "Motiver · Fédérer · Accompagner le changement",
+      progression: {
+        but1: "Tendance au retrait dans les groupes. Peu de prises d'initiative en leadership.",
+        but2: "Fashion DAY : animation en public, coordination logistique — prise de leadership affirmée.",
+        but3: "Animation réseau adhérents FFF. Contexte multiculturel Erasmus Sofia. Communication interne RH (Clariane).",
+      },
+      sousCompetences: [
+        {
+          titre: "Accompagner le changement organisationnel",
+          niveau: "acquis",
+          preuves: ["UltraTonic : accompagnement du changement, carte des parties prenantes", "Clariane : communication interne RH — employee advocacy"],
+        },
+        {
+          titre: "Animer et développer un réseau",
+          niveau: "maitrise",
+          preuves: ["Animation boucles WhatsApp membres FFF (réseau national)", "FEBA Social Room : mobilisation communauté alumni Erasmus"],
+        },
+      ],
+    },
+  ],
+};
+
 export const skills = {
   outils: ["Pack Office", "Canva", "Power BI", "ClientFit", "Logiciel 4D", "Python", "HTML / JS"],
   marketing: [
