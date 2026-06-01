@@ -23,7 +23,7 @@ export default function APropos() {
               confronter à quelque chose de plus grand que moi.
             </p>
             <p className="font-serif text-[#b0b0b0] text-lg leading-relaxed mb-4">
-              Ces trois années ont été denses : un prix de l'entrepreneuriat avec Breathe&Go,
+              Ces trois années ont été denses : 2 prix de l'entrepreneuriat avec Breathe&Go,
               un semestre Erasmus à Sofia en immersion totale en anglais, et aujourd'hui un
               stage au cœur du réseau fromager français. Chaque expérience a affiné ma façon
               d'analyser, de décider et d'agir.
