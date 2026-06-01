@@ -19,7 +19,7 @@ export default function APropos() {
             <p className="font-serif text-[#9a9a9a] text-lg leading-relaxed mb-4">
               J'ai grandi à Poitiers. Pendant longtemps, c'était mon monde. Puis à 18 ans,
               j'ai pris une décision : quitter ce que je connaissais, monter à Paris, et me
-              confronter à quelque chose de plus grand que moi. Pas par hasard, par envie
+              confronter à quelque chose de plus grand que moi. Pas par hasard. Par envie
               de me dépasser.
             </p>
             <p className="font-serif text-[#6b6b6b] text-lg leading-relaxed">
