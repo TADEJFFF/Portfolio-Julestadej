@@ -48,7 +48,9 @@ export const parcours = [
       "Baccalauréat STMG mention Assez Bien",
       "Décision : quitter Poitiers pour intégrer un BUT GEA à Paris",
     ],
-    releves: [],
+    releves: [
+      { label: "Diplôme Bac STMG", url: "/diplome-bac-stmg-2023.pdf" },
+    ],
     highlight: false,
     current: false,
   },
