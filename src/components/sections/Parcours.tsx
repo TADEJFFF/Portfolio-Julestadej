@@ -16,7 +16,7 @@ export default function Parcours() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
             Mon parcours
           </h2>
-          <p className="font-serif italic text-[#6b6b6b] text-lg max-w-xl">
+          <p className="font-serif italic text-[#888888] text-lg max-w-xl">
             Trois années de BUT GEA GEMA, un Erasmus+ en Bulgarie et un stage dans
             une fédération professionnelle nationale.
           </p>
@@ -83,14 +83,14 @@ export default function Parcours() {
                         <h3 className="font-display font-bold text-lg text-white mb-1">
                           {step.label}
                         </h3>
-                        <p className="font-display text-sm text-[#6b6b6b] mb-4">
+                        <p className="font-display text-sm text-[#888888] mb-4">
                           {step.lieu}
                         </p>
 
                         {/* Événements */}
                         <ul className="flex flex-col gap-2">
                           {step.events.map((ev, j) => (
-                            <li key={j} className="flex items-start gap-2 text-sm text-[#9a9a9a] font-serif">
+                            <li key={j} className="flex items-start gap-2 text-sm text-[#b0b0b0] font-serif">
                               <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FFD300]/60" />
                               {ev}
                             </li>
@@ -106,7 +106,7 @@ export default function Parcours() {
                                 href={releve.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 font-display text-[10px] font-medium px-2.5 py-1.5 rounded-lg border border-[#272727] bg-[#0c0c0c] text-[#6b6b6b] hover:text-[#FFD300] hover:border-[#FFD300]/30 transition-all duration-200"
+                                className="inline-flex items-center gap-1.5 font-display text-[10px] font-medium px-2.5 py-1.5 rounded-lg border border-[#272727] bg-[#0c0c0c] text-[#888888] hover:text-[#FFD300] hover:border-[#FFD300]/30 transition-all duration-200"
                               >
                                 <FileText size={10} />
                                 {releve.label}

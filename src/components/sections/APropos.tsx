@@ -17,13 +17,13 @@ export default function APropos() {
             <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-8 leading-tight">
               La décision qui a tout changé
             </h2>
-            <p className="font-serif text-[#9a9a9a] text-lg leading-relaxed mb-4">
+            <p className="font-serif text-[#b0b0b0] text-lg leading-relaxed mb-4">
               J'ai grandi à Poitiers. Pendant longtemps, c'était mon monde. Puis à 18 ans,
               j'ai pris une décision : quitter ce que je connaissais, monter à Paris, et me
               confronter à quelque chose de plus grand que moi. Pas par hasard. Par envie
               de me dépasser.
             </p>
-            <p className="font-serif text-[#6b6b6b] text-lg leading-relaxed">
+            <p className="font-serif text-[#888888] text-lg leading-relaxed">
               Ce portfolio retrace ces trois années de BUT GEA GEMA. Trois ans où chaque
               projet, chaque stage, chaque défi a construit la version de moi qui écrit ces
               lignes aujourd'hui.

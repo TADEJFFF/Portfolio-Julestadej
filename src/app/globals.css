@@ -7,8 +7,8 @@
   --color-surface: #141414;
   --color-surface-2: #1c1c1c;
   --color-border: #272727;
-  --color-muted: #6b6b6b;
-  --color-subtle: #9a9a9a;
+  --color-muted: #888888;
+  --color-subtle: #b0b0b0;
 
   --font-display: var(--font-syne);
   --font-body: var(--font-instrument);

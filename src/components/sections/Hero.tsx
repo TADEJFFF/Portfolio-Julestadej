@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#272727] bg-[#141414] text-xs font-display font-medium text-[#9a9a9a] uppercase tracking-widest"
+          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#272727] bg-[#141414] text-xs font-display font-medium text-[#b0b0b0] uppercase tracking-widest"
         >
           <span className="w-2 h-2 rounded-full bg-[#FFD300] animate-pulse" />
           {personal.iut} · {personal.universite}
@@ -60,7 +60,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="font-display text-base md:text-lg text-[#9a9a9a] font-medium mb-1"
+          className="font-display text-base md:text-lg text-[#b0b0b0] font-medium mb-1"
         >
           {personal.formation}
         </motion.p>
@@ -78,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="font-serif italic text-[#9a9a9a] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
+          className="font-serif italic text-[#b0b0b0] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
         >
           &ldquo;{personal.accroche}&rdquo;
         </motion.p>
@@ -98,7 +98,7 @@ export default function Hero() {
               <span className="font-display font-bold text-2xl md:text-3xl text-[#FFD300]">
                 {stat.value}
               </span>
-              <span className="font-display text-xs text-[#6b6b6b] mt-1 text-center uppercase tracking-wide">
+              <span className="font-display text-xs text-[#888888] mt-1 text-center uppercase tracking-wide">
                 {stat.label}
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function Hero() {
           </a>
           <button
             onClick={() => document.querySelector("#parcours")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#272727] text-[#9a9a9a] hover:border-[#FFD300]/50 hover:text-white transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#272727] text-[#b0b0b0] hover:border-[#FFD300]/50 hover:text-white transition-all duration-200 text-sm"
           >
             Voir mon parcours
           </button>
@@ -141,7 +141,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.85 }}
-          className="flex items-center gap-4 text-xs text-[#6b6b6b] font-display"
+          className="flex items-center gap-4 text-xs text-[#888888] font-display"
         >
           <span className="flex items-center gap-1">
             <MapPin size={12} />
@@ -157,7 +157,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#6b6b6b]"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#888888]"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}

@@ -40,7 +40,7 @@ export default function Navbar() {
         >
           <span className="text-[#FFD300]">J</span>
           <span className="text-white">T</span>
-          <span className="ml-2 text-xs text-[#6b6b6b] font-normal hidden sm:inline group-hover:text-[#FFD300] transition-colors duration-200">
+          <span className="ml-2 text-xs text-[#888888] font-normal hidden sm:inline group-hover:text-[#FFD300] transition-colors duration-200">
             BUT GEA GEMA
           </span>
         </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
             <li key={link.href}>
               <button
                 onClick={() => handleLink(link.href)}
-                className="font-display text-sm font-medium px-4 py-2 rounded-md text-[#9a9a9a] hover:text-white hover:bg-[#1a1a1a] transition-all duration-200 cursor-pointer"
+                className="font-display text-sm font-medium px-4 py-2 rounded-md text-[#b0b0b0] hover:text-white hover:bg-[#1a1a1a] transition-all duration-200 cursor-pointer"
               >
                 {link.label}
               </button>
@@ -69,7 +69,7 @@ export default function Navbar() {
 
         {/* Mobile burger */}
         <button
-          className="md:hidden text-[#9a9a9a] hover:text-white p-2"
+          className="md:hidden text-[#b0b0b0] hover:text-white p-2"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -84,7 +84,7 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => handleLink(link.href)}
-              className="font-display text-sm font-medium py-3 text-left text-[#9a9a9a] hover:text-white border-b border-[#1a1a1a] last:border-0 transition-colors duration-200"
+              className="font-display text-sm font-medium py-3 text-left text-[#b0b0b0] hover:text-white border-b border-[#1a1a1a] last:border-0 transition-colors duration-200"
             >
               {link.label}
             </button>

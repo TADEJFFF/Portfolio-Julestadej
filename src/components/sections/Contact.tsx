@@ -15,7 +15,7 @@ export default function Contact() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
             Me contacter
           </h2>
-          <p className="font-serif italic text-[#6b6b6b] text-lg max-w-lg mx-auto">
+          <p className="font-serif italic text-[#888888] text-lg max-w-lg mx-auto">
             Diplômé BUT GEA GEMA en juillet 2026, ouvert aux opportunités en freelance.
           </p>
         </AnimatedSection>
@@ -30,7 +30,7 @@ export default function Contact() {
               <Mail size={18} className="text-[#0c0c0c]" />
             </div>
             <div className="text-left">
-              <div className="font-display text-xs text-[#6b6b6b] uppercase tracking-widest mb-0.5">
+              <div className="font-display text-xs text-[#888888] uppercase tracking-widest mb-0.5">
                 Email
               </div>
               <div className="font-display font-bold text-white group-hover:text-[#FFD300] transition-colors duration-200">
@@ -54,16 +54,16 @@ export default function Contact() {
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
               <div className="text-left">
-                <div className="font-display text-[10px] text-[#6b6b6b] uppercase tracking-widest">LinkedIn</div>
+                <div className="font-display text-[10px] text-[#888888] uppercase tracking-widest">LinkedIn</div>
                 <div className="font-display text-sm text-white font-medium">Jules TADEJ</div>
               </div>
             </a>
 
             {/* Localisation */}
             <div className="flex items-center gap-3 px-5 py-3 rounded-xl border border-[#272727] bg-[#141414]">
-              <MapPin size={16} className="text-[#6b6b6b]" />
+              <MapPin size={16} className="text-[#888888]" />
               <div className="text-left">
-                <div className="font-display text-[10px] text-[#6b6b6b] uppercase tracking-widest">Localisation</div>
+                <div className="font-display text-[10px] text-[#888888] uppercase tracking-widest">Localisation</div>
                 <div className="font-display text-sm text-white">{personal.location}</div>
               </div>
             </div>
@@ -83,10 +83,10 @@ export default function Contact() {
         <AnimatedSection delay={0.3}>
           <div className="flex items-center gap-4 mb-8">
             <div className="flex-1 h-px bg-[#1e1e1e]" />
-            <span className="font-display text-xs text-[#6b6b6b]">Jules TADEJ · 2026</span>
+            <span className="font-display text-xs text-[#888888]">Jules TADEJ · 2026</span>
             <div className="flex-1 h-px bg-[#1e1e1e]" />
           </div>
-          <p className="font-display text-xs text-[#6b6b6b] leading-relaxed">
+          <p className="font-display text-xs text-[#888888] leading-relaxed">
             {personal.iut} · {personal.universite}
             <br />
             {personal.formation} — {personal.parcours}

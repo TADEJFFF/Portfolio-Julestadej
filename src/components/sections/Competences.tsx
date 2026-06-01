@@ -51,20 +51,20 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
             <span className="font-display font-extrabold text-base leading-none" style={{ color: comp.accent }}>
               N{comp.niveauAtteint}
             </span>
-            <span className="font-display text-[9px] uppercase tracking-wider text-[#6b6b6b]">
+            <span className="font-display text-[9px] uppercase tracking-wider text-[#888888]">
               /{maxN}
             </span>
           </div>
         </div>
         <h3 className="font-display font-extrabold text-2xl text-white leading-tight">{comp.titre}</h3>
-        <p className="font-display text-[10px] tracking-widest text-[#6b6b6b] mt-1 uppercase">
+        <p className="font-display text-[10px] tracking-widest text-[#888888] mt-1 uppercase">
           Référentiel BUT GEA GEMA
         </p>
       </div>
 
       {/* ── Niveaux + ACs avec badges ── */}
       <div className="px-6 py-4 border-b border-[#1e1e1e]">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-4">
+        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-4">
           Apprentissages critiques
         </p>
         <div className="flex flex-col gap-4">
@@ -89,7 +89,7 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
                   </div>
                   <span
                     className="font-display font-semibold text-[11px] leading-tight"
-                    style={{ color: current ? "#ffffff" : reached ? "#9a9a9a" : "#3a3a3a" }}
+                    style={{ color: current ? "#ffffff" : reached ? "#b0b0b0" : "#3a3a3a" }}
                   >
                     {niv.titre}
                     {current && (
@@ -112,7 +112,7 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
                         >
                           {cfg.symbol}
                         </span>
-                        <span className="font-serif text-[11px] text-[#6b6b6b] leading-relaxed">
+                        <span className="font-serif text-[11px] text-[#888888] leading-relaxed">
                           {ac.titre}
                         </span>
                       </div>
@@ -127,7 +127,7 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
 
       {/* ── Progression BUT1 → BUT2 → BUT3 ── */}
       <div className="px-6 py-4 border-b border-[#1e1e1e] bg-[#0f0f0f]">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-3">
+        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-3">
           Montée en compétence
         </p>
         <div className="flex flex-col gap-3">
@@ -146,11 +146,11 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
               <div className="pb-1">
                 <span
                   className="font-display font-bold text-[10px] uppercase tracking-widest block mb-0.5"
-                  style={{ color: i === 2 ? comp.accent : "#6b6b6b" }}
+                  style={{ color: i === 2 ? comp.accent : "#888888" }}
                 >
                   {etapeLabels[i]}
                 </span>
-                <p className="font-serif text-[11px] text-[#6b6b6b] leading-relaxed">
+                <p className="font-serif text-[11px] text-[#888888] leading-relaxed">
                   {comp.progression[key]}
                 </p>
               </div>
@@ -161,14 +161,14 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
 
       {/* ── Preuves ── */}
       <div className="px-6 py-4 flex-1">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-3">
+        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-3">
           Preuves concrètes
         </p>
         <div className="flex flex-col gap-2">
           {comp.preuves.map((p, i) => (
             <div key={i} className="flex items-start gap-2">
               <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full" style={{ backgroundColor: comp.accent + "80" }} />
-              <span className="font-serif text-[11px] text-[#9a9a9a] leading-relaxed">{p}</span>
+              <span className="font-serif text-[11px] text-[#b0b0b0] leading-relaxed">{p}</span>
             </div>
           ))}
         </div>
@@ -221,7 +221,7 @@ export default function Competences() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
             Compétences
           </h2>
-          <p className="font-serif italic text-[#6b6b6b] text-lg max-w-2xl mb-5">
+          <p className="font-serif italic text-[#888888] text-lg max-w-2xl mb-5">
             Les 5 compétences officielles du référentiel BUT GEA GEMA — avec chaque apprentissage critique évalué honnêtement, de BUT 1 à BUT 3.
           </p>
           <Legende />
@@ -240,7 +240,7 @@ export default function Competences() {
         <AnimatedSection className="mb-10">
           <div className="flex items-center gap-4">
             <div className="flex-1 h-px bg-[#1e1e1e]" />
-            <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-[#6b6b6b] px-1">
+            <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-[#888888] px-1">
               Outils & Compétences transversales
             </span>
             <div className="flex-1 h-px bg-[#1e1e1e]" />
@@ -265,7 +265,7 @@ export default function Competences() {
                   {items.map((item) => (
                     <div
                       key={item}
-                      className="font-display text-xs text-[#9a9a9a] py-1.5 px-2 rounded-md bg-[#0c0c0c] border border-[#1e1e1e]"
+                      className="font-display text-xs text-[#b0b0b0] py-1.5 px-2 rounded-md bg-[#0c0c0c] border border-[#1e1e1e]"
                     >
                       {item}
                     </div>
