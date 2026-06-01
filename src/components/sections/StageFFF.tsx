@@ -93,7 +93,7 @@ export default function StageFFF() {
               <StaggerContainer className="flex flex-col gap-2.5" staggerDelay={0.06}>
                 {stageFFF.missions.map((mission, i) => (
                   <StaggerItem key={i}>
-                    <div className="flex items-start gap-2.5 text-sm text-[#222222] font-serif hover:text-[#e2e2e2] transition-colors duration-200">
+                    <div className="flex items-start gap-2.5 text-sm text-[#222222] font-serif hover:text-[#9A7200] transition-colors duration-200">
                       <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#FFD300]/50" />
                       {mission}
                     </div>

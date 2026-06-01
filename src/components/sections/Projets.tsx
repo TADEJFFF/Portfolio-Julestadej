@@ -100,7 +100,7 @@ export default function Projets() {
                 {projet.resultats.length > 0 && (
                   <div className="flex flex-col gap-1 mb-4">
                     {projet.resultats.map((r, i) => (
-                      <div key={i} className="font-display text-xs text-[#e2e2e2] bg-[#f5f5f5] px-3 py-1.5 rounded-lg border border-[#b0b0b0]">
+                      <div key={i} className="font-display text-xs text-[#222222] bg-[#f0f0f0] px-3 py-1.5 rounded-lg border border-[#b8b8b8]">
                         {r}
                       </div>
                     ))}

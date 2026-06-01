@@ -44,7 +44,7 @@ export default function RootLayout({
       lang="fr"
       className={`${syne.variable} ${instrumentSerif.variable}`}
     >
-      <body className="bg-[#f5f5f5] text-[#e2e2e2] antialiased min-h-screen">
+      <body className="bg-white text-[#111111] antialiased min-h-screen">
         {children}
       </body>
     </html>
