@@ -28,6 +28,7 @@ export const stats = [
 ];
 
 export const navLinks = [
+  { label: "À propos", href: "#apropos" },
   { label: "Parcours", href: "#parcours" },
   { label: "Erasmus", href: "#erasmus" },
   { label: "Stage FFF", href: "#stage" },
