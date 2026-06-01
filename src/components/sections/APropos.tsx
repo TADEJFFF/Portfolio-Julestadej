@@ -18,15 +18,19 @@ export default function APropos() {
               La décision qui a tout changé
             </h2>
             <p className="font-serif text-[#b0b0b0] text-lg leading-relaxed mb-4">
-              J'ai grandi à Poitiers. Pendant longtemps, c'était mon monde. Puis à 18 ans,
-              j'ai pris une décision : quitter ce que je connaissais, monter à Paris, et me
-              confronter à quelque chose de plus grand que moi. Pas par hasard. Par envie
-              de me dépasser.
+              J'ai grandi à Poitiers. À 18 ans, j'ai fait le choix de tout quitter pour
+              intégrer un BUT GEA à Paris, pas par hasard, mais parce que je voulais me
+              confronter à quelque chose de plus grand que moi.
+            </p>
+            <p className="font-serif text-[#b0b0b0] text-lg leading-relaxed mb-4">
+              Ces trois années ont été denses : un prix de l'entrepreneuriat avec Breathe&Go,
+              un semestre Erasmus à Sofia en immersion totale en anglais, et aujourd'hui un
+              stage au cœur du réseau fromager français. Chaque expérience a affiné ma façon
+              d'analyser, de décider et d'agir.
             </p>
             <p className="font-serif text-[#888888] text-lg leading-relaxed">
-              Ce portfolio retrace ces trois années de BUT GEA GEMA. Trois ans où chaque
-              projet, chaque stage, chaque défi a construit la version de moi qui écrit ces
-              lignes aujourd'hui.
+              Ce portfolio ne retrace pas seulement un parcours académique. Il montre comment
+              j'ai transformé chaque défi en compétence concrète.
             </p>
           </AnimatedSection>
 
