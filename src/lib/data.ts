@@ -347,9 +347,18 @@ export const competencesBUT = [
 
 // ─── RÉFÉRENTIEL BUT GEA GEMA — 5 COMPÉTENCES OFFICIELLES ──────────────────
 
+export type Niveau = "apprentissage" | "acquis" | "maitrise";
+
+export interface AC {
+  code: string;
+  titre: string;
+  maitrise: Niveau;
+}
+
 export interface NiveauRef {
   n: number;
   titre: string;
+  acs: AC[];
 }
 
 export interface Competence5 {
@@ -367,16 +376,40 @@ export const competences5: Competence5[] = [
     id: "analyser",
     titre: "Analyser",
     accent: "#ef4444",
-    niveaux: [
-      { n: 1, titre: "Identifier les processus de l'organisation" },
-      { n: 2, titre: "Évaluer les processus de l'organisation" },
-      { n: 3, titre: "Conseiller pour l'amélioration des processus de l'organisation" },
-    ],
     niveauAtteint: 3,
+    niveaux: [
+      {
+        n: 1,
+        titre: "Identifier les processus de l'organisation",
+        acs: [
+          { code: "AC11.01", titre: "Identifier les différents types d'enjeux", maitrise: "maitrise" },
+          { code: "AC11.02", titre: "Qualifier les différents types d'organisations", maitrise: "maitrise" },
+          { code: "AC11.03", titre: "Identifier les parties prenantes et leurs relations au sein d'un processus", maitrise: "maitrise" },
+        ],
+      },
+      {
+        n: 2,
+        titre: "Évaluer les processus de l'organisation",
+        acs: [
+          { code: "AC21.01", titre: "Analyser les différents types d'enjeux", maitrise: "maitrise" },
+          { code: "AC21.02", titre: "Analyser les dimensions identitaires (juridiques, managériales…) de l'organisation", maitrise: "acquis" },
+          { code: "AC21.03", titre: "Évaluer le niveau de performance des processus", maitrise: "acquis" },
+        ],
+      },
+      {
+        n: 3,
+        titre: "Conseiller pour l'amélioration des processus de l'organisation",
+        acs: [
+          { code: "AC31.01", titre: "Intégrer l'impact des enjeux sur l'organisation", maitrise: "acquis" },
+          { code: "AC31.02", titre: "Conseiller un type d'organisation", maitrise: "acquis" },
+          { code: "AC31.03", titre: "Proposer des améliorations des processus", maitrise: "maitrise" },
+        ],
+      },
+    ],
     progression: {
       but1: "Premiers outils d'analyse : cartographie des processus, comptabilité, économie.",
       but2: "Évaluation des processus en stage Caroll — benchmarks web, physique et newsletters. Analyse comportement client (Power BI, ClientFit).",
-      but3: "Benchmark CGAD livré avec recommandations stratégiques au CA FFF (mai 2026). Conseiller sur l'amélioration des processus d'adhésion UFIDF.",
+      but3: "Benchmark CGAD livré avec recommandations stratégiques au CA FFF (mai 2026). Amélioration des processus d'adhésion UFIDF.",
     },
     preuves: [
       "Benchmark CGAD/UFIDF — recommandations remises au CA FFF (2026)",
@@ -388,16 +421,44 @@ export const competences5: Competence5[] = [
     id: "decider",
     titre: "Décider",
     accent: "#f97316",
-    niveaux: [
-      { n: 1, titre: "Identifier les éléments d'aide à la prise de décision" },
-      { n: 2, titre: "Évaluer les éléments d'aide à la prise de décision" },
-      { n: 3, titre: "Concourir à la prise de décision" },
-    ],
     niveauAtteint: 3,
+    niveaux: [
+      {
+        n: 1,
+        titre: "Identifier les éléments d'aide à la prise de décision",
+        acs: [
+          { code: "AC12.01", titre: "Identifier les composantes du système d'information de gestion", maitrise: "acquis" },
+          { code: "AC12.02", titre: "Rechercher, collecter et traiter les données brutes afin de produire une information structurée", maitrise: "maitrise" },
+          { code: "AC12.03", titre: "Identifier les contraintes qui s'imposent à l'organisation", maitrise: "maitrise" },
+          { code: "AC12.04", titre: "Identifier les risques", maitrise: "acquis" },
+        ],
+      },
+      {
+        n: 2,
+        titre: "Évaluer les éléments d'aide à la prise de décision",
+        acs: [
+          { code: "AC22.01", titre: "Analyser les enjeux du système d'information et leur impact sur le fonctionnement de l'organisation", maitrise: "acquis" },
+          { code: "AC22.02", titre: "Exploiter un ERP/PGI et ses fonctionnalités de base", maitrise: "acquis" },
+          { code: "AC22.03", titre: "Traiter les données pertinentes pour répondre à une problématique", maitrise: "maitrise" },
+          { code: "AC22.04", titre: "Analyser les contraintes et leur impact sur le fonctionnement et la performance de l'organisation", maitrise: "acquis" },
+          { code: "AC22.05", titre: "Évaluer les risques", maitrise: "acquis" },
+        ],
+      },
+      {
+        n: 3,
+        titre: "Concourir à la prise de décision",
+        acs: [
+          { code: "AC32.01", titre: "Collaborer au processus d'amélioration continue du système d'information", maitrise: "apprentissage" },
+          { code: "AC32.02", titre: "Exploiter les données pour accompagner la prise de décision", maitrise: "acquis" },
+          { code: "AC32.03", titre: "Participer à la prise de décision en fonction des contraintes identifiées", maitrise: "maitrise" },
+          { code: "AC32.04", titre: "Élaborer des mesures préventives de minimalisation des risques", maitrise: "acquis" },
+        ],
+      },
+    ],
     progression: {
-      but1: "Identification des outils d'aide à la décision en cours (tableaux de bord, ratios financiers). Stage Radio FG : premières recommandations stratégiques remises seul au PDG.",
-      but2: "Évaluation des décisions marketing chez Caroll. Business Plan Breathe&Go : arbitrages stratégiques, modèle financier et choix d'investissement.",
-      but3: "Présentation au Conseil d'Administration FFF — 18 mai 2026 — avec recommandations d'actions concrètes devant les élus nationaux.",
+      but1: "Identification des outils d'aide à la décision. Stage Radio FG : premières recommandations stratégiques remises seul au PDG.",
+      but2: "Évaluation des décisions marketing chez Caroll. Business Plan Breathe&Go : arbitrages stratégiques et choix d'investissement.",
+      but3: "Présentation au CA FFF — 18 mai 2026 — avec recommandations concrètes devant les élus nationaux.",
     },
     preuves: [
       "Présentation CA FFF — 18 mai 2026 (élus nationaux)",
@@ -409,16 +470,42 @@ export const competences5: Competence5[] = [
     id: "piloter",
     titre: "Piloter",
     accent: "#eab308",
-    niveaux: [
-      { n: 1, titre: "Identifier les relations entre les parties prenantes" },
-      { n: 2, titre: "Coordonner les relations entre les parties prenantes" },
-      { n: 3, titre: "Améliorer les relations entre les parties prenantes" },
-    ],
     niveauAtteint: 3,
+    niveaux: [
+      {
+        n: 1,
+        titre: "Identifier les relations entre les parties prenantes",
+        acs: [
+          { code: "AC13.01", titre: "Identifier ses qualités individuelles", maitrise: "maitrise" },
+          { code: "AC13.02", titre: "Identifier les relations inter-personnelles et collectives", maitrise: "maitrise" },
+          { code: "AC13.03", titre: "Travailler en équipe avec méthodes", maitrise: "maitrise" },
+          { code: "AC13.04", titre: "Utiliser de façon pertinente les techniques de communication", maitrise: "maitrise" },
+        ],
+      },
+      {
+        n: 2,
+        titre: "Coordonner les relations entre les parties prenantes",
+        acs: [
+          { code: "AC23.01", titre: "Mobiliser ses qualités individuelles au service de l'intelligence collective", maitrise: "maitrise" },
+          { code: "AC23.02", titre: "Analyser les relations inter-personnelles et collectives dans la stratégie de l'organisation", maitrise: "acquis" },
+          { code: "AC23.03", titre: "Utiliser les outils d'organisation et méthodes dédiés au travail collaboratif", maitrise: "acquis" },
+          { code: "AC23.04", titre: "Combiner les méthodes de communication en lien avec la stratégie", maitrise: "maitrise" },
+        ],
+      },
+      {
+        n: 3,
+        titre: "Améliorer les relations entre les parties prenantes",
+        acs: [
+          { code: "AC33.01", titre: "Animer une équipe", maitrise: "maitrise" },
+          { code: "AC33.02", titre: "Mener un projet collaboratif", maitrise: "maitrise" },
+          { code: "AC33.03", titre: "Participer à l'amélioration de la politique de communication en lien avec la stratégie", maitrise: "acquis" },
+        ],
+      },
+    ],
     progression: {
-      but1: "Cartographie des parties prenantes en SAE — identification des acteurs clés d'une organisation.",
-      but2: "Fashion DAY : coordination de l'équipe, des intervenants et du public — speaker et organisateur. Coordination pluripartenariale Breathe&Go.",
-      but3: "Animation du réseau adhérents FFF (boucles WhatsApp, événements). SAE UltraTonic : mapping Mitchell, accompagnement du changement. Erasmus : coordination internationale.",
+      but1: "Cartographie des parties prenantes en SAE — identification des acteurs clés.",
+      but2: "Fashion DAY : coordination équipe + speaker/présentateur devant public. Coordination pluripartenariale Breathe&Go.",
+      but3: "Animation réseau adhérents FFF. SAE UltraTonic : mapping Mitchell. Erasmus : coordination en contexte international.",
     },
     preuves: [
       "Animation réseau adhérents FFF — boucles WhatsApp + événements",
@@ -431,15 +518,34 @@ export const competences5: Competence5[] = [
     id: "entreprendre",
     titre: "Entreprendre",
     accent: "#22c55e",
-    niveaux: [
-      { n: 1, titre: "Modéliser la proposition de valeur" },
-      { n: 2, titre: "Sécuriser la proposition de valeur" },
-    ],
     niveauAtteint: 2,
+    niveaux: [
+      {
+        n: 1,
+        titre: "Modéliser la proposition de valeur",
+        acs: [
+          { code: "AC24.01", titre: "S'adapter aux évolutions induites par le contexte d'incertitude", maitrise: "maitrise" },
+          { code: "AC24.02", titre: "Évaluer le potentiel d'un marché à partir d'une collecte d'informations pertinentes", maitrise: "maitrise" },
+          { code: "AC24.03", titre: "Modéliser les composantes d'un business model d'une entité existante", maitrise: "maitrise" },
+          { code: "AC24.04", titre: "Apprécier la cohérence d'un business model et de son business plan", maitrise: "maitrise" },
+        ],
+      },
+      {
+        n: 2,
+        titre: "Sécuriser la proposition de valeur",
+        acs: [
+          { code: "AC34.01", titre: "Tester la viabilité financière d'un business model", maitrise: "acquis" },
+          { code: "AC34.02", titre: "Apprécier les risques financiers, fiscaux et juridiques de l'entité ou de l'entrepreneur", maitrise: "acquis" },
+          { code: "AC34.03", titre: "Préconiser les mesures de protection contre les risques", maitrise: "apprentissage" },
+          { code: "AC34.04", titre: "Persuader une partie prenante de la viabilité du business plan", maitrise: "maitrise" },
+          { code: "AC34.05", titre: "Confronter son projet à son expérience de terrain", maitrise: "maitrise" },
+        ],
+      },
+    ],
     progression: {
       but1: "Curiosité entrepreneuriale activée. Premiers projets collectifs mais pas encore de création propre.",
-      but2: "Breathe&Go : de l'idée (vécu personnel — 2 accidents en 2023) à la proposition de valeur complète. Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation.",
-      but3: "Sécurisation de la valeur : SAE UltraTonic (expansion USA), FEBA Social Room (Sofia, en anglais). Prospection B2B FFF pour pérenniser le réseau adhérents.",
+      but2: "Breathe&Go : de l'idée (vécu personnel — 2 accidents en 2023) à la proposition de valeur complète. 2 prix remportés.",
+      but3: "SAE UltraTonic (expansion USA), FEBA Social Room (Sofia, en anglais). Prospection B2B FFF pour pérenniser le réseau adhérents.",
     },
     preuves: [
       "Breathe&Go — Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation (BUT 2)",
@@ -451,15 +557,36 @@ export const competences5: Competence5[] = [
     id: "developper",
     titre: "Développer",
     accent: "#3b82f6",
-    niveaux: [
-      { n: 1, titre: "Développer la chaîne de valeur" },
-      { n: 2, titre: "Optimiser la chaîne de valeur" },
-    ],
     niveauAtteint: 2,
+    niveaux: [
+      {
+        n: 1,
+        titre: "Développer la chaîne de valeur",
+        acs: [
+          { code: "AC25.01", titre: "Promouvoir un projet, un événement ou une organisation par des actions de communication adaptées", maitrise: "maitrise" },
+          { code: "AC25.02", titre: "Identifier la variété et la complexité des processus de production et de supply chain", maitrise: "acquis" },
+          { code: "AC25.03", titre: "Utiliser les techniques de négociation avec les partenaires commerciaux", maitrise: "acquis" },
+          { code: "AC25.04", titre: "Évaluer les axes d'une démarche de marketing opérationnel y compris digitale", maitrise: "maitrise" },
+          { code: "AC25.05", titre: "Évaluer le risque de trésorerie", maitrise: "apprentissage" },
+          { code: "AC25.06", titre: "Contribuer à la gestion opérationnelle des ressources humaines", maitrise: "apprentissage" },
+        ],
+      },
+      {
+        n: 2,
+        titre: "Optimiser la chaîne de valeur",
+        acs: [
+          { code: "AC35.01", titre: "Concevoir une stratégie de communication en utilisant les outils adaptés y compris digitaux", maitrise: "maitrise" },
+          { code: "AC35.02", titre: "Mettre en œuvre des processus de production et de supply chain adaptés à la situation de l'entité", maitrise: "apprentissage" },
+          { code: "AC35.03", titre: "Concevoir une démarche de marketing opérationnel adaptée à l'entité", maitrise: "maitrise" },
+          { code: "AC35.04", titre: "Prévenir les risques de défaillance avec les outils adaptés", maitrise: "apprentissage" },
+          { code: "AC35.05", titre: "Déterminer les axes principaux d'une politique de ressources humaines dans l'entité", maitrise: "apprentissage" },
+        ],
+      },
+    ],
     progression: {
       but1: "Compréhension des mécanismes de création de valeur en cours théoriques.",
       but2: "Stage Caroll : développement de la chaîne de valeur marketing — benchmark, analyse concurrentielle, optimisation des actions commerciales.",
-      but3: "Optimisation de la chaîne de valeur adhérents UFIDF — prospection B2B, cartographie interactive Python/Leaflet.js, enrichissement base de données.",
+      but3: "Optimisation de la chaîne de valeur adhérents UFIDF — prospection B2B, cartographie Python/Leaflet.js, enrichissement base de données.",
     },
     preuves: [
       "Cartographie interactive membres UFIDF — Python + Leaflet.js",

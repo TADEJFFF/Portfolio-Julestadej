@@ -1,11 +1,19 @@
 "use client";
 
-import { competences5, skills, type Competence5 } from "@/lib/data";
+import { competences5, skills, type Competence5, type Niveau } from "@/lib/data";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import {
   Search, GitFork, Compass, Lightbulb, TrendingUp,
   Wrench, Megaphone, Briefcase, Languages,
 } from "lucide-react";
+
+// ── Config badges maîtrise ────────────────────────────────────────────────────
+
+const maitriseCfg: Record<Niveau, { label: string; color: string; symbol: string }> = {
+  apprentissage: { label: "En apprentissage", color: "#4b4b4b", symbol: "○" },
+  acquis:        { label: "Acquis",           color: "#FFD300", symbol: "◑" },
+  maitrise:      { label: "Maîtrisé",         color: "#34d399", symbol: "●" },
+};
 
 // ── Icônes par compétence ─────────────────────────────────────────────────────
 
@@ -24,12 +32,11 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
       className="rounded-2xl border bg-[#141414] overflow-hidden transition-colors duration-300 flex flex-col"
       style={{ borderColor: "#272727" }}
     >
-      {/* Header */}
+      {/* ── Header ── */}
       <div
         className="px-6 py-5 border-b border-[#1e1e1e]"
         style={{ background: `linear-gradient(135deg, ${comp.accent}0a 0%, transparent 60%)` }}
       >
-        {/* Ligne 1 : icône + badge niveau */}
         <div className="flex items-center justify-between mb-3">
           <div
             className="w-9 h-9 rounded-xl flex items-center justify-center"
@@ -49,58 +56,76 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
             </span>
           </div>
         </div>
-        {/* Ligne 2 : titre */}
         <h3 className="font-display font-extrabold text-2xl text-white leading-tight">{comp.titre}</h3>
         <p className="font-display text-[10px] tracking-widest text-[#6b6b6b] mt-1 uppercase">
           Référentiel BUT GEA GEMA
         </p>
       </div>
 
-      {/* Niveaux officiels */}
+      {/* ── Niveaux + ACs avec badges ── */}
       <div className="px-6 py-4 border-b border-[#1e1e1e]">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-3">
-          Niveaux du référentiel
+        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-4">
+          Apprentissages critiques
         </p>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           {comp.niveaux.map((niv) => {
             const reached = niv.n <= comp.niveauAtteint;
             const current = niv.n === comp.niveauAtteint;
             return (
-              <div key={niv.n} className="flex items-start gap-2.5">
-                {/* Indicateur */}
-                <div
-                  className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 font-display font-bold text-[10px]"
-                  style={
-                    current
-                      ? { backgroundColor: comp.accent, color: "#0a0a0a" }
-                      : reached
-                      ? { backgroundColor: comp.accent + "30", color: comp.accent, border: `1px solid ${comp.accent}50` }
-                      : { backgroundColor: "#1e1e1e", color: "#3a3a3a", border: "1px solid #272727" }
-                  }
-                >
-                  {niv.n}
+              <div key={niv.n}>
+                {/* Label du niveau */}
+                <div className="flex items-center gap-2 mb-2">
+                  <div
+                    className="w-5 h-5 rounded-full flex items-center justify-center font-display font-bold text-[10px] flex-shrink-0"
+                    style={
+                      current
+                        ? { backgroundColor: comp.accent, color: "#0a0a0a" }
+                        : reached
+                        ? { backgroundColor: comp.accent + "30", color: comp.accent, border: `1px solid ${comp.accent}50` }
+                        : { backgroundColor: "#1e1e1e", color: "#3a3a3a", border: "1px solid #272727" }
+                    }
+                  >
+                    {niv.n}
+                  </div>
+                  <span
+                    className="font-display font-semibold text-[11px] leading-tight"
+                    style={{ color: current ? "#ffffff" : reached ? "#9a9a9a" : "#3a3a3a" }}
+                  >
+                    {niv.titre}
+                    {current && (
+                      <span className="ml-1.5 font-bold text-[9px] uppercase tracking-wider" style={{ color: comp.accent }}>
+                        ← atteint
+                      </span>
+                    )}
+                  </span>
                 </div>
-                <span
-                  className="font-serif text-xs leading-relaxed"
-                  style={{ color: current ? "#ffffff" : reached ? "#9a9a9a" : "#3a3a3a" }}
-                >
-                  {niv.titre}
-                  {current && (
-                    <span
-                      className="ml-1.5 font-display text-[9px] uppercase tracking-wider font-bold"
-                      style={{ color: comp.accent }}
-                    >
-                      ← niveau atteint
-                    </span>
-                  )}
-                </span>
+                {/* ACs avec badge de maîtrise */}
+                <div className="flex flex-col gap-1.5 pl-7">
+                  {niv.acs.map((ac) => {
+                    const cfg = maitriseCfg[ac.maitrise];
+                    return (
+                      <div key={ac.code} className="flex items-start gap-2">
+                        <span
+                          className="text-[12px] leading-none mt-0.5 flex-shrink-0 font-bold"
+                          style={{ color: cfg.color }}
+                          title={cfg.label}
+                        >
+                          {cfg.symbol}
+                        </span>
+                        <span className="font-serif text-[11px] text-[#6b6b6b] leading-relaxed">
+                          {ac.titre}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* Progression BUT1 → BUT2 → BUT3 */}
+      {/* ── Progression BUT1 → BUT2 → BUT3 ── */}
       <div className="px-6 py-4 border-b border-[#1e1e1e] bg-[#0f0f0f]">
         <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-3">
           Montée en compétence
@@ -108,7 +133,6 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
         <div className="flex flex-col gap-3">
           {etapeKeys.map((key, i) => (
             <div key={key} className="flex gap-3">
-              {/* Dot + ligne */}
               <div className="flex flex-col items-center flex-shrink-0">
                 <div
                   className="w-2 h-2 rounded-full mt-1"
@@ -135,7 +159,7 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
         </div>
       </div>
 
-      {/* Preuves */}
+      {/* ── Preuves ── */}
       <div className="px-6 py-4 flex-1">
         <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-3">
           Preuves concrètes
@@ -149,6 +173,26 @@ function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.Element
           ))}
         </div>
       </div>
+
+    </div>
+  );
+}
+
+// ── Légende ───────────────────────────────────────────────────────────────────
+
+function Legende() {
+  const niveaux: Niveau[] = ["maitrise", "acquis", "apprentissage"];
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      {niveaux.map((n) => {
+        const cfg = maitriseCfg[n];
+        return (
+          <span key={n} className="inline-flex items-center gap-1.5 font-display text-xs" style={{ color: cfg.color }}>
+            <span className="text-sm font-bold">{cfg.symbol}</span>
+            {cfg.label}
+          </span>
+        );
+      })}
     </div>
   );
 }
@@ -177,12 +221,13 @@ export default function Competences() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
             Compétences
           </h2>
-          <p className="font-serif italic text-[#6b6b6b] text-lg max-w-2xl">
-            Les 5 compétences officielles du référentiel BUT GEA GEMA — tracées depuis BUT 1 jusqu'au niveau atteint en BUT 3, avec les preuves concrètes à l'appui.
+          <p className="font-serif italic text-[#6b6b6b] text-lg max-w-2xl mb-5">
+            Les 5 compétences officielles du référentiel BUT GEA GEMA — avec chaque apprentissage critique évalué honnêtement, de BUT 1 à BUT 3.
           </p>
+          <Legende />
         </AnimatedSection>
 
-        {/* 5 compétences — grille 2+3 */}
+        {/* 5 compétences */}
         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16" staggerDelay={0.08}>
           {competences5.map((comp, i) => (
             <StaggerItem key={comp.id}>
