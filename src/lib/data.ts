@@ -42,10 +42,10 @@ export const navLinks = [
 export const parcours = [
   {
     periode: "2020 — 2023",
-    label: "Baccalauréat · Lycée de Poitiers",
-    lieu: "Poitiers (86), France",
+    label: "Baccalauréat STMG · Option Mercatique",
+    lieu: "Lycée Victor Hugo, Poitiers (86)",
     events: [
-      "Baccalauréat général — mention Assez Bien",
+      "Baccalauréat STMG mention Assez Bien",
       "Décision : quitter Poitiers pour intégrer un BUT GEA à Paris",
     ],
     releves: [],
