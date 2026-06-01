@@ -34,7 +34,7 @@ export default function APropos() {
           <AnimatedSection className="flex justify-center md:justify-end">
             <div className="relative w-72 h-96 rounded-2xl overflow-hidden border border-[#272727]">
               <Image
-                src="/Photo pro jules noir et blanc$.jpeg"
+                src="/photo-jules.jpeg"
                 alt="Jules TADEJ"
                 fill
                 className="object-cover object-top"
