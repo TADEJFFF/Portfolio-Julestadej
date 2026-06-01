@@ -1,145 +1,153 @@
 "use client";
 
-import { competencesGEA, skills, type CompetenceGEA, type Niveau } from "@/lib/data";
+import { competences5, skills, type Competence5 } from "@/lib/data";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
-import { BarChart3, Rocket, Users, TrendingUp, Lightbulb, Heart, Wrench, Megaphone, Briefcase, Languages } from "lucide-react";
+import {
+  Search, GitFork, Compass, Lightbulb, TrendingUp,
+  Wrench, Megaphone, Briefcase, Languages,
+} from "lucide-react";
 
-// ── Niveau badge ──────────────────────────────────────────────────────────────
+// ── Icônes par compétence ─────────────────────────────────────────────────────
 
-const niveauConfig: Record<Niveau, { label: string; color: string; bg: string; border: string; symbol: string }> = {
-  apprentissage: { label: "En apprentissage", color: "#6b6b6b", bg: "#6b6b6b18", border: "#6b6b6b40", symbol: "○" },
-  acquis:        { label: "Acquis",           color: "#FFD300", bg: "#FFD30018", border: "#FFD30040", symbol: "◑" },
-  maitrise:      { label: "Maîtrisé",         color: "#34d399", bg: "#34d39918", border: "#34d39940", symbol: "●" },
-};
-
-function NiveauBadge({ niveau }: { niveau: Niveau }) {
-  const cfg = niveauConfig[niveau];
-  return (
-    <span
-      className="inline-flex items-center gap-1.5 text-[10px] font-display font-bold uppercase tracking-wider px-2.5 py-1 rounded-full flex-shrink-0"
-      style={{ color: cfg.color, backgroundColor: cfg.bg, border: `1px solid ${cfg.border}` }}
-    >
-      <span className="text-[11px] leading-none">{cfg.symbol}</span>
-      {cfg.label}
-    </span>
-  );
-}
+const compIcons = [Search, GitFork, Compass, Lightbulb, TrendingUp];
 
 // ── Carte compétence ──────────────────────────────────────────────────────────
 
-const etapeLabels = ["BUT 1", "BUT 2", "BUT 3"] as const;
 const etapeKeys = ["but1", "but2", "but3"] as const;
+const etapeLabels = ["BUT 1", "BUT 2", "BUT 3"] as const;
 
-function CompetenceCard({ comp, Icon }: { comp: CompetenceGEA; Icon: React.ElementType }) {
+function CompetenceCard({ comp, Icon }: { comp: Competence5; Icon: React.ElementType }) {
+  const maxN = comp.niveaux.length;
+
   return (
-    <div className="rounded-2xl border border-[#272727] bg-[#141414] overflow-hidden hover:border-[#FFD300]/20 transition-colors duration-300">
+    <div
+      className="rounded-2xl border bg-[#141414] overflow-hidden transition-colors duration-300 flex flex-col"
+      style={{ borderColor: "#272727" }}
+    >
       {/* Header */}
-      <div className="flex items-center gap-4 px-6 py-5 border-b border-[#1e1e1e]">
-        <span className="font-display font-extrabold text-5xl text-[#FFD300]/12 leading-none select-none w-14 flex-shrink-0">
-          {comp.numero}
-        </span>
+      <div
+        className="flex items-center gap-4 px-6 py-5 border-b border-[#1e1e1e]"
+        style={{ background: `linear-gradient(135deg, ${comp.accent}0a 0%, transparent 60%)` }}
+      >
+        <div
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+          style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
+        >
+          <Icon size={18} style={{ color: comp.accent }} />
+        </div>
         <div className="flex-1 min-w-0">
           <h3 className="font-display font-extrabold text-xl text-white leading-tight">{comp.titre}</h3>
-          <p className="font-display text-[11px] tracking-wider text-[#6b6b6b] mt-0.5">{comp.tagline}</p>
+          <p className="font-display text-[10px] tracking-widest text-[#6b6b6b] mt-0.5 uppercase">
+            Référentiel BUT GEA GEMA
+          </p>
         </div>
-        <div className="w-10 h-10 rounded-xl bg-[#FFD300]/10 border border-[#FFD300]/20 flex items-center justify-center flex-shrink-0">
-          <Icon size={17} className="text-[#FFD300]" />
+        {/* Niveau atteint */}
+        <div
+          className="flex-shrink-0 text-center px-3 py-1.5 rounded-xl"
+          style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
+        >
+          <div className="font-display font-extrabold text-lg leading-none" style={{ color: comp.accent }}>
+            N{comp.niveauAtteint}
+          </div>
+          <div className="font-display text-[9px] uppercase tracking-wider text-[#6b6b6b] mt-0.5">
+            /{maxN}
+          </div>
+        </div>
+      </div>
+
+      {/* Niveaux officiels */}
+      <div className="px-6 py-4 border-b border-[#1e1e1e]">
+        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-3">
+          Niveaux du référentiel
+        </p>
+        <div className="flex flex-col gap-2">
+          {comp.niveaux.map((niv) => {
+            const reached = niv.n <= comp.niveauAtteint;
+            const current = niv.n === comp.niveauAtteint;
+            return (
+              <div key={niv.n} className="flex items-start gap-2.5">
+                {/* Indicateur */}
+                <div
+                  className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 font-display font-bold text-[10px]"
+                  style={
+                    current
+                      ? { backgroundColor: comp.accent, color: "#0a0a0a" }
+                      : reached
+                      ? { backgroundColor: comp.accent + "30", color: comp.accent, border: `1px solid ${comp.accent}50` }
+                      : { backgroundColor: "#1e1e1e", color: "#3a3a3a", border: "1px solid #272727" }
+                  }
+                >
+                  {niv.n}
+                </div>
+                <span
+                  className="font-serif text-xs leading-relaxed"
+                  style={{ color: current ? "#ffffff" : reached ? "#9a9a9a" : "#3a3a3a" }}
+                >
+                  {niv.titre}
+                  {current && (
+                    <span
+                      className="ml-1.5 font-display text-[9px] uppercase tracking-wider font-bold"
+                      style={{ color: comp.accent }}
+                    >
+                      ← niveau atteint
+                    </span>
+                  )}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
 
       {/* Progression BUT1 → BUT2 → BUT3 */}
-      <div className="px-6 py-5 border-b border-[#1e1e1e] bg-[#0f0f0f]">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-4">
+      <div className="px-6 py-4 border-b border-[#1e1e1e] bg-[#0f0f0f]">
+        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-3">
           Montée en compétence
         </p>
-        <div className="grid grid-cols-3 gap-x-4 gap-y-2 relative">
-          {/* Ligne connecteur */}
-          <div className="hidden md:block absolute top-[10px] left-[calc(16.66%-8px)] right-[calc(16.66%-8px)] h-px bg-[#272727]" />
+        <div className="flex flex-col gap-3">
           {etapeKeys.map((key, i) => (
-            <div key={key} className="relative flex flex-col gap-1.5">
-              <div className="flex items-center gap-1.5">
+            <div key={key} className="flex gap-3">
+              {/* Dot + ligne */}
+              <div className="flex flex-col items-center flex-shrink-0">
                 <div
-                  className="w-2 h-2 rounded-full flex-shrink-0 relative z-10"
+                  className="w-2 h-2 rounded-full mt-1"
                   style={{
-                    backgroundColor: i === 2 ? "#FFD300" : i === 1 ? "#FFD30060" : "#272727",
-                    border: `1px solid ${i === 2 ? "#FFD300" : i === 1 ? "#FFD30060" : "#3a3a3a"}`,
+                    backgroundColor: i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#272727",
+                    border: `1px solid ${i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#3a3a3a"}`,
                   }}
                 />
+                {i < 2 && <div className="w-px flex-1 bg-[#1e1e1e] my-1" style={{ minHeight: 10 }} />}
+              </div>
+              <div className="pb-1">
                 <span
-                  className="font-display font-bold text-[10px] uppercase tracking-widest"
-                  style={{ color: i === 2 ? "#FFD300" : "#9a9a9a" }}
+                  className="font-display font-bold text-[10px] uppercase tracking-widest block mb-0.5"
+                  style={{ color: i === 2 ? comp.accent : "#6b6b6b" }}
                 >
                   {etapeLabels[i]}
                 </span>
+                <p className="font-serif text-[11px] text-[#6b6b6b] leading-relaxed">
+                  {comp.progression[key]}
+                </p>
               </div>
-              <p className="text-[11px] text-[#6b6b6b] font-serif leading-relaxed pl-3.5">
-                {comp.progression[key]}
-              </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Sous-compétences */}
-      <div className="px-6 py-5">
-        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-4">
-          Sous-compétences
+      {/* Preuves */}
+      <div className="px-6 py-4 flex-1">
+        <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#6b6b6b] mb-3">
+          Preuves concrètes
         </p>
-        <div className="flex flex-col gap-5">
-          {comp.sousCompetences.map((sc, i) => (
-            <div key={i} className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 flex-wrap">
-                <NiveauBadge niveau={sc.niveau} />
-                <span className="font-display font-semibold text-sm text-white leading-tight">{sc.titre}</span>
-              </div>
-              <div className="flex flex-wrap gap-1.5 pl-1">
-                {sc.preuves.map((p, j) => (
-                  <span
-                    key={j}
-                    className="text-[11px] text-[#9a9a9a] font-serif bg-[#0c0c0c] border border-[#1e1e1e] rounded-md px-2.5 py-1 leading-relaxed"
-                  >
-                    {p}
-                  </span>
-                ))}
-              </div>
+        <div className="flex flex-col gap-2">
+          {comp.preuves.map((p, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full" style={{ backgroundColor: comp.accent + "80" }} />
+              <span className="font-serif text-[11px] text-[#9a9a9a] leading-relaxed">{p}</span>
             </div>
           ))}
         </div>
       </div>
-    </div>
-  );
-}
-
-// ── Légende niveaux ───────────────────────────────────────────────────────────
-
-function Legende() {
-  return (
-    <div className="flex flex-wrap items-center gap-3">
-      {(["apprentissage", "acquis", "maitrise"] as Niveau[]).map((n) => {
-        const cfg = niveauConfig[n];
-        return (
-          <span
-            key={n}
-            className="inline-flex items-center gap-1.5 text-[10px] font-display font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
-            style={{ color: cfg.color, backgroundColor: cfg.bg, border: `1px solid ${cfg.border}` }}
-          >
-            <span className="text-[11px] leading-none">{cfg.symbol}</span>
-            {cfg.label}
-          </span>
-        );
-      })}
-    </div>
-  );
-}
-
-// ── Bloc séparateur ───────────────────────────────────────────────────────────
-
-function BlocLabel({ label }: { label: string }) {
-  return (
-    <div className="flex items-center gap-4">
-      <div className="flex-1 h-px bg-[#1e1e1e]" />
-      <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-[#6b6b6b] px-1">{label}</span>
-      <div className="flex-1 h-px bg-[#1e1e1e]" />
     </div>
   );
 }
@@ -155,9 +163,6 @@ const skillCategories = [
 
 // ── Section principale ────────────────────────────────────────────────────────
 
-const troncIcons = [BarChart3, Rocket, Users];
-const gemaIcons  = [TrendingUp, Lightbulb, Heart];
-
 export default function Competences() {
   return (
     <section id="competences" className="section-padding bg-[#0c0c0c]">
@@ -166,48 +171,37 @@ export default function Competences() {
         {/* En-tête */}
         <AnimatedSection className="mb-14">
           <span className="font-display text-xs font-bold text-[#FFD300] uppercase tracking-[0.2em] mb-3 block">
-            Référentiel BUT GEA
+            Référentiel BUT GEA GEMA
           </span>
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
             Compétences
           </h2>
-          <p className="font-serif italic text-[#6b6b6b] text-lg max-w-2xl mb-6">
-            Trois ans de BUT GEA GEMA — du doute de BUT 1 à la présentation devant le Conseil d'Administration de la FFF. Chaque compétence, tracée étape par étape.
+          <p className="font-serif italic text-[#6b6b6b] text-lg max-w-2xl">
+            Les 5 compétences officielles du référentiel BUT GEA GEMA — tracées depuis BUT 1 jusqu'au niveau atteint en BUT 3, avec les preuves concrètes à l'appui.
           </p>
-          <Legende />
         </AnimatedSection>
 
-        {/* ── Tronc Commun ── */}
-        <AnimatedSection className="mb-8">
-          <BlocLabel label="Tronc Commun — Gérer · Entreprendre · Manager" />
-        </AnimatedSection>
-
-        <StaggerContainer className="grid md:grid-cols-3 gap-5 mb-14" staggerDelay={0.1}>
-          {competencesGEA.tronc.map((comp, i) => (
-            <StaggerItem key={comp.numero}>
-              <CompetenceCard comp={comp} Icon={troncIcons[i]} />
+        {/* 5 compétences — grille 2+3 */}
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16" staggerDelay={0.08}>
+          {competences5.map((comp, i) => (
+            <StaggerItem key={comp.id}>
+              <CompetenceCard comp={comp} Icon={compIcons[i]} />
             </StaggerItem>
           ))}
         </StaggerContainer>
 
-        {/* ── GEMA ── */}
-        <AnimatedSection className="mb-8">
-          <BlocLabel label="Parcours GEMA — Spécialisation" />
-        </AnimatedSection>
-
-        <StaggerContainer className="grid md:grid-cols-3 gap-5 mb-16" staggerDelay={0.1}>
-          {competencesGEA.gema.map((comp, i) => (
-            <StaggerItem key={comp.numero}>
-              <CompetenceCard comp={comp} Icon={gemaIcons[i]} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-        {/* ── Compétences techniques ── */}
+        {/* Divider skills */}
         <AnimatedSection className="mb-10">
-          <BlocLabel label="Outils & Compétences transversales" />
+          <div className="flex items-center gap-4">
+            <div className="flex-1 h-px bg-[#1e1e1e]" />
+            <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-[#6b6b6b] px-1">
+              Outils & Compétences transversales
+            </span>
+            <div className="flex-1 h-px bg-[#1e1e1e]" />
+          </div>
         </AnimatedSection>
 
+        {/* Grille skills */}
         <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.08}>
           {skillCategories.map(({ label, Icon, items, color }) => (
             <StaggerItem key={label}>
