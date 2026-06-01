@@ -27,24 +27,21 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
   const maxN = comp.niveaux.length;
 
   return (
-    <div className="rounded-2xl border border-[#272727] bg-[#141414]">
+    <div className="rounded-2xl border border-[#272727] bg-[#141414] overflow-hidden w-full">
       <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#1e1e1e]">
 
         {/* ── Colonne 1 : Apprentissages critiques ── */}
         <div className="lg:col-span-2 p-7">
-          <div className="flex items-center gap-3 mb-6">
+          {/* Ligne 1 : icône + badge */}
+          <div className="flex items-center justify-between mb-3">
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
             >
               <Icon size={16} style={{ color: comp.accent }} />
             </div>
-            <div>
-              <h3 className="font-display font-extrabold text-2xl text-white leading-tight">{comp.titre}</h3>
-              <p className="font-display text-[10px] tracking-widest text-[#888888] uppercase">Référentiel BUT GEA GEMA</p>
-            </div>
             <div
-              className="ml-auto flex items-baseline gap-1 px-3 py-1.5 rounded-xl flex-shrink-0"
+              className="flex items-baseline gap-1 px-3 py-1.5 rounded-xl flex-shrink-0"
               style={{ backgroundColor: comp.accent + "18", border: `1px solid ${comp.accent}35` }}
             >
               <span className="font-display font-extrabold text-base leading-none" style={{ color: comp.accent }}>
@@ -52,6 +49,11 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
               </span>
               <span className="font-display text-[9px] uppercase tracking-wider text-[#888888]">/{maxN}</span>
             </div>
+          </div>
+          {/* Ligne 2 : titre */}
+          <div className="mb-6">
+            <h3 className="font-display font-extrabold text-2xl text-white leading-tight">{comp.titre}</h3>
+            <p className="font-display text-[10px] tracking-widest text-[#888888] uppercase mt-1">Référentiel BUT GEA GEMA</p>
           </div>
 
           {/* Légende inline */}
