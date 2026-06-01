@@ -41,6 +41,18 @@ export const navLinks = [
 
 export const parcours = [
   {
+    periode: "2020 — 2023",
+    label: "Baccalauréat · Lycée de Poitiers",
+    lieu: "Poitiers (86), France",
+    events: [
+      "Baccalauréat général — mention Assez Bien",
+      "Décision : quitter Poitiers pour intégrer un BUT GEA à Paris",
+    ],
+    releves: [],
+    highlight: false,
+    current: false,
+  },
+  {
     periode: "2023 — 2024",
     label: "BUT 1 · S1 – S2",
     lieu: "IUT de Paris – Rives de Seine",

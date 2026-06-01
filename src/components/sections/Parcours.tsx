@@ -25,7 +25,7 @@ export default function Parcours() {
         {/* Timeline */}
         <div className="relative">
           {/* Ligne verticale */}
-          <div className="absolute left-[22px] top-0 bottom-0 w-px bg-gradient-to-b from-[#FFD300]/60 via-[#272727] to-transparent md:left-1/2 md:-translate-x-px" />
+          <div className="absolute left-[22px] top-0 bottom-0 w-px bg-gradient-to-b from-[#FFD300]/80 via-[#FFD300]/20 to-transparent md:left-1/2 md:-translate-x-px" />
 
           <StaggerContainer className="flex flex-col gap-12" staggerDelay={0.15}>
             {parcours.map((step, i) => {
