@@ -121,11 +121,6 @@ export default function Erasmus() {
                         <div className="font-display text-sm font-medium text-white">
                           {course.name}
                         </div>
-                        {course.code !== "[À COMPLÉTER]" && (
-                          <div className="font-display text-[11px] text-[#888888] mt-0.5">
-                            {course.code}
-                          </div>
-                        )}
                       </td>
                       <td className="px-4 py-4 text-center">
                         <span className="font-display font-bold text-sm text-[#FFD300]">
