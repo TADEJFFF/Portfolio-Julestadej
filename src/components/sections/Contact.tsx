@@ -16,8 +16,8 @@ export default function Contact() {
             Me contacter
           </h2>
           <p className="font-serif italic text-[#6b6b6b] text-lg max-w-lg mx-auto">
-            Étudiant en fin de BUT GEA GEMA, ouvert aux opportunités à partir
-            du 10 juillet 2026.
+            Diplômé BUT GEA GEMA en juillet 2026, ouvert aux opportunités en freelance
+            — micro-entreprise en cours de création.
           </p>
         </AnimatedSection>
 
