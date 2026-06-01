@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { parcours } from "@/lib/data";
 import { StaggerContainer, StaggerItem, AnimatedSection } from "@/components/ui/AnimatedSection";
@@ -6,17 +6,17 @@ import { CheckCircle2, Circle, FileText } from "lucide-react";
 
 export default function Parcours() {
   return (
-    <section id="parcours" className="section-padding bg-[#0c0c0c]">
+    <section id="parcours" className="section-padding bg-[#f5f5f5]">
       <div className="max-w-4xl mx-auto px-6">
         {/* En-tête */}
         <AnimatedSection className="mb-16">
-          <span className="font-display text-xs font-bold text-[#FFD300] uppercase tracking-[0.2em] mb-3 block">
+          <span className="font-display text-xs font-bold text-[#9A7200] uppercase tracking-[0.2em] mb-3 block">
             Timeline
           </span>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Mon parcours
           </h2>
-          <p className="font-serif italic text-[#888888] text-lg max-w-xl">
+          <p className="font-serif italic text-[#555555] text-lg max-w-xl">
             Trois années de BUT GEA GEMA, un Erasmus+ en Bulgarie et un stage dans
             une fédération professionnelle nationale.
           </p>
@@ -25,7 +25,7 @@ export default function Parcours() {
         {/* Timeline */}
         <div className="relative">
           {/* Ligne verticale */}
-          <div className="absolute left-[22px] top-0 bottom-0 w-px bg-gradient-to-b from-[#FFD300]/80 via-[#FFD300]/20 to-transparent md:left-1/2 md:-translate-x-px" />
+          <div className="absolute left-[22px] top-0 bottom-0 w-px bg-gradient-to-b from-[#9A7200]/80 via-[#9A7200]/20 to-transparent md:left-1/2 md:-translate-x-px" />
 
           <StaggerContainer className="flex flex-col gap-12" staggerDelay={0.15}>
             {parcours.map((step, i) => {
@@ -41,11 +41,11 @@ export default function Parcours() {
                     <div className="relative z-10 flex-shrink-0 ml-0 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-4">
                       {step.current ? (
                         <div className="w-11 h-11 rounded-full bg-[#FFD300] flex items-center justify-center ring-4 ring-[#FFD300]/20">
-                          <Circle size={18} className="text-[#0c0c0c] fill-[#0c0c0c]" />
+                          <Circle size={18} className="text-[#111111] fill-[#111111]" />
                         </div>
                       ) : (
-                        <div className="w-11 h-11 rounded-full border-2 border-[#272727] bg-[#141414] flex items-center justify-center hover:border-[#FFD300]/50 transition-colors duration-300">
-                          <CheckCircle2 size={18} className="text-[#FFD300]" />
+                        <div className="w-11 h-11 rounded-full border-2 border-[#d8d8d8] bg-white flex items-center justify-center hover:border-[#FFD300]/50 transition-colors duration-300">
+                          <CheckCircle2 size={18} className="text-[#9A7200]" />
                         </div>
                       )}
                     </div>
@@ -55,19 +55,19 @@ export default function Parcours() {
                       <div
                         className={`rounded-2xl border p-6 transition-all duration-300 ${
                           step.current
-                            ? "border-[#FFD300]/40 bg-[#141414]"
+                            ? "border-[#FFD300]/40 bg-white"
                             : step.highlight
-                            ? "border-[#FFD300]/20 bg-[#141414]"
-                            : "border-[#272727] bg-[#141414] hover:border-[#272727]/80"
+                            ? "border-[#FFD300]/20 bg-white"
+                            : "border-[#d8d8d8] bg-white hover:border-[#d8d8d8]/80"
                         }`}
                       >
                         {/* Période */}
                         <div className="flex items-center gap-2 mb-2">
-                          <span className="font-display text-xs font-bold text-[#FFD300] uppercase tracking-widest">
+                          <span className="font-display text-xs font-bold text-[#9A7200] uppercase tracking-widest">
                             {step.periode}
                           </span>
                           {step.current && (
-                            <span className="inline-flex items-center gap-1 text-[10px] font-display font-bold px-2 py-0.5 rounded-full bg-[#FFD300]/15 text-[#FFD300] border border-[#FFD300]/30">
+                            <span className="inline-flex items-center gap-1 text-[10px] font-display font-bold px-2 py-0.5 rounded-full bg-[#FFD300]/15 text-[#9A7200] border border-[#FFD300]/30">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#FFD300] animate-pulse" />
                               En cours
                             </span>
@@ -80,17 +80,17 @@ export default function Parcours() {
                         </div>
 
                         {/* Label */}
-                        <h3 className="font-display font-bold text-lg text-white mb-1">
+                        <h3 className="font-display font-bold text-lg text-[#111111] mb-1">
                           {step.label}
                         </h3>
-                        <p className="font-display text-sm text-[#888888] mb-4">
+                        <p className="font-display text-sm text-[#555555] mb-4">
                           {step.lieu}
                         </p>
 
                         {/* Événements */}
                         <ul className="flex flex-col gap-2">
                           {step.events.map((ev, j) => (
-                            <li key={j} className="flex items-start gap-2 text-sm text-[#b0b0b0] font-serif">
+                            <li key={j} className="flex items-start gap-2 text-sm text-[#3a3a3a] font-serif">
                               <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FFD300]/60" />
                               {ev}
                             </li>
@@ -99,14 +99,14 @@ export default function Parcours() {
 
                         {/* Relevés de notes */}
                         {step.releves && step.releves.length > 0 && (
-                          <div className="mt-4 pt-4 border-t border-[#1e1e1e] flex flex-wrap gap-2">
+                          <div className="mt-4 pt-4 border-t border-[#e8e8e8] flex flex-wrap gap-2">
                             {step.releves.map((releve) => (
                               <a
                                 key={releve.url}
                                 href={releve.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 font-display text-[10px] font-medium px-2.5 py-1.5 rounded-lg border border-[#272727] bg-[#0c0c0c] text-[#888888] hover:text-[#FFD300] hover:border-[#FFD300]/30 transition-all duration-200"
+                                className="inline-flex items-center gap-1.5 font-display text-[10px] font-medium px-2.5 py-1.5 rounded-lg border border-[#d8d8d8] bg-[#f5f5f5] text-[#555555] hover:text-[#9A7200] hover:border-[#FFD300]/30 transition-all duration-200"
                               >
                                 <FileText size={10} />
                                 {releve.label}

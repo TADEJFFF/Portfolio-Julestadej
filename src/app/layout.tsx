@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Syne, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
@@ -44,7 +44,7 @@ export default function RootLayout({
       lang="fr"
       className={`${syne.variable} ${instrumentSerif.variable}`}
     >
-      <body className="bg-[#0c0c0c] text-[#e2e2e2] antialiased min-h-screen">
+      <body className="bg-[#f5f5f5] text-[#e2e2e2] antialiased min-h-screen">
         {children}
       </body>
     </html>

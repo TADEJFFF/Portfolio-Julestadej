@@ -1,4 +1,4 @@
-import Navbar from "@/components/layout/Navbar";
+﻿import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import APropos from "@/components/sections/APropos";
 import Parcours from "@/components/sections/Parcours";
@@ -22,8 +22,8 @@ export default function Home() {
         <Competences />
         <Contact />
       </main>
-      <footer className="border-t border-[#1a1a1a] py-6 text-center">
-        <p className="font-display text-xs text-[#6b6b6b]">
+      <footer className="border-t border-[#e8e8e8] bg-white py-6 text-center">
+        <p className="font-display text-xs text-[#999999]">
           Portfolio Jules TADEJ · BUT GEA GEMA · IUT de Paris – Rives de Seine · 2026
         </p>
       </footer>

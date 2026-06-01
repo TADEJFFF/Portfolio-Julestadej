@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#272727] bg-[#141414] text-xs font-display font-medium text-[#b0b0b0] uppercase tracking-widest"
+          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#d8d8d8] bg-white text-xs font-display font-medium text-[#3a3a3a] uppercase tracking-widest"
         >
           <span className="w-2 h-2 rounded-full bg-[#FFD300] animate-pulse" />
           {personal.iut} · {personal.universite}
@@ -51,8 +51,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="font-display font-extrabold text-[clamp(2.5rem,8vw,6.5rem)] leading-none tracking-tight mb-3"
         >
-          <span className="text-white">{personal.firstName} </span>
-          <span className="text-[#FFD300]">{personal.lastName}</span>
+          <span className="text-[#111111]">{personal.firstName} </span>
+          <span className="text-[#9A7200]">{personal.lastName}</span>
         </motion.h1>
 
         {/* Formation */}
@@ -60,7 +60,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="font-display text-base md:text-lg text-[#b0b0b0] font-medium mb-1"
+          className="font-display text-base md:text-lg text-[#3a3a3a] font-medium mb-1"
         >
           {personal.formation}
         </motion.p>
@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="font-display text-sm text-[#FFD300]/80 font-medium mb-6"
+          className="font-display text-sm text-[#9A7200]/80 font-medium mb-6"
         >
           {personal.parcours}
         </motion.p>
@@ -78,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="font-serif italic text-[#b0b0b0] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
+          className="font-serif italic text-[#3a3a3a] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
         >
           &ldquo;{personal.accroche}&rdquo;
         </motion.p>
@@ -93,12 +93,12 @@ export default function Hero() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center py-2.5 px-3 rounded-xl border border-[#272727] bg-[#141414] hover:border-[#FFD300]/40 transition-colors duration-300"
+              className="flex flex-col items-center py-2.5 px-3 rounded-xl border border-[#d8d8d8] bg-white hover:border-[#FFD300]/40 transition-colors duration-300"
             >
-              <span className="font-display font-bold text-2xl md:text-3xl text-[#FFD300]">
+              <span className="font-display font-bold text-2xl md:text-3xl text-[#9A7200]">
                 {stat.value}
               </span>
-              <span className="font-display text-xs text-[#888888] mt-1 text-center uppercase tracking-wide">
+              <span className="font-display text-xs text-[#555555] mt-1 text-center uppercase tracking-wide">
                 {stat.label}
               </span>
             </div>
@@ -114,7 +114,7 @@ export default function Hero() {
         >
           <a
             href={`mailto:${personal.email}`}
-            className="inline-flex items-center gap-2 font-display font-bold px-5 py-2.5 rounded-xl bg-[#FFD300] text-[#0c0c0c] hover:bg-[#e6be00] transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 font-display font-bold px-5 py-2.5 rounded-xl bg-[#FFD300] text-[#111111] hover:bg-[#e6be00] transition-all duration-200 text-sm"
           >
             <Mail size={16} />
             {personal.email}
@@ -123,14 +123,14 @@ export default function Hero() {
             href="/cv-jules-tadej-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#FFD300]/40 text-[#FFD300] hover:bg-[#FFD300]/10 hover:border-[#FFD300]/70 transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#FFD300]/40 text-[#9A7200] hover:bg-[#FFD300]/10 hover:border-[#FFD300]/70 transition-all duration-200 text-sm"
           >
             <Download size={16} />
             Télécharger mon CV
           </a>
           <button
             onClick={() => document.querySelector("#parcours")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#272727] text-[#b0b0b0] hover:border-[#FFD300]/50 hover:text-white transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#d8d8d8] text-[#3a3a3a] hover:border-[#FFD300]/50 hover:text-[#111111] transition-all duration-200 text-sm"
           >
             Voir mon parcours
           </button>
@@ -141,14 +141,14 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.85 }}
-          className="flex items-center gap-4 text-xs text-[#888888] font-display"
+          className="flex items-center gap-4 text-xs text-[#555555] font-display"
         >
           <span className="flex items-center gap-1">
             <MapPin size={12} />
             {personal.location}
           </span>
           <span>·</span>
-          <span className="text-[#FFD300]/70">{personal.dispo}</span>
+          <span className="text-[#9A7200]/70">{personal.dispo}</span>
         </motion.div>
       </motion.div>
 
@@ -157,7 +157,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#888888]"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#555555]"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}

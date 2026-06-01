@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { competences5, skills, type Competence5, type Niveau } from "@/lib/data";
@@ -27,8 +27,8 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
   const maxN = comp.niveaux.length;
 
   return (
-    <div className="rounded-2xl border border-[#272727] bg-[#141414] overflow-hidden w-full">
-      <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#1e1e1e]">
+    <div className="rounded-2xl border border-[#d8d8d8] bg-white overflow-hidden w-full">
+      <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#e8e8e8]">
 
         {/* ── Colonne 1 : Apprentissages critiques ── */}
         <div className="lg:col-span-2 p-7">
@@ -47,13 +47,13 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
               <span className="font-display font-extrabold text-base leading-none" style={{ color: comp.accent }}>
                 N{comp.niveauAtteint}
               </span>
-              <span className="font-display text-[9px] uppercase tracking-wider text-[#888888]">/{maxN}</span>
+              <span className="font-display text-[9px] uppercase tracking-wider text-[#555555]">/{maxN}</span>
             </div>
           </div>
           {/* Ligne 2 : titre */}
           <div className="mb-6">
-            <h3 className="font-display font-extrabold text-2xl text-white leading-tight">{comp.titre}</h3>
-            <p className="font-display text-[10px] tracking-widest text-[#888888] uppercase mt-1">Référentiel BUT GEA GEMA</p>
+            <h3 className="font-display font-extrabold text-2xl text-[#111111] leading-tight">{comp.titre}</h3>
+            <p className="font-display text-[10px] tracking-widest text-[#555555] uppercase mt-1">Référentiel BUT GEA GEMA</p>
           </div>
 
           {/* Légende inline */}
@@ -82,14 +82,14 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
                           ? { backgroundColor: comp.accent, color: "#0a0a0a" }
                           : reached
                           ? { backgroundColor: comp.accent + "30", color: comp.accent, border: `1px solid ${comp.accent}50` }
-                          : { backgroundColor: "#1e1e1e", color: "#444444", border: "1px solid #2a2a2a" }
+                          : { backgroundColor: "#e8e8e8", color: "#444444", border: "1px solid #2a2a2a" }
                       }
                     >
                       {niv.n}
                     </div>
                     <span
                       className="font-display font-semibold text-sm"
-                      style={{ color: current ? "#ffffff" : reached ? "#b0b0b0" : "#444444" }}
+                      style={{ color: current ? "#ffffff" : reached ? "#c0c0c0" : "#444444" }}
                     >
                       {niv.titre}
                       {current && (
@@ -113,7 +113,7 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
                           >
                             {cfg.symbol}
                           </span>
-                          <span className="font-serif text-[13px] text-[#b0b0b0] leading-relaxed break-words min-w-0">
+                          <span className="font-serif text-[13px] text-[#3a3a3a] leading-relaxed break-words min-w-0">
                             {ac.titre}
                           </span>
                         </div>
@@ -131,7 +131,7 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
 
           {/* Progression */}
           <div>
-            <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-4">
+            <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#555555] mb-4">
               Montée en compétence
             </p>
             <div className="flex flex-col gap-4">
@@ -141,8 +141,8 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
                     <div
                       className="w-2 h-2 rounded-full mt-1"
                       style={{
-                        backgroundColor: i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#272727",
-                        border: `1px solid ${i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#3a3a3a"}`,
+                        backgroundColor: i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#d8d8d8",
+                        border: `1px solid ${i === 2 ? comp.accent : i === 1 ? comp.accent + "60" : "#c0c0c0"}`,
                       }}
                     />
                     {i < 2 && <div className="w-px flex-1 bg-[#1e1e1e] my-1" style={{ minHeight: 12 }} />}
@@ -150,11 +150,11 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
                   <div className="pb-1">
                     <span
                       className="font-display font-bold text-[10px] uppercase tracking-widest block mb-1"
-                      style={{ color: i === 2 ? comp.accent : "#888888" }}
+                      style={{ color: i === 2 ? comp.accent : "#555555" }}
                     >
                       {etapeLabels[i]}
                     </span>
-                    <p className="font-serif text-[13px] text-[#b0b0b0] leading-relaxed">
+                    <p className="font-serif text-[13px] text-[#3a3a3a] leading-relaxed">
                       {comp.progression[key]}
                     </p>
                   </div>
@@ -165,14 +165,14 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
 
           {/* Preuves */}
           <div>
-            <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#888888] mb-4">
+            <p className="font-display text-[9px] uppercase tracking-[0.2em] text-[#555555] mb-4">
               Preuves concrètes
             </p>
             <div className="flex flex-col gap-3">
               {comp.preuves.map((p, i) => (
                 <div key={i} className="flex items-start gap-2.5">
                   <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: comp.accent + "80" }} />
-                  <span className="font-serif text-[13px] text-[#b0b0b0] leading-relaxed">{p}</span>
+                  <span className="font-serif text-[13px] text-[#3a3a3a] leading-relaxed">{p}</span>
                 </div>
               ))}
             </div>
@@ -201,18 +201,18 @@ export default function Competences() {
   const ActiveIcon = compIcons[activeIndex];
 
   return (
-    <section id="competences" className="section-padding bg-[#0c0c0c]">
+    <section id="competences" className="section-padding bg-[#f5f5f5]">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* En-tête */}
         <AnimatedSection className="mb-12">
-          <span className="font-display text-xs font-bold text-[#FFD300] uppercase tracking-[0.2em] mb-3 block">
+          <span className="font-display text-xs font-bold text-[#9A7200] uppercase tracking-[0.2em] mb-3 block">
             Référentiel BUT GEA GEMA
           </span>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-white mb-4">
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Compétences
           </h2>
-          <p className="font-serif italic text-[#888888] text-lg max-w-2xl">
+          <p className="font-serif italic text-[#555555] text-lg max-w-2xl">
             Les 5 compétences officielles du référentiel BUT GEA GEMA — avec chaque apprentissage critique évalué honnêtement, de BUT 1 à BUT 3.
           </p>
         </AnimatedSection>
@@ -236,9 +236,9 @@ export default function Competences() {
                           color: comp.accent,
                         }
                       : {
-                          backgroundColor: "#141414",
+                          backgroundColor: "#ffffff",
                           border: "1px solid #272727",
-                          color: "#888888",
+                          color: "#555555",
                         }
                   }
                 >
@@ -259,7 +259,7 @@ export default function Competences() {
         <AnimatedSection className="mb-10">
           <div className="flex items-center gap-4">
             <div className="flex-1 h-px bg-[#1e1e1e]" />
-            <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-[#888888] px-1">
+            <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-[#555555] px-1">
               Outils & Compétences transversales
             </span>
             <div className="flex-1 h-px bg-[#1e1e1e]" />
@@ -270,7 +270,7 @@ export default function Competences() {
         <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.08}>
           {skillCategories.map(({ label, Icon, items, color }) => (
             <StaggerItem key={label}>
-              <div className="rounded-2xl border border-[#272727] bg-[#141414] p-5 h-full">
+              <div className="rounded-2xl border border-[#d8d8d8] bg-white p-5 h-full">
                 <div className="flex items-center gap-2 mb-4">
                   <div
                     className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
@@ -278,13 +278,13 @@ export default function Competences() {
                   >
                     <Icon size={13} style={{ color }} />
                   </div>
-                  <span className="font-display font-bold text-sm text-white">{label}</span>
+                  <span className="font-display font-bold text-sm text-[#111111]">{label}</span>
                 </div>
                 <div className="flex flex-col gap-2">
                   {items.map((item) => (
                     <div
                       key={item}
-                      className="font-display text-xs text-[#b0b0b0] py-1.5 px-2 rounded-md bg-[#0c0c0c] border border-[#1e1e1e]"
+                      className="font-display text-xs text-[#3a3a3a] py-1.5 px-2 rounded-md bg-[#f5f5f5] border border-[#e8e8e8]"
                     >
                       {item}
                     </div>
