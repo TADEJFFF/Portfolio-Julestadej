@@ -89,7 +89,7 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
                     </div>
                     <span
                       className="font-display font-semibold text-sm"
-                      style={{ color: current ? "#ffffff" : reached ? "#a0a0a0" : "#444444" }}
+                      style={{ color: current ? "#111111" : reached ? "#333333" : "#aaaaaa" }}
                     >
                       {niv.titre}
                       {current && (
