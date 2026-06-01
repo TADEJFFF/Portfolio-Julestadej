@@ -16,7 +16,7 @@ export default function Parcours() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Mon parcours
           </h2>
-          <p className="font-serif italic text-[#555555] text-lg max-w-xl">
+          <p className="font-serif italic text-[#444444] text-lg max-w-xl">
             Trois années de BUT GEA GEMA, un Erasmus+ en Bulgarie et un stage dans
             une fédération professionnelle nationale.
           </p>
@@ -44,7 +44,7 @@ export default function Parcours() {
                           <Circle size={18} className="text-[#111111] fill-[#111111]" />
                         </div>
                       ) : (
-                        <div className="w-11 h-11 rounded-full border-2 border-[#d8d8d8] bg-white flex items-center justify-center hover:border-[#FFD300]/50 transition-colors duration-300">
+                        <div className="w-11 h-11 rounded-full border-2 border-[#b8b8b8] bg-white flex items-center justify-center hover:border-[#FFD300]/50 transition-colors duration-300">
                           <CheckCircle2 size={18} className="text-[#9A7200]" />
                         </div>
                       )}
@@ -58,7 +58,7 @@ export default function Parcours() {
                             ? "border-[#FFD300]/40 bg-white"
                             : step.highlight
                             ? "border-[#FFD300]/20 bg-white"
-                            : "border-[#d8d8d8] bg-white hover:border-[#d8d8d8]/80"
+                            : "border-[#b8b8b8] bg-white hover:border-[#b8b8b8]/80"
                         }`}
                       >
                         {/* Période */}
@@ -83,14 +83,14 @@ export default function Parcours() {
                         <h3 className="font-display font-bold text-lg text-[#111111] mb-1">
                           {step.label}
                         </h3>
-                        <p className="font-display text-sm text-[#555555] mb-4">
+                        <p className="font-display text-sm text-[#444444] mb-4">
                           {step.lieu}
                         </p>
 
                         {/* Événements */}
                         <ul className="flex flex-col gap-2">
                           {step.events.map((ev, j) => (
-                            <li key={j} className="flex items-start gap-2 text-sm text-[#3a3a3a] font-serif">
+                            <li key={j} className="flex items-start gap-2 text-sm text-[#222222] font-serif">
                               <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FFD300]/60" />
                               {ev}
                             </li>
@@ -99,14 +99,14 @@ export default function Parcours() {
 
                         {/* Relevés de notes */}
                         {step.releves && step.releves.length > 0 && (
-                          <div className="mt-4 pt-4 border-t border-[#e8e8e8] flex flex-wrap gap-2">
+                          <div className="mt-4 pt-4 border-t border-[#b0b0b0] flex flex-wrap gap-2">
                             {step.releves.map((releve) => (
                               <a
                                 key={releve.url}
                                 href={releve.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 font-display text-[10px] font-medium px-2.5 py-1.5 rounded-lg border border-[#d8d8d8] bg-[#f5f5f5] text-[#555555] hover:text-[#9A7200] hover:border-[#FFD300]/30 transition-all duration-200"
+                                className="inline-flex items-center gap-1.5 font-display text-[10px] font-medium px-2.5 py-1.5 rounded-lg border border-[#b8b8b8] bg-[#f5f5f5] text-[#444444] hover:text-[#9A7200] hover:border-[#FFD300]/30 transition-all duration-200"
                               >
                                 <FileText size={10} />
                                 {releve.label}

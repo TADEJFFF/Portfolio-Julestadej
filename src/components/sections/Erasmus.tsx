@@ -9,7 +9,7 @@ const gradeColor = (grade: string) => {
   if (grade === "B") return "text-sky-400 bg-sky-400/10 border-sky-400/20";
   if (grade === "C") return "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
   if (grade === "D") return "text-orange-400 bg-orange-400/10 border-orange-400/20";
-  return "text-[#3a3a3a] bg-[#f0f0f0] border-[#d8d8d8]";
+  return "text-[#222222] bg-[#f0f0f0] border-[#b8b8b8]";
 };
 
 export default function Erasmus() {
@@ -24,7 +24,7 @@ export default function Erasmus() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Sofia, Bulgarie
           </h2>
-          <p className="font-serif italic text-[#555555] text-lg max-w-xl">
+          <p className="font-serif italic text-[#444444] text-lg max-w-xl">
             Un semestre d&apos;études intégralement en anglais, au sein d&apos;une
             université internationale reconnue.
           </p>
@@ -51,7 +51,7 @@ export default function Erasmus() {
                     { icon: Globe2, label: erasmusData.ville + ", " + erasmusData.pays },
                     { icon: BookOpen, label: erasmusData.periode },
                   ].map(({ icon: Icon, label }) => (
-                    <div key={label} className="flex items-center gap-2 text-sm text-[#3a3a3a] font-display">
+                    <div key={label} className="flex items-center gap-2 text-sm text-[#222222] font-display">
                       <Icon size={14} className="text-[#9A7200]/60 flex-shrink-0" />
                       {label}
                     </div>
@@ -61,24 +61,24 @@ export default function Erasmus() {
 
               {/* Résumé ECTS */}
               <div className="mt-auto grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-[#d8d8d8] bg-[#f5f5f5] p-4 text-center">
+                <div className="rounded-xl border border-[#b8b8b8] bg-[#f5f5f5] p-4 text-center">
                   <div className="font-display font-extrabold text-3xl text-[#9A7200]">
                     {erasmusData.totalEcts}
                   </div>
-                  <div className="font-display text-[10px] text-[#555555] uppercase tracking-wider mt-1">
+                  <div className="font-display text-[10px] text-[#444444] uppercase tracking-wider mt-1">
                     Crédits ECTS
                   </div>
                 </div>
-                <div className="rounded-xl border border-[#d8d8d8] bg-[#f5f5f5] p-4 text-center">
+                <div className="rounded-xl border border-[#b8b8b8] bg-[#f5f5f5] p-4 text-center">
                   <div className="font-display font-extrabold text-3xl text-emerald-400">5</div>
-                  <div className="font-display text-[10px] text-[#555555] uppercase tracking-wider mt-1">
+                  <div className="font-display text-[10px] text-[#444444] uppercase tracking-wider mt-1">
                     Mentions A
                   </div>
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#d8d8d8] bg-[#f5f5f5] px-4 py-3">
-                <div className="font-display text-xs text-[#555555] uppercase tracking-wide mb-1">
+              <div className="rounded-xl border border-[#b8b8b8] bg-[#f5f5f5] px-4 py-3">
+                <div className="font-display text-xs text-[#444444] uppercase tracking-wide mb-1">
                   Langue d&apos;enseignement
                 </div>
                 <div className="font-display font-bold text-[#111111]">
@@ -90,26 +90,26 @@ export default function Erasmus() {
 
           {/* Tableau des matières — 3 colonnes */}
           <AnimatedSection direction="right" className="lg:col-span-3" delay={0.1}>
-            <div className="rounded-2xl border border-[#d8d8d8] bg-white overflow-hidden">
-              <div className="px-6 py-4 border-b border-[#d8d8d8] flex items-center justify-between">
+            <div className="rounded-2xl border border-[#b8b8b8] bg-white overflow-hidden">
+              <div className="px-6 py-4 border-b border-[#b8b8b8] flex items-center justify-between">
                 <h4 className="font-display font-bold text-[#111111]">
                   Matières suivies
                 </h4>
-                <span className="font-display text-xs text-[#555555]">
+                <span className="font-display text-xs text-[#444444]">
                   {erasmusData.courses.length} UE · Semestre hiver 2025/2026
                 </span>
               </div>
 
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-[#e8e8e8]">
-                    <th className="text-left px-6 py-3 font-display text-[10px] uppercase tracking-widest text-[#555555]">
+                  <tr className="border-b border-[#b0b0b0]">
+                    <th className="text-left px-6 py-3 font-display text-[10px] uppercase tracking-widest text-[#444444]">
                       Matière
                     </th>
-                    <th className="text-center px-4 py-3 font-display text-[10px] uppercase tracking-widest text-[#555555]">
+                    <th className="text-center px-4 py-3 font-display text-[10px] uppercase tracking-widest text-[#444444]">
                       ECTS
                     </th>
-                    <th className="text-center px-4 py-3 font-display text-[10px] uppercase tracking-widest text-[#555555]">
+                    <th className="text-center px-4 py-3 font-display text-[10px] uppercase tracking-widest text-[#444444]">
                       Note
                     </th>
                   </tr>
@@ -138,8 +138,8 @@ export default function Erasmus() {
               </table>
 
               {/* Total + lien Transcript */}
-              <div className="px-6 py-4 border-t border-[#d8d8d8] bg-[#f5f5f5]/50 flex items-center justify-between">
-                <span className="font-display text-sm text-[#3a3a3a]">Total validé</span>
+              <div className="px-6 py-4 border-t border-[#b8b8b8] bg-[#f5f5f5]/50 flex items-center justify-between">
+                <span className="font-display text-sm text-[#222222]">Total validé</span>
                 <div className="flex items-center gap-4">
                   <a
                     href="/transcript-of-records-erasmus.pdf"
@@ -161,8 +161,8 @@ export default function Erasmus() {
 
         {/* ID étudiant Sofia */}
         <AnimatedSection delay={0.2} className="mt-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#d8d8d8] bg-white">
-            <span className="font-display text-xs text-[#555555]">Student ID UNWE Sofia :</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#b8b8b8] bg-white">
+            <span className="font-display text-xs text-[#444444]">Student ID UNWE Sofia :</span>
             <span className="font-display text-xs font-bold text-[#111111]">{erasmusData.studentId}</span>
           </div>
         </AnimatedSection>

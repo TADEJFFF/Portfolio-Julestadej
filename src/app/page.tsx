@@ -22,7 +22,7 @@ export default function Home() {
         <Competences />
         <Contact />
       </main>
-      <footer className="border-t border-[#e8e8e8] bg-white py-6 text-center">
+      <footer className="border-t border-[#b0b0b0] bg-white py-6 text-center">
         <p className="font-display text-xs text-[#999999]">
           Portfolio Jules TADEJ · BUT GEA GEMA · IUT de Paris – Rives de Seine · 2026
         </p>

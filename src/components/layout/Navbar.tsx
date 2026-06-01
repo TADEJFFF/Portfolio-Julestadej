@@ -24,7 +24,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#f5f5f5]/95 backdrop-blur-md border-b border-[#e8e8e8]"
+          ? "bg-[#f5f5f5]/95 backdrop-blur-md border-b border-[#b0b0b0]"
           : "bg-transparent"
       }`}
     >
@@ -40,7 +40,7 @@ export default function Navbar() {
         >
           <span className="text-[#9A7200]">J</span>
           <span className="text-[#111111]">T</span>
-          <span className="ml-2 text-xs text-[#555555] font-normal hidden sm:inline group-hover:text-[#9A7200] transition-colors duration-200">
+          <span className="ml-2 text-xs text-[#444444] font-normal hidden sm:inline group-hover:text-[#9A7200] transition-colors duration-200">
             BUT GEA GEMA
           </span>
         </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
             <li key={link.href}>
               <button
                 onClick={() => handleLink(link.href)}
-                className="font-display text-sm font-medium px-4 py-2 rounded-md text-[#3a3a3a] hover:text-[#111111] hover:bg-[#f0f0f0] transition-all duration-200 cursor-pointer"
+                className="font-display text-sm font-medium px-4 py-2 rounded-md text-[#222222] hover:text-[#111111] hover:bg-[#f0f0f0] transition-all duration-200 cursor-pointer"
               >
                 {link.label}
               </button>
@@ -69,7 +69,7 @@ export default function Navbar() {
 
         {/* Mobile burger */}
         <button
-          className="md:hidden text-[#3a3a3a] hover:text-[#111111] p-2"
+          className="md:hidden text-[#222222] hover:text-[#111111] p-2"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -79,12 +79,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#f5f5f5]/98 backdrop-blur-md border-b border-[#e8e8e8] px-6 py-4 flex flex-col gap-1">
+        <div className="md:hidden bg-[#f5f5f5]/98 backdrop-blur-md border-b border-[#b0b0b0] px-6 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => handleLink(link.href)}
-              className="font-display text-sm font-medium py-3 text-left text-[#3a3a3a] hover:text-[#111111] border-b border-[#1a1a1a] last:border-0 transition-colors duration-200"
+              className="font-display text-sm font-medium py-3 text-left text-[#222222] hover:text-[#111111] border-b border-[#1a1a1a] last:border-0 transition-colors duration-200"
             >
               {link.label}
             </button>

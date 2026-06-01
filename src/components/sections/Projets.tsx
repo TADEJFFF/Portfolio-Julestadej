@@ -27,7 +27,7 @@ export default function Projets() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Projets académiques
           </h2>
-          <p className="font-serif italic text-[#555555] text-lg max-w-xl">
+          <p className="font-serif italic text-[#444444] text-lg max-w-xl">
             Stages, SAEs et projets collectifs — de l&apos;entrepreneuriat à la
             communication corporate.
           </p>
@@ -43,7 +43,7 @@ export default function Projets() {
                 className={`font-display text-sm font-medium px-5 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
                   activeFilter === f
                     ? "bg-[#FFD300] text-[#111111] border-[#FFD300]"
-                    : "border-[#d8d8d8] text-[#3a3a3a] hover:border-[#FFD300]/40 hover:text-[#111111] bg-white"
+                    : "border-[#b8b8b8] text-[#222222] hover:border-[#FFD300]/40 hover:text-[#111111] bg-white"
                 }`}
               >
                 {f}
@@ -64,12 +64,12 @@ export default function Projets() {
                 className={`group relative h-full flex flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 ${
                   projet.featured
                     ? "border-[#FFD300]/30 bg-white hover:border-[#FFD300]/60"
-                    : "border-[#d8d8d8] bg-white hover:border-[#d8d8d8]/60"
+                    : "border-[#b8b8b8] bg-white hover:border-[#b8b8b8]/60"
                 }`}
               >
                 {/* Badge BUT + featured */}
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="font-display text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#f5f5f5] border border-[#d8d8d8] text-[#555555] uppercase tracking-widest">
+                  <span className="font-display text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#f5f5f5] border border-[#b8b8b8] text-[#444444] uppercase tracking-widest">
                     {projet.but}
                   </span>
                   {projet.featured && (
@@ -78,7 +78,7 @@ export default function Projets() {
                       Primé
                     </span>
                   )}
-                  <span className="ml-auto font-display text-[10px] text-[#555555] text-right">
+                  <span className="ml-auto font-display text-[10px] text-[#444444] text-right">
                     {projet.categorie.split("·")[0]}
                   </span>
                 </div>
@@ -92,7 +92,7 @@ export default function Projets() {
                 <p className="font-display text-xs text-[#9A7200]/70 mb-3">{projet.categorie}</p>
 
                 {/* Description */}
-                <p className="font-serif text-sm text-[#3a3a3a] leading-relaxed mb-4 flex-1">
+                <p className="font-serif text-sm text-[#222222] leading-relaxed mb-4 flex-1">
                   {projet.description}
                 </p>
 
@@ -100,7 +100,7 @@ export default function Projets() {
                 {projet.resultats.length > 0 && (
                   <div className="flex flex-col gap-1 mb-4">
                     {projet.resultats.map((r, i) => (
-                      <div key={i} className="font-display text-xs text-[#e2e2e2] bg-[#f5f5f5] px-3 py-1.5 rounded-lg border border-[#e8e8e8]">
+                      <div key={i} className="font-display text-xs text-[#e2e2e2] bg-[#f5f5f5] px-3 py-1.5 rounded-lg border border-[#b0b0b0]">
                         {r}
                       </div>
                     ))}
@@ -112,7 +112,7 @@ export default function Projets() {
                   {projet.competences.map((c) => (
                     <span
                       key={c}
-                      className="font-display text-[10px] font-medium px-2 py-1 rounded-md bg-[#f0f0f0] border border-[#252525] text-[#555555]"
+                      className="font-display text-[10px] font-medium px-2 py-1 rounded-md bg-[#f0f0f0] border border-[#252525] text-[#444444]"
                     >
                       {c}
                     </span>
@@ -138,7 +138,7 @@ export default function Projets() {
         </StaggerContainer>
 
         {filtered.length === 0 && (
-          <AnimatedSection className="text-center py-16 text-[#555555] font-display">
+          <AnimatedSection className="text-center py-16 text-[#444444] font-display">
             Aucun projet pour ce filtre.
           </AnimatedSection>
         )}

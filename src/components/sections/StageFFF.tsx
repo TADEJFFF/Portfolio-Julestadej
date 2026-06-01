@@ -16,7 +16,7 @@ export default function StageFFF() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             UFIDF / Fédération des Fromagers de France
           </h2>
-          <p className="font-serif italic text-[#555555] text-lg max-w-2xl">
+          <p className="font-serif italic text-[#444444] text-lg max-w-2xl">
             Développement commercial B2B, cartographie interactive et animation
             du réseau fromager d&apos;Île-de-France.
           </p>
@@ -60,18 +60,18 @@ export default function StageFFF() {
                 <div key={label} className="flex flex-col gap-1.5">
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <Icon size={13} className="text-[#9A7200]/60" />
-                    <span className="font-display text-[10px] uppercase tracking-widest text-[#555555]">
+                    <span className="font-display text-[10px] uppercase tracking-widest text-[#444444]">
                       {label}
                     </span>
                   </div>
                   <div className="font-display font-bold text-sm text-[#111111]">{value}</div>
-                  <div className="font-display text-xs text-[#555555]">{sub}</div>
+                  <div className="font-display text-xs text-[#444444]">{sub}</div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-6 pt-6 border-t border-[#e8e8e8]">
-              <p className="font-serif text-[#3a3a3a] leading-relaxed italic">{stageFFF.contexte}</p>
+            <div className="mt-6 pt-6 border-t border-[#b0b0b0]">
+              <p className="font-serif text-[#222222] leading-relaxed italic">{stageFFF.contexte}</p>
             </div>
           </div>
         </AnimatedSection>
@@ -80,20 +80,20 @@ export default function StageFFF() {
         <div className="grid md:grid-cols-2 gap-8 mb-10">
           {/* Missions */}
           <AnimatedSection direction="left">
-            <div className="rounded-2xl border border-[#d8d8d8] bg-white p-6 h-full">
+            <div className="rounded-2xl border border-[#b8b8b8] bg-white p-6 h-full">
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-8 h-8 rounded-lg bg-[#FFD300]/10 flex items-center justify-center">
                   <CheckSquare size={16} className="text-[#9A7200]" />
                 </div>
                 <h3 className="font-display font-bold text-[#111111]">Missions</h3>
-                <span className="ml-auto font-display text-xs text-[#555555] bg-[#f0f0f0] px-2 py-1 rounded-full border border-[#d8d8d8]">
+                <span className="ml-auto font-display text-xs text-[#444444] bg-[#f0f0f0] px-2 py-1 rounded-full border border-[#b8b8b8]">
                   {stageFFF.missions.length}
                 </span>
               </div>
               <StaggerContainer className="flex flex-col gap-2.5" staggerDelay={0.06}>
                 {stageFFF.missions.map((mission, i) => (
                   <StaggerItem key={i}>
-                    <div className="flex items-start gap-2.5 text-sm text-[#3a3a3a] font-serif hover:text-[#e2e2e2] transition-colors duration-200">
+                    <div className="flex items-start gap-2.5 text-sm text-[#222222] font-serif hover:text-[#e2e2e2] transition-colors duration-200">
                       <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#FFD300]/50" />
                       {mission}
                     </div>
@@ -105,24 +105,24 @@ export default function StageFFF() {
 
           {/* Livrables */}
           <AnimatedSection direction="right" delay={0.1}>
-            <div className="rounded-2xl border border-[#d8d8d8] bg-white p-6 h-full">
+            <div className="rounded-2xl border border-[#b8b8b8] bg-white p-6 h-full">
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-8 h-8 rounded-lg bg-[#FFD300]/10 flex items-center justify-center">
                   <Package size={16} className="text-[#9A7200]" />
                 </div>
                 <h3 className="font-display font-bold text-[#111111]">Livrables</h3>
-                <span className="ml-auto font-display text-xs text-[#555555] bg-[#f0f0f0] px-2 py-1 rounded-full border border-[#d8d8d8]">
+                <span className="ml-auto font-display text-xs text-[#444444] bg-[#f0f0f0] px-2 py-1 rounded-full border border-[#b8b8b8]">
                   {stageFFF.livrables.length}
                 </span>
               </div>
               <StaggerContainer className="flex flex-col gap-3" staggerDelay={0.06}>
                 {stageFFF.livrables.map((livrable, i) => (
                   <StaggerItem key={i}>
-                    <div className="flex items-start gap-3 p-3 rounded-xl border border-[#e8e8e8] bg-[#f5f5f5]/50 hover:border-[#FFD300]/20 transition-colors duration-200">
+                    <div className="flex items-start gap-3 p-3 rounded-xl border border-[#b0b0b0] bg-[#f5f5f5]/50 hover:border-[#FFD300]/20 transition-colors duration-200">
                       <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#FFD300]/10 border border-[#FFD300]/20 flex items-center justify-center font-display text-[10px] font-bold text-[#9A7200]">
                         {i + 1}
                       </span>
-                      <span className="text-sm text-[#3a3a3a] font-serif">{livrable}</span>
+                      <span className="text-sm text-[#222222] font-serif">{livrable}</span>
                     </div>
                   </StaggerItem>
                 ))}
@@ -133,10 +133,10 @@ export default function StageFFF() {
 
         {/* Outils utilisés */}
         <AnimatedSection delay={0.15}>
-          <div className="rounded-2xl border border-[#d8d8d8] bg-white px-6 py-5 flex flex-wrap items-center gap-4">
+          <div className="rounded-2xl border border-[#b8b8b8] bg-white px-6 py-5 flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2 mr-2">
               <Wrench size={14} className="text-[#9A7200]/60" />
-              <span className="font-display text-xs uppercase tracking-widest text-[#555555]">
+              <span className="font-display text-xs uppercase tracking-widest text-[#444444]">
                 Outils mobilisés
               </span>
             </div>
@@ -167,7 +167,7 @@ export default function StageFFF() {
                 <div className="font-display font-bold text-[#111111] group-hover:text-[#9A7200] transition-colors duration-200">
                   Cartographie interactive des fromagers IDF
                 </div>
-                <div className="font-display text-xs text-[#555555] mt-1">
+                <div className="font-display text-xs text-[#444444] mt-1">
                   Livrable développé durant le stage · Python + Leaflet.js
                 </div>
               </div>

@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#d8d8d8] bg-white text-xs font-display font-medium text-[#3a3a3a] uppercase tracking-widest"
+          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#b8b8b8] bg-white text-xs font-display font-medium text-[#222222] uppercase tracking-widest"
         >
           <span className="w-2 h-2 rounded-full bg-[#FFD300] animate-pulse" />
           {personal.iut} · {personal.universite}
@@ -60,7 +60,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="font-display text-base md:text-lg text-[#3a3a3a] font-medium mb-1"
+          className="font-display text-base md:text-lg text-[#222222] font-medium mb-1"
         >
           {personal.formation}
         </motion.p>
@@ -78,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="font-serif italic text-[#3a3a3a] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
+          className="font-serif italic text-[#222222] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
         >
           &ldquo;{personal.accroche}&rdquo;
         </motion.p>
@@ -93,12 +93,12 @@ export default function Hero() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center py-2.5 px-3 rounded-xl border border-[#d8d8d8] bg-white hover:border-[#FFD300]/40 transition-colors duration-300"
+              className="flex flex-col items-center py-2.5 px-3 rounded-xl border border-[#b8b8b8] bg-white hover:border-[#FFD300]/40 transition-colors duration-300"
             >
               <span className="font-display font-bold text-2xl md:text-3xl text-[#9A7200]">
                 {stat.value}
               </span>
-              <span className="font-display text-xs text-[#555555] mt-1 text-center uppercase tracking-wide">
+              <span className="font-display text-xs text-[#444444] mt-1 text-center uppercase tracking-wide">
                 {stat.label}
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function Hero() {
           </a>
           <button
             onClick={() => document.querySelector("#parcours")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#d8d8d8] text-[#3a3a3a] hover:border-[#FFD300]/50 hover:text-[#111111] transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#b8b8b8] text-[#222222] hover:border-[#FFD300]/50 hover:text-[#111111] transition-all duration-200 text-sm"
           >
             Voir mon parcours
           </button>
@@ -141,7 +141,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.85 }}
-          className="flex items-center gap-4 text-xs text-[#555555] font-display"
+          className="flex items-center gap-4 text-xs text-[#444444] font-display"
         >
           <span className="flex items-center gap-1">
             <MapPin size={12} />
@@ -157,7 +157,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#555555]"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#444444]"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
