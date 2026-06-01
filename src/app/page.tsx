@@ -1,5 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
+import APropos from "@/components/sections/APropos";
 import Parcours from "@/components/sections/Parcours";
 import Erasmus from "@/components/sections/Erasmus";
 import StageFFF from "@/components/sections/StageFFF";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <APropos />
         <Parcours />
         <Erasmus />
         <StageFFF />
