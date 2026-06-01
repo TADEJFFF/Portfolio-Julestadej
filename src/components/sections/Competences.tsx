@@ -27,7 +27,7 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
   const maxN = comp.niveaux.length;
 
   return (
-    <div className="rounded-2xl border border-[#272727] bg-[#141414] overflow-hidden">
+    <div className="rounded-2xl border border-[#272727] bg-[#141414]">
       <div className="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-[#1e1e1e]">
 
         {/* ── Colonne 1 : Apprentissages critiques ── */}
@@ -99,7 +99,7 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
                   </div>
 
                   {/* ACs */}
-                  <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2 pl-8">
+                  <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2 pl-8 min-w-0">
                     {niv.acs.map((ac) => {
                       const cfg = maitriseCfg[ac.maitrise];
                       return (
@@ -111,7 +111,7 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
                           >
                             {cfg.symbol}
                           </span>
-                          <span className="font-serif text-[13px] text-[#b0b0b0] leading-relaxed">
+                          <span className="font-serif text-[13px] text-[#b0b0b0] leading-relaxed break-words min-w-0">
                             {ac.titre}
                           </span>
                         </div>
