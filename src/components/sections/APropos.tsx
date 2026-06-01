@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 export default function APropos() {
@@ -29,31 +30,25 @@ export default function APropos() {
             </p>
           </AnimatedSection>
 
-          {/* ── Photo placeholder ── */}
+          {/* ── Photo ── */}
           <AnimatedSection className="flex justify-center md:justify-end">
-            <div className="relative w-72 h-96 rounded-2xl border-2 border-dashed border-[#272727] bg-[#141414] flex flex-col items-center justify-center gap-3 overflow-hidden">
-              {/* Coin décoratif accent */}
+            <div className="relative w-72 h-96 rounded-2xl overflow-hidden border border-[#272727]">
+              <Image
+                src="/Photo pro jules noir et blanc$.jpeg"
+                alt="Jules TADEJ"
+                fill
+                className="object-cover object-top"
+                sizes="288px"
+              />
+              {/* Coins décoratifs */}
               <div
-                className="absolute top-0 left-0 w-16 h-16 rounded-br-3xl opacity-20"
+                className="absolute top-0 left-0 w-12 h-12 rounded-br-2xl opacity-30 pointer-events-none"
                 style={{ backgroundColor: "#FFD300" }}
               />
               <div
-                className="absolute bottom-0 right-0 w-16 h-16 rounded-tl-3xl opacity-20"
+                className="absolute bottom-0 right-0 w-12 h-12 rounded-tl-2xl opacity-30 pointer-events-none"
                 style={{ backgroundColor: "#FFD300" }}
               />
-              {/* Icône placeholder */}
-              <div className="w-16 h-16 rounded-full border-2 border-dashed border-[#3a3a3a] flex items-center justify-center">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3a3a3a" strokeWidth="1.5">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-              </div>
-              <span className="font-display text-xs text-[#3a3a3a] uppercase tracking-widest text-center px-6">
-                Ta photo ici
-              </span>
-              <span className="font-serif text-[10px] text-[#272727] text-center px-8">
-                Format portrait recommandé
-              </span>
             </div>
           </AnimatedSection>
 
