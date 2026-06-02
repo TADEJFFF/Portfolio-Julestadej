@@ -43,12 +43,17 @@ export default function Erasmus() {
                 Partir à Sofia pour un semestre entier en immersion totale en anglais, c'était un défi
                 que je m'étais fixé pour me pousser hors de ma zone de confort, et nourrir cette envie
                 profonde d'explorer de nouveaux horizons, de découvrir d'autres façons de penser et de
-                travailler. Loin de Paris, dans une université internationale de 20 000 étudiants, j'ai
-                dû m'adapter rapidement : suivre des cours de management, marketing et finance en anglais,
-                collaborer avec des étudiants d'une dizaine de nationalités différentes, et mener un
-                projet de bout en bout dans une langue qui n'est pas la mienne.
+                travailler.
               </p>
-              <p className="font-serif text-[#444444] text-base leading-relaxed italic">
+              <p className="font-serif text-[#222222] text-base leading-relaxed mb-4">
+                Loin de Paris, dans une université internationale de 20 000 étudiants, j'ai dû m'adapter
+                rapidement : suivre des cours de management, marketing et finance en anglais, collaborer
+                avec des étudiants d'une dizaine de nationalités différentes, et mener un projet de bout
+                en bout dans une langue qui n'est pas la mienne. Cette immersion ne s'est pas arrêtée aux
+                études, j'ai partagé mon quotidien en colocation avec un étudiant bulgare de Sofia, ce qui
+                m'a permis de m'imprégner de la culture locale bien au-delà du cadre universitaire.
+              </p>
+              <p className="font-serif text-[#222222] text-base leading-relaxed">
                 Ce semestre m'a appris autant sur moi-même que sur les matières étudiées. J'en suis
                 revenu avec 34 ECTS, 5 mentions A, et surtout une confiance en moi que je n'avais pas
                 avant, et la certitude que cette soif de découverte ne s'arrêtera pas là.
