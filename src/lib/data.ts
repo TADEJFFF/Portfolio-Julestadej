@@ -221,7 +221,7 @@ export const projets = [
     id: "breathe-go",
     but: "BUT 2",
     nom: "Breathe&Go",
-    categorie: "Entrepreneuriat · SAE S3/S4",
+    categorie: "SAE BUT 2",
     description:
       "Dispositif bloque-volant intelligent avec éthylotest intégré pour prévenir la conduite en état d'ivresse. Né d'un vécu personnel (2 accidents en 2023). Business plan complet, stratégie marketing Instagram/TikTok, livret investisseur.",
     resultats: ["🏆 Prix de l'entrepreneuriat 2ᵉ année", "🥇 1ᵉʳ Prix de l'innovation"],
@@ -300,7 +300,7 @@ export const projets = [
     id: "defile-mode",
     but: "BUT 2",
     nom: "Fashion DAY",
-    categorie: "Événementiel · SAE Tronc commun BUT2",
+    categorie: "SAE BUT 2",
     description:
       "Organisation et animation du Fashion DAY, défilé de mode réalisé dans le cadre de la SAE Événementiel en tronc commun (BUT2). Triple casquette : coordination logistique de l'événement, création de contenu pour les réseaux sociaux (avant/pendant/après), et animation de la soirée en tant que speaker/présentateur.",
     resultats: [
