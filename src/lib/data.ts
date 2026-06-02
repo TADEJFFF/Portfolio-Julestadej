@@ -243,6 +243,9 @@ export const projets = [
       "2 mois (janv.–fév. 2025) chez Caroll à Paris. Assistant Marketing Opérationnel : benchmarks web/physiques/newsletters, gestion hotline marketing, analyse des soldes et comportement client (Power BI, ClientFit). Mapping concurrentiel.",
     resultats: ["Mapping concurrentiel livré", "Analyse comportement client soldes"],
     lien: "/documents/benchmark-caroll.pdf",
+    liensExtra: [
+      { label: "Analyse Soldes AH24", url: "/documents/analyse-soldes-caroll.pptx" },
+    ],
     instagram: "",
     competences: ["Marketing opérationnel", "Power BI", "Analyse de données", "Benchmark"],
     featured: false,

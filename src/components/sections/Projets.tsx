@@ -157,6 +157,19 @@ export default function Projets() {
                       {projet.id === "caroll" ? "Benchmark S10" : projet.lien.endsWith(".pdf") ? "Télécharger" : "Voir le projet"}
                     </a>
                   )}
+                  {"liensExtra" in projet && (projet as { liensExtra?: { label: string; url: string }[] }).liensExtra?.map((l) => (
+                    <a
+                      key={l.url}
+                      href={l.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 font-display text-xs font-medium text-[#9A7200] hover:text-[#111111] transition-colors duration-200"
+                    >
+                      <Download size={12} />
+                      {l.label}
+                    </a>
+                  ))}
                   {"affiche" in projet && projet.affiche && (
                     <a
                       href={(projet as { affiche: string }).affiche}
