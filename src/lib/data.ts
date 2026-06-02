@@ -7,7 +7,7 @@ export const personal = {
   lastName: "TADEJ",
   fullName: "Jules TADEJ",
   email: "tadejjules@gmail.com",
-  phone: "+33 7 83 74 27 84",
+  phone: "07 83 74 27 84",
   location: "Vitry-sur-Seine (94), France",
   linkedin: "https://www.linkedin.com/in/jules-tadej-107612295",
   formation: "BUT Gestion des Entreprises et des Administrations",
