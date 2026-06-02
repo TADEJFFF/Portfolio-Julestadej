@@ -54,19 +54,16 @@ export default function Erasmus() {
                 avant, et la certitude que cette soif de découverte ne s'arrêtera pas là.
               </p>
             </div>
-            {/* Photo placeholder */}
+            {/* Photo Sofia */}
             <div className="flex justify-center">
-              <div className="relative w-full max-w-sm h-72 rounded-2xl overflow-hidden border border-[#b8b8b8] bg-[#f0f0f0] flex flex-col items-center justify-center gap-3">
-                <div className="w-14 h-14 rounded-full border-2 border-dashed border-[#c0c0c0] flex items-center justify-center">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c0c0c0" strokeWidth="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <path d="M21 15l-5-5L5 21" />
-                  </svg>
-                </div>
-                <span className="font-display text-xs text-[#c0c0c0] uppercase tracking-widest text-center px-6">
-                  Photo Erasmus · Sofia
-                </span>
+              <div className="relative w-full max-w-sm h-72 rounded-2xl overflow-hidden border border-[#b8b8b8]">
+                <Image
+                  src="/photo-sofia.png"
+                  alt="Erasmus Sofia — Jules TADEJ"
+                  fill
+                  className="object-cover object-center"
+                  sizes="384px"
+                />
               </div>
             </div>
           </div>
