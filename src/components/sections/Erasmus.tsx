@@ -41,7 +41,7 @@ export default function Erasmus() {
               </span>
               <p className="font-serif text-[#222222] text-base leading-relaxed mb-4">
                 Partir à Sofia pour un semestre entier en immersion totale en anglais, c'était un défi
-                que je m'étais fixé pour me pousser hors de ma zone de confort — et nourrir cette envie
+                que je m'étais fixé pour me pousser hors de ma zone de confort, et nourrir cette envie
                 profonde d'explorer de nouveaux horizons, de découvrir d'autres façons de penser et de
                 travailler. Loin de Paris, dans une université internationale de 20 000 étudiants, j'ai
                 dû m'adapter rapidement : suivre des cours de management, marketing et finance en anglais,
@@ -51,7 +51,7 @@ export default function Erasmus() {
               <p className="font-serif text-[#444444] text-base leading-relaxed italic">
                 Ce semestre m'a appris autant sur moi-même que sur les matières étudiées. J'en suis
                 revenu avec 34 ECTS, 5 mentions A, et surtout une confiance en moi que je n'avais pas
-                avant — et la certitude que cette soif de découverte ne s'arrêtera pas là.
+                avant, et la certitude que cette soif de découverte ne s'arrêtera pas là.
               </p>
             </div>
             {/* Photo placeholder */}
