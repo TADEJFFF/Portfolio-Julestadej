@@ -184,37 +184,48 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
   );
 }
 
-// ── Logos outils ─────────────────────────────────────────────────────────────
+// ── Logos outils (SVG inline + image locale) ─────────────────────────────────
 
-const toolLogos: Record<string, string> = {
-  "Pack Office":  "https://cdn.simpleicons.org/microsoftoffice/D83B01",
-  "Canva":        "https://cdn.simpleicons.org/canva/00C4CC",
-  "Power BI":     "https://cdn.simpleicons.org/powerbi/F2C811",
-  "Python":       "https://cdn.simpleicons.org/python/3776AB",
-  "Logiciel 4D":  "/logos/Capture d'écran 2026-06-02 094511.png",
-  "Instagram · TikTok · LinkedIn": "multi-social",
-  "Instagram":    "https://cdn.simpleicons.org/instagram/E4405F",
-  "TikTok":       "https://cdn.simpleicons.org/tiktok/000000",
-  "LinkedIn":     "https://cdn.simpleicons.org/linkedin/0A66C2",
+const toolLogos: Record<string, React.ReactNode> = {
+  "Pack Office": (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 flex-shrink-0" fill="#D83B01">
+      <path d="M24 1.5v21L14.5 24 0 21V3L14.5 0 24 1.5zM13 6H9.5L7.7 13.2 5.8 6H2.5l3 12h3.2l1.8-7.2L12.3 18h3.2l3-12H15.4l-1.8 7.2L13 6z"/>
+    </svg>
+  ),
+  "Canva": (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 flex-shrink-0" fill="#00C4CC">
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.5 14.5c-.7.7-1.6 1.1-2.6 1.1-1.3 0-2.3-.6-2.9-1.5-.6.9-1.6 1.5-2.8 1.5-1.9 0-3.4-1.6-3.4-3.6s1.5-3.6 3.4-3.6c1.2 0 2.2.6 2.8 1.5.6-.9 1.6-1.5 2.9-1.5 2 0 3.6 1.6 3.6 3.6 0 .8-.3 1.6-.8 2.2l-.2.3z"/>
+    </svg>
+  ),
+  "Power BI": (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 flex-shrink-0" fill="#F2C811">
+      <path d="M4 18V6h2v12H4zm4-4V8h2v6H8zm4-2v-4h2v4h-2zm4-6v12h-2V6h2zm4 4v8h-2v-8h2z"/>
+    </svg>
+  ),
+  "Python": (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 flex-shrink-0" fill="#3776AB">
+      <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.963 3.403 5.963h2.031v-2.868s-.109-3.402 3.35-3.402h5.766s3.24.052 3.24-3.13V3.13S18.28 0 11.914 0zm-3.2 1.812a1.042 1.042 0 1 1 0 2.083 1.042 1.042 0 0 1 0-2.083zM24 12.031c0-6.18-3.403-5.963-3.403-5.963h-2.031v2.868s.109 3.402-3.35 3.402H9.45s-3.24-.052-3.24 3.13v5.402S5.72 24 12.086 24c6.18 0 5.8-2.656 5.8-2.656l-.007-2.752H12.065v-.826h8.121S24 18.211 24 12.031zm-8.714 10.157a1.042 1.042 0 1 1 0-2.083 1.042 1.042 0 0 1 0 2.083z"/>
+    </svg>
+  ),
+  "Logiciel 4D": (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/logos/logo-4d.png" alt="4D" style={{ width: 16, height: 16 }} className="flex-shrink-0 object-contain" />
+  ),
+  "Instagram · TikTok · LinkedIn": (
+    <div className="flex gap-1 flex-shrink-0">
+      <svg viewBox="0 0 24 24" className="w-3 h-3" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <svg viewBox="0 0 24 24" className="w-3 h-3" fill="#000000"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      <svg viewBox="0 0 24 24" className="w-3 h-3" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </div>
+  ),
 };
 
 function SkillBadge({ item }: { item: string }) {
   const logo = toolLogos[item];
   return (
-    <div className="flex items-center gap-2 font-display text-xs text-[#222222] py-1.5 px-2.5 rounded-md bg-[#f5f5f5] border border-[#b0b0b0]">
-      {logo && logo !== "multi-social" && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={logo} alt={item} width={16} height={16} className="flex-shrink-0 object-contain" />
-      )}
-      {logo === "multi-social" && (
-        <div className="flex gap-1 flex-shrink-0">
-          {["instagram", "tiktok", "linkedin"].map((s) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img key={s} src={`https://cdn.simpleicons.org/${s}`} alt={s} width={12} height={12} className="object-contain" />
-          ))}
-        </div>
-      )}
-      {item}
+    <div className="flex items-center gap-2 font-display text-xs text-[#222222] py-1.5 px-2.5 rounded-md bg-[#f5f5f5] border border-[#b0b0b0] min-w-0">
+      {logo && <span className="flex-shrink-0">{logo}</span>}
+      <span className="truncate">{item}</span>
     </div>
   );
 }
