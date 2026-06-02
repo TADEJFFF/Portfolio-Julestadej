@@ -99,7 +99,9 @@ export const parcours = [
       "FEBA Social Room : site web pour financer la salle sociale de la faculté",
       "Immersion totale en environnement international",
     ],
-    releves: [],
+    releves: [
+      { label: "Transcript of Records", url: "/transcript-of-records-erasmus.pdf" },
+    ],
     highlight: true,
     current: false,
   },
