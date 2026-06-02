@@ -184,6 +184,41 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
   );
 }
 
+// ── Logos outils ─────────────────────────────────────────────────────────────
+
+const toolLogos: Record<string, string> = {
+  "Pack Office":  "https://cdn.simpleicons.org/microsoftoffice/D83B01",
+  "Canva":        "https://cdn.simpleicons.org/canva/00C4CC",
+  "Power BI":     "https://cdn.simpleicons.org/powerbi/F2C811",
+  "Python":       "https://cdn.simpleicons.org/python/3776AB",
+  "Logiciel 4D":  "/logos/4d-logo.png",
+  "Instagram · TikTok · LinkedIn": "multi-social",
+  "Instagram":    "https://cdn.simpleicons.org/instagram/E4405F",
+  "TikTok":       "https://cdn.simpleicons.org/tiktok/000000",
+  "LinkedIn":     "https://cdn.simpleicons.org/linkedin/0A66C2",
+};
+
+function SkillBadge({ item }: { item: string }) {
+  const logo = toolLogos[item];
+  return (
+    <div className="flex items-center gap-2 font-display text-xs text-[#222222] py-1.5 px-2.5 rounded-md bg-[#f5f5f5] border border-[#b0b0b0]">
+      {logo && logo !== "multi-social" && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={logo} alt={item} width={16} height={16} className="flex-shrink-0 object-contain" />
+      )}
+      {logo === "multi-social" && (
+        <div className="flex gap-1 flex-shrink-0">
+          {["instagram", "tiktok", "linkedin"].map((s) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={s} src={`https://cdn.simpleicons.org/${s}`} alt={s} width={12} height={12} className="object-contain" />
+          ))}
+        </div>
+      )}
+      {item}
+    </div>
+  );
+}
+
 // ── Grille skills ─────────────────────────────────────────────────────────────
 
 const skillCategories = [
@@ -282,12 +317,7 @@ export default function Competences() {
                 </div>
                 <div className="flex flex-col gap-2">
                   {items.map((item) => (
-                    <div
-                      key={item}
-                      className="font-display text-xs text-[#222222] py-1.5 px-2 rounded-md bg-[#f5f5f5] border border-[#b0b0b0]"
-                    >
-                      {item}
-                    </div>
+                    <SkillBadge key={item} item={item} />
                   ))}
                 </div>
               </div>

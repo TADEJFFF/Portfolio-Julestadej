@@ -614,7 +614,7 @@ export const competences5: Competence5[] = [
 ];
 
 export const skills = {
-  outils: ["Pack Office", "Canva", "Power BI", "ClientFit", "Logiciel 4D", "Python", "HTML / JS"],
+  outils: ["Pack Office", "Canva", "Power BI", "ClientFit", "Logiciel 4D", "Python"],
   marketing: [
     "Marketing digital",
     "Community management",
