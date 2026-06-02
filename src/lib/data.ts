@@ -28,13 +28,13 @@ export const stats = [
 ];
 
 export const navLinks = [
-  { label: "À propos", href: "#apropos" },
-  { label: "Parcours", href: "#parcours" },
-  { label: "Erasmus", href: "#erasmus" },
-  { label: "Stage FFF", href: "#stage" },
-  { label: "Projets", href: "#projets" },
-  { label: "Compétences", href: "#competences" },
-  { label: "Contact", href: "#contact" },
+  { label: "À propos", href: "/" },
+  { label: "Parcours", href: "/parcours" },
+  { label: "Erasmus", href: "/erasmus" },
+  { label: "Stage FFF", href: "/stage" },
+  { label: "Projets", href: "/projets" },
+  { label: "Compétences", href: "/competences" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // ─── TIMELINE PARCOURS ──────────────────────────────────────────────────────

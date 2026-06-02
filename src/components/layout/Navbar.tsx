@@ -1,12 +1,15 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -14,56 +17,53 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleLink = (href: string) => {
-    setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  // Fermer le menu mobile au changement de page
+  useEffect(() => { setOpen(false); }, [pathname]);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#f5f5f5]/95 backdrop-blur-md border-b border-[#b0b0b0]"
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md border-b border-[#b8b8b8]"
+          : "bg-white border-b border-[#e0e0e0]"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#hero"
-          onClick={(e) => {
-            e.preventDefault();
-            handleLink("#hero");
-          }}
-          className="font-display font-bold text-xl tracking-tight group"
-        >
+        <Link href="/" className="font-display font-bold text-xl tracking-tight group">
           <span className="text-[#9A7200]">J</span>
           <span className="text-[#111111]">T</span>
           <span className="ml-2 text-xs text-[#444444] font-normal hidden sm:inline group-hover:text-[#9A7200] transition-colors duration-200">
             BUT GEA GEMA
           </span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <button
-                onClick={() => handleLink(link.href)}
-                className="font-display text-sm font-medium px-4 py-2 rounded-md text-[#222222] hover:text-[#111111] hover:bg-[#f0f0f0] transition-all duration-200 cursor-pointer"
+              <Link
+                href={link.href}
+                className={`font-display text-sm font-medium px-4 py-2 rounded-md transition-all duration-200 ${
+                  isActive(link.href)
+                    ? "text-[#9A7200] bg-[#FFD300]/10 font-bold"
+                    : "text-[#222222] hover:text-[#111111] hover:bg-[#f0f0f0]"
+                }`}
               >
                 {link.label}
-              </button>
+              </Link>
             </li>
           ))}
           <li>
-            <button
-              onClick={() => handleLink("#contact")}
-              className="font-display text-sm font-bold ml-2 px-4 py-2 rounded-md bg-[#FFD300] text-[#111111] hover:bg-[#e6be00] transition-all duration-200 cursor-pointer"
+            <Link
+              href="/contact"
+              className="font-display text-sm font-bold ml-2 px-4 py-2 rounded-md bg-[#FFD300] text-[#111111] hover:bg-[#e6be00] transition-all duration-200"
             >
               Me contacter
-            </button>
+            </Link>
           </li>
         </ul>
 
@@ -79,22 +79,26 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#f5f5f5]/98 backdrop-blur-md border-b border-[#b0b0b0] px-6 py-4 flex flex-col gap-1">
+        <div className="md:hidden bg-white border-b border-[#b8b8b8] px-6 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
-            <button
+            <Link
               key={link.href}
-              onClick={() => handleLink(link.href)}
-              className="font-display text-sm font-medium py-3 text-left text-[#222222] hover:text-[#111111] border-b border-[#1a1a1a] last:border-0 transition-colors duration-200"
+              href={link.href}
+              className={`font-display text-sm font-medium py-3 text-left border-b border-[#eeeeee] last:border-0 transition-colors duration-200 ${
+                isActive(link.href)
+                  ? "text-[#9A7200] font-bold"
+                  : "text-[#222222] hover:text-[#111111]"
+              }`}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
-          <button
-            onClick={() => handleLink("#contact")}
-            className="font-display text-sm font-bold mt-2 py-3 rounded-md bg-[#FFD300] text-[#111111] text-center"
+          <Link
+            href="/contact"
+            className="font-display text-sm font-bold mt-2 py-3 rounded-md bg-[#FFD300] text-[#111111] text-center block"
           >
             Me contacter
-          </button>
+          </Link>
         </div>
       )}
     </header>
