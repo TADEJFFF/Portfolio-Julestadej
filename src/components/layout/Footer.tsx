@@ -47,7 +47,7 @@ export default function Footer() {
             <h4 className="font-display font-bold text-sm text-[#111111] mb-3 uppercase tracking-widest">
               Navigation
             </h4>
-            <ul className="flex flex-col gap-1.5">
+            <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
