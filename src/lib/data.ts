@@ -46,7 +46,7 @@ export const parcours = [
     lieu: "Lycée Victor Hugo, Poitiers (86)",
     events: [
       "Baccalauréat STMG mention Assez Bien",
-      "Stage — Concession Citroën Stellantis, Poitiers",
+      "Stage — Concession Citroën/DS Stellantis, Poitiers",
       "Stage — Radio FG, Paris",
       "Décision : quitter Poitiers pour intégrer un BUT GEA à Paris",
     ],
