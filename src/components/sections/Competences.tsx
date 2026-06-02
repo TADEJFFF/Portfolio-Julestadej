@@ -191,7 +191,7 @@ const toolLogos: Record<string, string> = {
   "Canva":        "https://cdn.simpleicons.org/canva/00C4CC",
   "Power BI":     "https://cdn.simpleicons.org/powerbi/F2C811",
   "Python":       "https://cdn.simpleicons.org/python/3776AB",
-  "Logiciel 4D":  "/logos/4d-logo.png",
+  "Logiciel 4D":  "/logos/Capture d'écran 2026-06-02 094511.png",
   "Instagram · TikTok · LinkedIn": "multi-social",
   "Instagram":    "https://cdn.simpleicons.org/instagram/E4405F",
   "TikTok":       "https://cdn.simpleicons.org/tiktok/000000",
