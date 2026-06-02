@@ -11,8 +11,14 @@ export async function sendEmail(formData: FormData) {
     return { success: false, error: "Tous les champs sont requis." };
   }
 
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    return { success: false, error: "Configuration email manquante." };
+  }
+
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -52,7 +58,9 @@ export async function sendEmail(formData: FormData) {
     });
 
     return { success: true };
-  } catch {
-    return { success: false, error: "Erreur lors de l'envoi. Réessaie plus tard." };
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : "Erreur inconnue";
+    console.error("Nodemailer error:", msg);
+    return { success: false, error: `Erreur : ${msg}` };
   }
 }
