@@ -116,16 +116,32 @@ export default function StageFFF() {
                 </span>
               </div>
               <StaggerContainer className="flex flex-col gap-3" staggerDelay={0.06}>
-                {stageFFF.livrables.map((livrable, i) => (
-                  <StaggerItem key={i}>
-                    <div className="flex items-start gap-3 p-3 rounded-xl border border-[#b0b0b0] bg-[#f5f5f5]/50 hover:border-[#FFD300]/20 transition-colors duration-200">
-                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#FFD300]/10 border border-[#FFD300]/20 flex items-center justify-center font-display text-[10px] font-bold text-[#9A7200]">
-                        {i + 1}
-                      </span>
-                      <span className="text-sm text-[#222222] font-serif">{livrable}</span>
-                    </div>
-                  </StaggerItem>
-                ))}
+                {stageFFF.livrables.map((livrable, i) => {
+                  const isEnquete = livrable.startsWith("Enquête de satisfaction");
+                  return (
+                    <StaggerItem key={i}>
+                      <div className="flex items-start gap-3 p-3 rounded-xl border border-[#b0b0b0] bg-[#f5f5f5]/50 hover:border-[#FFD300]/20 transition-colors duration-200">
+                        <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#FFD300]/10 border border-[#FFD300]/20 flex items-center justify-center font-display text-[10px] font-bold text-[#9A7200]">
+                          {i + 1}
+                        </span>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-sm text-[#222222] font-serif">{livrable}</span>
+                          {isEnquete && (
+                            <a
+                              href="/documents/enquete-satisfaction-fff.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 font-display text-[10px] font-bold text-[#9A7200] hover:text-[#111111] transition-colors duration-200"
+                            >
+                              <ExternalLink size={10} />
+                              Voir
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </StaggerItem>
+                  );
+                })}
               </StaggerContainer>
             </div>
           </AnimatedSection>

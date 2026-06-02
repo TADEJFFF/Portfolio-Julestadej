@@ -212,6 +212,7 @@ export const stageFFF = {
     "Calendrier et rapports de visites terrain",
     "Cartographie interactive membres (Python + Leaflet.js)",
     "Synthèse globale et restitution finale (10 juillet 2026)",
+    "Enquête de satisfaction adhérents UFIDF/FFF 2026",
   ],
   outils: ["Python", "Leaflet.js", "Excel · Power Query", "Logiciel 4D", "WhatsApp Business"],
 };
