@@ -45,8 +45,6 @@ export default function APropos() {
                 className="object-cover object-top"
                 sizes="288px"
               />
-              {/* Overlay jaune semi-transparent */}
-              <div className="absolute inset-0 bg-[#FFD300]/20 pointer-events-none mix-blend-multiply" />
             </div>
           </AnimatedSection>
 
