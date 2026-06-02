@@ -224,10 +224,12 @@ export const projets = [
     but: "BUT 2",
     nom: "Breathe&Go",
     categorie: "SAE BUT 2",
+    logo: "/logos/logo-breathego.png",
     description:
       "Dispositif bloque-volant intelligent avec éthylotest intégré pour prévenir la conduite en état d'ivresse. Né d'un vécu personnel (2 accidents en 2023). Business plan complet, stratégie marketing Instagram/TikTok, livret investisseur.",
     resultats: ["🏆 Prix de l'entrepreneuriat 2ᵉ année", "🥇 1ᵉʳ Prix de l'innovation"],
     lien: "/documents/livret-investisseur-breathego.pdf",
+    instagram: "https://www.instagram.com/breatheandgo_project/",
     competences: ["Entrepreneuriat", "Business Plan", "Marketing digital", "Pitch", "Réseaux sociaux"],
     featured: true,
   },
@@ -236,10 +238,12 @@ export const projets = [
     but: "BUT 2",
     nom: "Stage Caroll",
     categorie: "Stage · Marketing opérationnel",
+    logo: "/logos/logo-caroll.png",
     description:
       "2 mois (janv.–fév. 2025) chez Caroll à Paris. Assistant Marketing Opérationnel : benchmarks web/physiques/newsletters, gestion hotline marketing, analyse des soldes et comportement client (Power BI, ClientFit). Mapping concurrentiel.",
     resultats: ["Mapping concurrentiel livré", "Analyse comportement client soldes"],
     lien: "/documents/caroll-ecosystem.html",
+    instagram: "",
     competences: ["Marketing opérationnel", "Power BI", "Analyse de données", "Benchmark"],
     featured: false,
   },
@@ -248,10 +252,12 @@ export const projets = [
     but: "BUT 1",
     nom: "Stage Radio FG",
     categorie: "Stage · Marketing digital",
+    logo: "/logos/logo-radiofg.png",
     description:
       "1 mois (mars-avril 2024) chez Radio FG, 51 rue de Rivoli, Paris. Mission : développer la marque FG DanceOne sur Instagram et TikTok pour les 18-25 ans. Veille concurrentielle sur 30+ radios et médias nationaux et internationaux.",
     resultats: ["Stratégie réseaux sociaux remise au PDG", "Veille sur 30+ médias"],
     lien: "",
+    instagram: "",
     competences: ["Community management", "Stratégie réseaux sociaux", "Veille concurrentielle"],
     featured: false,
   },
@@ -260,10 +266,12 @@ export const projets = [
     but: "BUT 3",
     nom: "Plan de comm — Clariane",
     categorie: "SAE S6 · Communication corporate",
+    logo: "/logos/logo-clariane.png",
     description:
       "Plan de communication corporate pour Clariane (groupe médico-social, ex-Korian). Rôle : Communication interne RH. Axe stratégique : transformer les collaborateurs en ambassadeurs (employee advocacy). Audit e-réputation Glassdoor/Trustpilot.",
     resultats: ["Plan de communication 6 pages livré", "Audit e-réputation complet"],
     lien: "/documents/plan-comm-clariane.pdf",
+    instagram: "",
     competences: ["Communication corporate", "E-réputation", "Employee advocacy", "Plan de comm"],
     featured: false,
   },
@@ -272,6 +280,7 @@ export const projets = [
     but: "BUT 3",
     nom: "Stage UFIDF / FFF",
     categorie: "Stage · Développement commercial",
+    logo: "/logos/logo-fff.png",
     description:
       "Stage de fin de BUT GEA GEMA au sein de l'Union des Fromagers de l'Île-de-France (80 %) et de la Fédération des Fromagers de France (20 %). Prospection B2B des crèmeries-fromageries, cartographie interactive, animation réseau adhérents, soutien au Salon du Fromage et au concours MAF.",
     resultats: [
@@ -280,6 +289,7 @@ export const projets = [
       "Benchmark CGAD livré avec recommandations",
     ],
     lien: "https://tadejfff.github.io/MAPIDFC/",
+    instagram: "",
     competences: ["Prospection B2B", "Cartographie Python/Leaflet.js", "Gestion de réseau", "Animation événementielle"],
     featured: false,
   },
@@ -288,6 +298,7 @@ export const projets = [
     but: "BUT 3",
     nom: "FEBA Social Room",
     categorie: "Projet Erasmus · Entrepreneuriat social",
+    logo: "/logos/logo-feba.png",
     description:
       "Projet réalisé intégralement en anglais à Sofia University (2025/2026) : création d'un site web pour promouvoir et financer une salle sociale au sein de la Faculty of Economics and Business Administration (FEBA). Campagne de dons, témoignages étudiants, appel à la communauté alumni.",
     resultats: [
@@ -295,6 +306,7 @@ export const projets = [
       "Campagne de dons & témoignages étudiants",
     ],
     lien: "https://sites.google.com/view/social-room-feba/home",
+    instagram: "",
     competences: ["Entrepreneuriat social", "Communication digitale", "Anglais académique", "Gestion de projet"],
     featured: false,
   },
@@ -303,6 +315,7 @@ export const projets = [
     but: "BUT 2",
     nom: "Fashion DAY",
     categorie: "SAE BUT 2",
+    logo: "/logos/logo-fashionday.png",
     description:
       "Organisation et animation du Fashion DAY, défilé de mode réalisé dans le cadre de la SAE Événementiel en tronc commun (BUT2). Triple casquette : coordination logistique de l'événement, création de contenu pour les réseaux sociaux (avant/pendant/après), et animation de la soirée en tant que speaker/présentateur.",
     resultats: [
@@ -310,6 +323,7 @@ export const projets = [
       "Contenu réseaux sociaux produit et diffusé",
     ],
     lien: "",
+    instagram: "https://www.instagram.com/fashionday_iut/",
     competences: ["Organisation événementielle", "Community management", "Prise de parole en public", "Communication digitale"],
     featured: false,
   },
@@ -318,10 +332,12 @@ export const projets = [
     but: "BUT 3",
     nom: "Innovation — UltraTonic USA",
     categorie: "SAE S6 · Management de l'innovation",
+    logo: "/logos/logo-ultratonic.png",
     description:
       "Note de synthèse sur la stratégie d'expansion internationale d'UltraTonic (fitness B2B connecté) vers Boston et Philadelphie. Accompagnement du changement, mapping Mitchell parties prenantes, communication interne.",
     resultats: ["Note de synthèse réalisée", "Analyse parties prenantes Mitchell"],
     lien: "/documents/note-synthese-ultratonic.pdf",
+    instagram: "",
     competences: ["Management de l'innovation", "Stratégie internationale", "Accompagnement du changement"],
     featured: false,
   },
