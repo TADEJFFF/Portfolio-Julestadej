@@ -144,7 +144,7 @@ export default function Projets() {
                 </div>
 
                 {/* Liens */}
-                <div className="flex items-center gap-3 mt-auto">
+                <div className="flex items-center gap-3 mt-auto flex-wrap">
                   {projet.lien && (
                     <a
                       href={projet.lien}
@@ -154,7 +154,19 @@ export default function Projets() {
                       className="inline-flex items-center gap-1.5 font-display text-xs font-medium text-[#9A7200] hover:text-[#111111] transition-colors duration-200"
                     >
                       {projet.lien.endsWith(".pdf") ? <Download size={12} /> : <ExternalLink size={12} />}
-                      {projet.lien.endsWith(".pdf") ? "Télécharger" : "Voir le projet"}
+                      {projet.id === "caroll" ? "Benchmark S10" : projet.lien.endsWith(".pdf") ? "Télécharger" : "Voir le projet"}
+                    </a>
+                  )}
+                  {"affiche" in projet && projet.affiche && (
+                    <a
+                      href={(projet as { affiche: string }).affiche}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 font-display text-xs font-medium text-[#9A7200] hover:text-[#111111] transition-colors duration-200"
+                    >
+                      <ExternalLink size={12} />
+                      Affiche
                     </a>
                   )}
                   {projet.instagram && (

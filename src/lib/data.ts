@@ -242,7 +242,7 @@ export const projets = [
     description:
       "2 mois (janv.–fév. 2025) chez Caroll à Paris. Assistant Marketing Opérationnel : benchmarks web/physiques/newsletters, gestion hotline marketing, analyse des soldes et comportement client (Power BI, ClientFit). Mapping concurrentiel.",
     resultats: ["Mapping concurrentiel livré", "Analyse comportement client soldes"],
-    lien: "/documents/caroll-ecosystem.html",
+    lien: "/documents/benchmark-caroll.pdf",
     instagram: "",
     competences: ["Marketing opérationnel", "Power BI", "Analyse de données", "Benchmark"],
     featured: false,
@@ -280,7 +280,7 @@ export const projets = [
     but: "BUT 3",
     nom: "Stage UFIDF / FFF",
     categorie: "Stage · Développement commercial",
-    logo: "/logos/logo-fff.png",
+    logo: "/logos/logo-fff-new.png",
     description:
       "Stage de fin de BUT GEA GEMA au sein de l'Union des Fromagers de l'Île-de-France (80 %) et de la Fédération des Fromagers de France (20 %). Prospection B2B des crèmeries-fromageries, cartographie interactive, animation réseau adhérents, soutien au Salon du Fromage et au concours MAF.",
     resultats: [
@@ -323,6 +323,7 @@ export const projets = [
       "Contenu réseaux sociaux produit et diffusé",
     ],
     lien: "",
+    affiche: "/documents/affiche-fashionday.png",
     instagram: "https://www.instagram.com/fashionday_iut/",
     competences: ["Organisation événementielle", "Community management", "Prise de parole en public", "Communication digitale"],
     featured: false,
