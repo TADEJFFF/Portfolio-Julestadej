@@ -128,12 +128,12 @@ export default function Hero() {
             <Download size={16} />
             Télécharger mon CV
           </a>
-          <button
-            onClick={() => document.querySelector("#parcours")?.scrollIntoView({ behavior: "smooth" })}
+          <a
+            href="/parcours"
             className="inline-flex items-center gap-2 font-display font-medium px-5 py-2.5 rounded-xl border border-[#b8b8b8] text-[#222222] hover:border-[#FFD300]/50 hover:text-[#111111] transition-all duration-200 text-sm"
           >
             Voir mon parcours
-          </button>
+          </a>
         </motion.div>
 
         {/* Location + dispo */}
