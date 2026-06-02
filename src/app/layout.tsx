@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -50,11 +51,7 @@ export default function RootLayout({
         <main className="flex-1">
           {children}
         </main>
-        <footer className="border-t border-[#b0b0b0] bg-white py-6 text-center">
-          <p className="font-display text-xs text-[#999999]">
-            Portfolio Jules TADEJ · BUT GEA GEMA · IUT de Paris – Rives de Seine · 2026
-          </p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
