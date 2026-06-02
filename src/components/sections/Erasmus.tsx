@@ -31,6 +31,47 @@ export default function Erasmus() {
           </p>
         </AnimatedSection>
 
+        {/* Paragraphe expérience + photo */}
+        <AnimatedSection delay={0.05} className="mb-10">
+          <div className="grid md:grid-cols-2 gap-8 items-center rounded-2xl border border-[#b8b8b8] bg-[#f9f9f9] p-8">
+            {/* Texte */}
+            <div>
+              <span className="font-display text-xs font-bold text-[#9A7200] uppercase tracking-[0.2em] mb-4 block">
+                Vivre l'expérience
+              </span>
+              <p className="font-serif text-[#222222] text-base leading-relaxed mb-4">
+                Partir à Sofia pour un semestre entier en immersion totale en anglais, c'était un défi
+                que je m'étais fixé pour me pousser hors de ma zone de confort — et nourrir cette envie
+                profonde d'explorer de nouveaux horizons, de découvrir d'autres façons de penser et de
+                travailler. Loin de Paris, dans une université internationale de 20 000 étudiants, j'ai
+                dû m'adapter rapidement : suivre des cours de management, marketing et finance en anglais,
+                collaborer avec des étudiants d'une dizaine de nationalités différentes, et mener un
+                projet de bout en bout dans une langue qui n'est pas la mienne.
+              </p>
+              <p className="font-serif text-[#444444] text-base leading-relaxed italic">
+                Ce semestre m'a appris autant sur moi-même que sur les matières étudiées. J'en suis
+                revenu avec 34 ECTS, 5 mentions A, et surtout une confiance en moi que je n'avais pas
+                avant — et la certitude que cette soif de découverte ne s'arrêtera pas là.
+              </p>
+            </div>
+            {/* Photo placeholder */}
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-sm h-72 rounded-2xl overflow-hidden border border-[#b8b8b8] bg-[#f0f0f0] flex flex-col items-center justify-center gap-3">
+                <div className="w-14 h-14 rounded-full border-2 border-dashed border-[#c0c0c0] flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c0c0c0" strokeWidth="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <path d="M21 15l-5-5L5 21" />
+                  </svg>
+                </div>
+                <span className="font-display text-xs text-[#c0c0c0] uppercase tracking-widest text-center px-6">
+                  Photo Erasmus · Sofia
+                </span>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Bloc université — 2 colonnes */}
           <AnimatedSection direction="left" className="lg:col-span-2">
@@ -159,48 +200,6 @@ export default function Erasmus() {
             </div>
           </AnimatedSection>
         </div>
-
-        {/* Paragraphe expérience + photo */}
-        <AnimatedSection delay={0.15} className="mt-10">
-          <div className="grid md:grid-cols-2 gap-8 items-center rounded-2xl border border-[#b8b8b8] bg-[#f9f9f9] p-8">
-            {/* Texte */}
-            <div>
-              <span className="font-display text-xs font-bold text-[#9A7200] uppercase tracking-[0.2em] mb-4 block">
-                Vivre l'expérience
-              </span>
-              <p className="font-serif text-[#222222] text-base leading-relaxed mb-4">
-                Partir à Sofia pour un semestre entier en immersion totale en anglais, c'était un défi
-                que je m'étais fixé pour me pousser hors de ma zone de confort — et nourrir cette envie
-                profonde d'explorer de nouveaux horizons, de découvrir d'autres façons de penser et de
-                travailler. Loin de Paris, dans une université internationale de 20 000 étudiants, j'ai
-                dû m'adapter rapidement : suivre des cours de management, marketing et finance en anglais,
-                collaborer avec des étudiants d'une dizaine de nationalités différentes, et mener un
-                projet de bout en bout dans une langue qui n'est pas la mienne.
-              </p>
-              <p className="font-serif text-[#444444] text-base leading-relaxed italic">
-                Ce semestre m'a appris autant sur moi-même que sur les matières étudiées. J'en suis
-                revenu avec 34 ECTS, 5 mentions A, et surtout une confiance en moi que je n'avais pas
-                avant — et la certitude que cette soif de découverte ne s'arrêtera pas là.
-              </p>
-            </div>
-            {/* Photo */}
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-sm h-72 rounded-2xl overflow-hidden border border-[#b8b8b8] bg-[#f0f0f0] flex flex-col items-center justify-center gap-3">
-                {/* Remplacer par <Image> quand la photo est disponible */}
-                <div className="w-14 h-14 rounded-full border-2 border-dashed border-[#c0c0c0] flex items-center justify-center">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c0c0c0" strokeWidth="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <path d="M21 15l-5-5L5 21" />
-                  </svg>
-                </div>
-                <span className="font-display text-xs text-[#c0c0c0] uppercase tracking-widest text-center px-6">
-                  Photo Erasmus · Sofia
-                </span>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
 
         {/* ID étudiant Sofia */}
         <AnimatedSection delay={0.2} className="mt-6">
