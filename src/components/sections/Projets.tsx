@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { projets } from "@/lib/data";
+import { renderBold } from "@/lib/renderBold";
 import { StaggerContainer, StaggerItem, AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Trophy, ExternalLink, Download } from "lucide-react";
 
@@ -117,7 +118,7 @@ export default function Projets() {
 
                 {/* Description */}
                 <p className="font-serif text-sm text-[#222222] leading-relaxed mb-4 flex-1">
-                  {projet.description}
+                  {renderBold(projet.description)}
                 </p>
 
                 {/* Résultats */}

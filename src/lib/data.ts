@@ -45,10 +45,10 @@ export const parcours = [
     label: "Baccalauréat STMG · Option Mercatique",
     lieu: "Lycée Victor Hugo, Poitiers (86)",
     events: [
-      "Baccalauréat STMG mention Assez Bien",
-      "Stage — Concession Citroën/DS Stellantis, Poitiers",
-      "Stage — Radio FG, Paris",
-      "Décision : quitter Poitiers pour intégrer un BUT GEA à Paris",
+      "**Baccalauréat STMG** mention Assez Bien",
+      "Stage — Concession **Citroën/DS Stellantis**, Poitiers",
+      "Stage — **Radio FG**, Paris",
+      "Décision : quitter Poitiers pour intégrer un **BUT GEA à Paris**",
     ],
     releves: [
       { label: "Diplôme Bac STMG", url: "/diplome-bac-stmg-2023.pdf" },
@@ -61,9 +61,9 @@ export const parcours = [
     label: "BUT 1 · S1 – S2",
     lieu: "IUT de Paris – Rives de Seine",
     events: [
-      "Fondements GEA : comptabilité, économie, management",
-      "Stage Radio FG — mars/avril 2024",
-      "60 crédits ECTS validés",
+      "Fondements GEA : **comptabilité, économie, management**",
+      "**Stage Radio FG** — mars/avril 2024",
+      "**60 crédits ECTS** validés",
     ],
     releves: [
       { label: "Relevé S1", url: "/releves/semestre-1.pdf" },
@@ -77,10 +77,10 @@ export const parcours = [
     label: "BUT 2 · S3 – S4 · Parcours GEMA",
     lieu: "IUT de Paris – Rives de Seine",
     events: [
-      "Spécialisation GEMA : entrepreneuriat, marketing, management",
-      "Breathe&Go → Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation",
-      "Fashion DAY : organisation et animation du défilé de mode (SAE Événementiel)",
-      "Stage Caroll — Assistant Marketing Opérationnel (Janv.–Fév. 2025)",
+      "Spécialisation GEMA : **entrepreneuriat, marketing, management**",
+      "**Breathe&Go** → **Prix de l'entrepreneuriat** + 1ᵉʳ Prix de l'innovation",
+      "**Fashion DAY** : organisation et animation du défilé de mode",
+      "**Stage Caroll** — Assistant Marketing Opérationnel (Janv.–Fév. 2025)",
     ],
     releves: [
       { label: "Relevé S3", url: "/releves/semestre-3.pdf" },
@@ -94,10 +94,10 @@ export const parcours = [
     label: "Erasmus+ · Semestre 5",
     lieu: "Sofia University St. Kliment Ohridski — Bulgarie",
     events: [
-      "Cours intégralement en anglais (FEBA)",
-      "34 ECTS validés · 5 mentions A sur 6 matières",
-      "FEBA Social Room : site web pour financer la salle sociale de la faculté",
-      "Immersion totale en environnement international",
+      "Cours **intégralement en anglais** (FEBA)",
+      "**34 ECTS validés** · 5 mentions A sur 6 matières",
+      "**FEBA Social Room** : site web pour financer la salle sociale de la faculté",
+      "Immersion totale en **environnement international**",
     ],
     releves: [
       { label: "Transcript of Records", url: "/transcript-of-records-erasmus.pdf" },
@@ -110,9 +110,9 @@ export const parcours = [
     label: "BUT 3 · S6 · Stage + SAEs",
     lieu: "IUT de Paris – Rives de Seine + UFIDF/FFF (Paris)",
     events: [
-      "Stage UFIDF/FFF : prospection B2B, cartographie, animation réseau",
-      "SAE Clariane : plan de communication corporate",
-      "SAE UltraTonic : management de l'innovation (expansion USA)",
+      "**Stage UFIDF/FFF** : prospection B2B, cartographie, animation réseau",
+      "SAE Clariane : **plan de communication corporate**",
+      "SAE UltraTonic : **management de l'innovation** (expansion USA)",
     ],
     releves: [],
     highlight: false,
@@ -193,26 +193,26 @@ export const stageFFF = {
   contexte:
     "Stage de fin de BUT GEA GEMA visant à renforcer le développement commercial et la structuration du réseau des crémiers-fromagers en Île-de-France, et à soutenir les actions fédérales de la FFF au niveau national.",
   missions: [
-    "Prospection et qualification B2B des crèmeries-fromageries IDF",
-    "Prises de contact ciblées (email, LinkedIn, visites terrain)",
-    "Recensement et cartographie des boutiques et marchés parisiens",
-    "Actualisation et enrichissement de la base de données adhérents",
-    "Benchmark des organisations professionnelles CGAD IDF",
+    "**Prospection et qualification B2B** des crèmeries-fromageries IDF",
+    "Prises de contact ciblées (email, LinkedIn, **visites terrain**)",
+    "**Recensement et cartographie** des boutiques et marchés parisiens",
+    "Actualisation et enrichissement de la **base de données adhérents**",
+    "**Benchmark** des organisations professionnelles CGAD IDF",
     "Analyse des services aux adhérents UFIDF",
-    "Présentation au Conseil d'Administration FFF (18 mai 2026)",
-    "Animation des boucles WhatsApp membres et événements FFF",
-    "Organisation du concours MAF (Meilleur Apprenti de France)",
-    "Aide à l'organisation du Salon du Fromage",
-    "Mise en place d'une enquête de satisfaction adhérents",
+    "**Présentation au Conseil d'Administration FFF** (18 mai 2026)",
+    "Animation des **boucles WhatsApp** membres et événements FFF",
+    "Organisation du **concours MAF** (Meilleur Apprenti de France)",
+    "Aide à l'organisation du **Salon du Fromage**",
+    "Mise en place d'une **enquête de satisfaction** adhérents",
   ],
   livrables: [
-    "Liste qualifiée des entreprises de crèmerie-fromagerie en France",
-    "Tableau comparatif benchmark CGAD (synthèse + recommandations)",
-    "Présentation au CA FFF — 18 mai 2026",
-    "Calendrier et rapports de visites terrain",
-    "Cartographie interactive membres (Python + Leaflet.js)",
-    "Synthèse globale et restitution finale (10 juillet 2026)",
-    "Enquête de satisfaction adhérents UFIDF/FFF 2026",
+    "**Liste qualifiée** des entreprises de crèmerie-fromagerie en France",
+    "Tableau comparatif benchmark CGAD (synthèse + **recommandations**)",
+    "**Présentation au CA FFF** — 18 mai 2026",
+    "Calendrier et rapports de **visites terrain**",
+    "**Cartographie interactive membres** (Python + Leaflet.js)",
+    "Synthèse globale et **restitution finale** (10 juillet 2026)",
+    "**Enquête de satisfaction** adhérents UFIDF/FFF 2026",
   ],
   outils: ["Python", "Leaflet.js", "Excel · Power Query", "Logiciel 4D", "WhatsApp Business"],
 };
@@ -227,7 +227,7 @@ export const projets = [
     categorie: "SAE BUT 2 · Entrepreneuriat",
     logo: "/logos/logo-breathego.png",
     description:
-      "Dispositif bloque-volant intelligent avec éthylotest intégré pour prévenir la conduite en état d'ivresse. Né d'un vécu personnel (2 accidents en 2023). Business plan complet, stratégie marketing Instagram/TikTok, livret investisseur.",
+      "**Dispositif bloque-volant intelligent** avec éthylotest intégré pour prévenir la conduite en état d'ivresse. Né d'un **vécu personnel** (2 accidents en 2023). **Business plan complet**, stratégie marketing Instagram/TikTok, livret investisseur.",
     resultats: ["🏆 Prix de l'entrepreneuriat 2ᵉ année", "🥇 1ᵉʳ Prix de l'innovation"],
     lien: "/documents/livret-investisseur-breathego.pdf",
     instagram: "https://www.instagram.com/breatheandgo_project/",
@@ -241,7 +241,7 @@ export const projets = [
     categorie: "Stage · Marketing opérationnel",
     logo: "/logos/logo-caroll.png",
     description:
-      "2 mois (janv.–fév. 2025) chez Caroll à Paris. Assistant Marketing Opérationnel : benchmarks web/physiques/newsletters, gestion hotline marketing, analyse des soldes et comportement client (Power BI, ClientFit). Mapping concurrentiel.",
+      "2 mois (janv.–fév. 2025) chez **Caroll** à Paris. **Assistant Marketing Opérationnel** : benchmarks web/physiques/newsletters, gestion hotline marketing, **analyse des soldes** et comportement client (Power BI, ClientFit). **Mapping concurrentiel**.",
     resultats: ["Mapping concurrentiel livré", "Analyse comportement client soldes"],
     lien: "/documents/benchmark-caroll.pdf",
     liensExtra: [
@@ -258,7 +258,7 @@ export const projets = [
     categorie: "Stage · Marketing digital",
     logo: "/logos/logo-radiofg.png",
     description:
-      "1 mois (mars-avril 2024) chez Radio FG, 51 rue de Rivoli, Paris. Mission : développer la marque FG DanceOne sur Instagram et TikTok pour les 18-25 ans. Veille concurrentielle sur 30+ radios et médias nationaux et internationaux.",
+      "1 mois (mars-avril 2024) chez **Radio FG**, 51 rue de Rivoli, Paris. Mission : développer la marque **FG DanceOne** sur Instagram et TikTok pour les **18-25 ans**. **Veille concurrentielle** sur 30+ radios et médias nationaux et internationaux.",
     resultats: ["Stratégie réseaux sociaux remise au PDG", "Veille sur 30+ médias"],
     lien: "",
     instagram: "",
@@ -272,7 +272,7 @@ export const projets = [
     categorie: "SAE S6 · Communication corporate",
     logo: "/logos/logo-clariane.png",
     description:
-      "Plan de communication corporate pour Clariane (groupe médico-social, ex-Korian). Rôle : Communication interne RH. Axe stratégique : transformer les collaborateurs en ambassadeurs (employee advocacy). Audit e-réputation Glassdoor/Trustpilot.",
+      "Plan de communication corporate pour **Clariane** (groupe médico-social, ex-Korian). Rôle : **Communication interne RH**. Axe stratégique : transformer les collaborateurs en **ambassadeurs** (employee advocacy). **Audit e-réputation** Glassdoor/Trustpilot.",
     resultats: ["Plan de communication 6 pages livré", "Audit e-réputation complet"],
     lien: "/documents/plan-comm-clariane.pdf",
     instagram: "",
@@ -286,7 +286,7 @@ export const projets = [
     categorie: "Stage · Développement commercial",
     logo: "/logos/logo-fff-new.png",
     description:
-      "Stage de fin de BUT GEA GEMA au sein de l'Union des Fromagers de l'Île-de-France (80 %) et de la Fédération des Fromagers de France (20 %). Prospection B2B des crèmeries-fromageries, cartographie interactive, animation réseau adhérents, soutien au Salon du Fromage et au concours MAF.",
+      "Stage de fin de BUT GEA GEMA au sein de l'**UFIDF** (80 %) et de la **FFF** (20 %). **Prospection B2B** des crèmeries-fromageries, **cartographie interactive**, animation réseau adhérents, soutien au **Salon du Fromage** et au **concours MAF**.",
     resultats: [
       "Cartographie interactive Python + Leaflet.js",
       "Présentation au CA FFF — 18 mai 2026",
@@ -304,7 +304,7 @@ export const projets = [
     categorie: "Projet Erasmus · Entrepreneuriat social",
     logo: "/logos/logo-feba.png",
     description:
-      "Projet réalisé intégralement en anglais à Sofia University (2025/2026) : création d'un site web pour promouvoir et financer une salle sociale au sein de la Faculty of Economics and Business Administration (FEBA). Campagne de dons, témoignages étudiants, appel à la communauté alumni.",
+      "Projet réalisé **intégralement en anglais** à Sofia University (2025/2026) : création d'un **site web** pour promouvoir et financer une salle sociale au sein de la **FEBA**. **Campagne de dons**, témoignages étudiants, appel à la communauté alumni.",
     resultats: [
       "Site Google Sites publié en ligne",
       "Campagne de dons & témoignages étudiants",
@@ -321,7 +321,7 @@ export const projets = [
     categorie: "SAE BUT 2 · Événementiel",
     logo: "/logos/logo-fashionday.png",
     description:
-      "Organisation et animation du Fashion DAY, défilé de mode réalisé dans le cadre de la SAE Événementiel en tronc commun (BUT2). Triple casquette : coordination logistique de l'événement, création de contenu pour les réseaux sociaux (avant/pendant/après), et animation de la soirée en tant que speaker/présentateur.",
+      "Organisation et animation du **Fashion DAY**, défilé de mode en tronc commun (BUT2). **Triple casquette** : coordination logistique de l'événement, **création de contenu** pour les réseaux sociaux (avant/pendant/après), et animation de la soirée en tant que **speaker/présentateur**.",
     resultats: [
       "Événement organisé et animé de A à Z",
       "Contenu réseaux sociaux produit et diffusé",
@@ -339,7 +339,7 @@ export const projets = [
     categorie: "SAE S6 · Management de l'innovation",
     logo: "/logos/logo-ultratonic.png",
     description:
-      "Note de synthèse sur la stratégie d'expansion internationale d'UltraTonic (fitness B2B connecté) vers Boston et Philadelphie. Accompagnement du changement, mapping Mitchell parties prenantes, communication interne.",
+      "Note de synthèse sur la **stratégie d'expansion internationale** d'UltraTonic (fitness B2B connecté) vers **Boston et Philadelphie**. **Accompagnement du changement**, mapping Mitchell parties prenantes, communication interne.",
     resultats: ["Note de synthèse réalisée", "Analyse parties prenantes Mitchell"],
     lien: "/documents/note-synthese-ultratonic.pdf",
     instagram: "",

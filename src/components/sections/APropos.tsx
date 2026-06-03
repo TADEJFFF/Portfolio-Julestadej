@@ -18,20 +18,19 @@ export default function APropos() {
               La décision qui a tout changé
             </h2>
             <p className="font-serif text-[#222222] text-lg leading-relaxed mb-4">
-              À 18 ans, j'ai quitté Poitiers pour Paris et mes habitudes pour l'inconnu.
-              Direction un BUT GEA, avec une seule envie : prendre un nouveau départ et me
-              confronter à de nouveaux défis.
+              À 18 ans, j'ai <strong className="font-bold text-[#111111]">quitté Poitiers pour Paris</strong> et mes habitudes pour l'inconnu.
+              Direction un <strong className="font-bold text-[#111111]">BUT GEA</strong>, avec une seule envie : prendre un nouveau départ et me
+              confronter à de <strong className="font-bold text-[#111111]">nouveaux défis</strong>.
             </p>
             <p className="font-serif text-[#222222] text-lg leading-relaxed mb-4">
-              Ces trois années ont été riches et formatrices : 2 prix de l'entrepreneuriat
-              avec Breathe&Go, un semestre Erasmus à Sofia suivi d'un stage au cœur du réseau
-              fromager français. Chacune de ces expériences a renforcé mon sens de l'analyse,
-              ma capacité à prendre des décisions et mon aptitude à passer à l'action.
+              Ces trois années ont été riches et formatrices : <strong className="font-bold text-[#111111]">2 prix de l'entrepreneuriat avec Breathe&Go</strong>,
+              un <strong className="font-bold text-[#111111]">semestre Erasmus à Sofia</strong> suivi d'un stage au cœur du <strong className="font-bold text-[#111111]">réseau fromager français</strong>.
+              Chacune de ces expériences a renforcé mon <strong className="font-bold text-[#111111]">sens de l'analyse</strong>,
+              ma capacité à <strong className="font-bold text-[#111111]">prendre des décisions</strong> et mon aptitude à passer à l'action.
             </p>
             <p className="font-serif text-[#444444] text-lg leading-relaxed">
-              Ce portfolio retrace non seulement mon parcours académique, mais met également
-              en lumière la manière dont j'ai su appréhender ces expériences et en faire de
-              véritables leviers de développement.
+              Ce portfolio retrace non seulement mon <strong className="font-bold text-[#111111]">parcours académique</strong>, mais met également
+              en lumière la manière dont j'ai su en faire de véritables <strong className="font-bold text-[#111111]">leviers de développement</strong>.
             </p>
           </AnimatedSection>
 

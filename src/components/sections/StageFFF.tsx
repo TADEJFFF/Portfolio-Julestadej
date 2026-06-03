@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { stageFFF } from "@/lib/data";
+import { renderBold } from "@/lib/renderBold";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import { Building2, MapPin, User2, Calendar, CheckSquare, Package, Wrench, Map, ExternalLink } from "lucide-react";
 
@@ -95,7 +96,7 @@ export default function StageFFF() {
                   <StaggerItem key={i}>
                     <div className="flex items-start gap-2.5 text-sm text-[#222222] font-serif hover:text-[#9A7200] transition-colors duration-200">
                       <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#FFD300]/50" />
-                      {mission}
+                      {renderBold(mission)}
                     </div>
                   </StaggerItem>
                 ))}
@@ -125,7 +126,7 @@ export default function StageFFF() {
                           {i + 1}
                         </span>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-sm text-[#222222] font-serif">{livrable}</span>
+                          <span className="text-sm text-[#222222] font-serif">{renderBold(livrable)}</span>
                           {isEnquete && (
                             <a
                               href="/documents/enquete-satisfaction-fff.pdf"

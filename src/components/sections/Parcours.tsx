@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { parcours } from "@/lib/data";
+import { renderBold } from "@/lib/renderBold";
 import { StaggerContainer, StaggerItem, AnimatedSection } from "@/components/ui/AnimatedSection";
 import { CheckCircle2, Circle, FileText } from "lucide-react";
 
@@ -92,7 +93,7 @@ export default function Parcours() {
                           {step.events.map((ev, j) => (
                             <li key={j} className="flex items-start gap-2 text-sm text-[#222222] font-serif">
                               <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FFD300]/60" />
-                              {ev}
+                              {renderBold(ev)}
                             </li>
                           ))}
                         </ul>
