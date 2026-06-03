@@ -7,7 +7,7 @@ export default function APropos() {
   return (
     <section id="apropos" className="section-padding bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-[3fr_2fr] gap-12 items-center">
 
           {/* ── Texte ── */}
           <AnimatedSection>
@@ -35,8 +35,8 @@ export default function APropos() {
           </AnimatedSection>
 
           {/* ── Photo ── */}
-          <AnimatedSection className="flex justify-center md:justify-end">
-            <div className="relative w-72 h-96 rounded-2xl overflow-hidden border border-[#b8b8b8]">
+          <AnimatedSection className="flex justify-center">
+            <div className="relative w-full h-[32rem] rounded-2xl overflow-hidden border border-[#b8b8b8]">
               <Image
                 src="/photo-jules.jpeg"
                 alt="Jules TADEJ"

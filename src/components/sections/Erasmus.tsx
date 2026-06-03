@@ -33,7 +33,7 @@ export default function Erasmus() {
 
         {/* Paragraphe expérience + photo */}
         <AnimatedSection delay={0.05} className="mb-10">
-          <div className="grid md:grid-cols-2 gap-8 items-center rounded-2xl border border-[#b8b8b8] bg-[#f9f9f9] p-8">
+          <div className="grid md:grid-cols-[3fr_2fr] gap-8 items-center rounded-2xl border border-[#b8b8b8] bg-[#f9f9f9] p-8">
             {/* Texte */}
             <div>
               <span className="font-display text-xs font-bold text-[#9A7200] uppercase tracking-[0.2em] mb-4 block">
@@ -61,7 +61,7 @@ export default function Erasmus() {
             </div>
             {/* Photo Sofia */}
             <div className="flex justify-center">
-              <div className="relative w-full max-w-sm h-72 rounded-2xl overflow-hidden border border-[#b8b8b8]">
+              <div className="relative w-full h-[26rem] rounded-2xl overflow-hidden border border-[#b8b8b8]">
                 <Image
                   src="/photo-sofia.png"
                   alt="Erasmus Sofia — Jules TADEJ"
