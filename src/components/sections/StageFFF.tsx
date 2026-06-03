@@ -96,7 +96,7 @@ export default function StageFFF() {
                   <StaggerItem key={i}>
                     <div className="flex items-start gap-2.5 text-sm text-[#222222] font-serif hover:text-[#9A7200] transition-colors duration-200">
                       <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#FFD300]/50" />
-                      {renderBold(mission)}
+                      <span>{renderBold(mission)}</span>
                     </div>
                   </StaggerItem>
                 ))}
@@ -126,7 +126,7 @@ export default function StageFFF() {
                           {i + 1}
                         </span>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-sm text-[#222222] font-serif">{renderBold(livrable)}</span>
+                          <span className="text-sm text-[#222222] font-serif"><span>{renderBold(livrable)}</span></span>
                           {isEnquete && (
                             <a
                               href="/documents/enquete-satisfaction-fff.pdf"
