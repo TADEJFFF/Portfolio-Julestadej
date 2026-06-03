@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { competences5, skills, type Competence5, type Niveau } from "@/lib/data";
+import { renderBold } from "@/lib/renderBold";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import {
   Search, GitFork, Compass, Lightbulb, TrendingUp,
@@ -155,7 +156,7 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
                       {etapeLabels[i]}
                     </span>
                     <p className="font-serif text-[13px] text-[#222222] leading-relaxed">
-                      {comp.progression[key]}
+                      {renderBold(comp.progression[key])}
                     </p>
                   </div>
                 </div>
@@ -172,7 +173,7 @@ function CompetenceDetail({ comp, Icon }: { comp: Competence5; Icon: React.Eleme
               {comp.preuves.map((p, i) => (
                 <div key={i} className="flex items-start gap-2.5">
                   <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: comp.accent + "80" }} />
-                  <span className="font-serif text-[13px] text-[#222222] leading-relaxed">{p}</span>
+                  <span className="font-serif text-[13px] text-[#222222] leading-relaxed">{renderBold(p)}</span>
                 </div>
               ))}
             </div>
