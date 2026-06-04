@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, Instrument_Serif, Inter } from "next/font/google";
+import { Syne, Instrument_Serif, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -19,7 +19,7 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${syne.variable} ${instrumentSerif.variable} ${inter.variable}`}
+      className={`${syne.variable} ${instrumentSerif.variable} ${dmSans.variable}`}
     >
       <body className="bg-white text-[#111111] antialiased min-h-screen flex flex-col">
         <Navbar />
