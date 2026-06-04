@@ -60,6 +60,12 @@ body {
   border-radius: 2px;
 }
 
+/* ─── CAROUSEL AUTO-SCROLL ───────────────────────────────────────────────── */
+@keyframes scroll-carousel {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* ─── SCROLLBAR ───────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
