@@ -118,7 +118,7 @@ export default function StageFFF() {
               </div>
               <StaggerContainer className="flex flex-col gap-3" staggerDelay={0.06}>
                 {stageFFF.livrables.map((livrable, i) => {
-                  const isEnquete = livrable.startsWith("Enquête de satisfaction");
+                  const isEnquete = livrable.includes("satisfaction");
                   return (
                     <StaggerItem key={i}>
                       <div className="flex items-start gap-3 p-3 rounded-xl border border-[#b0b0b0] bg-[#f5f5f5]/50 hover:border-[#FFD300]/20 transition-colors duration-200">

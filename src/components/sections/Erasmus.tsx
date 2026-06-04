@@ -64,7 +64,7 @@ export default function Erasmus() {
               <div className="relative w-full h-[26rem] rounded-2xl overflow-hidden border border-[#b8b8b8]">
                 <Image
                   src="/photo-sofia.png"
-                  alt="Erasmus Sofia — Jules TADEJ"
+                  alt="Erasmus Sofia, Jules TADEJ"
                   fill
                   className="object-cover object-center"
                   sizes="384px"
@@ -75,7 +75,7 @@ export default function Erasmus() {
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-5 gap-8">
-          {/* Bloc université — 2 colonnes */}
+          {/* Bloc université, 2 colonnes */}
           <AnimatedSection direction="left" className="lg:col-span-2">
             <div className="h-full rounded-2xl border border-[#FFD300]/20 bg-white p-6 flex flex-col gap-6">
               {/* Badge Erasmus */}
@@ -132,7 +132,7 @@ export default function Erasmus() {
             </div>
           </AnimatedSection>
 
-          {/* Tableau des matières — 3 colonnes */}
+          {/* Tableau des matières, 3 colonnes */}
           <AnimatedSection direction="right" className="lg:col-span-3" delay={0.1}>
             <div className="rounded-2xl border border-[#b8b8b8] bg-white overflow-hidden">
               <div className="px-6 py-4 border-b border-[#b8b8b8] flex items-center justify-between">

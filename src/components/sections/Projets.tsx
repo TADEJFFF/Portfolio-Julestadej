@@ -39,7 +39,7 @@ export default function Projets() {
             Projets académiques
           </h2>
           <p className="font-serif text-[#444444] text-lg max-w-xl">
-            Stages, SAEs et projets collectifs — de l&apos;entrepreneuriat à la
+            Stages, SAEs et projets collectifs, de l&apos;entrepreneuriat à la
             communication corporate.
           </p>
         </AnimatedSection>

@@ -51,7 +51,7 @@ export default function Parcours() {
                       )}
                     </div>
 
-                    {/* Carte — spacer côté opposé */}
+                    {/* Carte, spacer côté opposé */}
                     <div className={`md:w-[calc(50%-3rem)] ml-6 md:ml-0 ${isRight ? "md:mr-auto md:pr-4" : "md:ml-auto md:pl-4"}`}>
                       <div
                         className={`rounded-2xl border p-6 transition-all duration-300 ${

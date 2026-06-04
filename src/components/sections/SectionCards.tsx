@@ -23,7 +23,7 @@ const cards = [
     Icon: Plane,
     label: "Erasmus+ · Sofia",
     titre: "Loin de tout ce que je connaissais",
-    texte: "Sofia, Bulgarie. Quatre mois en immersion totale en anglais. 34 ECTS, 5 mentions A — et quelque chose d'indéfinissable que les notes ne mesurent pas.",
+    texte: "Sofia, Bulgarie. Quatre mois en immersion totale en anglais. 34 ECTS, 5 mentions A, et quelque chose d'indéfinissable que les notes ne mesurent pas.",
     cta: "Découvrir l'Erasmus",
   },
   {
@@ -32,7 +32,7 @@ const cards = [
     accentBg: "#FFD300",
     Icon: UtensilsCrossed,
     label: "Stage FFF",
-    titre: "Pas de simulation — du vrai",
+    titre: "Pas de simulation, du vrai",
     texte: "Prospection B2B, cartographie Python, présentation devant le Conseil d'Administration de la Fédération des Fromagers de France.",
     cta: "Voir le stage",
   },
@@ -53,7 +53,7 @@ const cards = [
     Icon: BarChart2,
     label: "Compétences",
     titre: "Analyser. Décider. Piloter. Entreprendre. Développer.",
-    texte: "Les 5 compétences du référentiel BUT GEA GEMA — tracées depuis le premier cours jusqu'à aujourd'hui, avec les preuves qui vont avec.",
+    texte: "Les 5 compétences du référentiel BUT GEA GEMA tracées depuis le premier cours jusqu'à aujourd'hui avec les preuves qui vont avec.",
     cta: "Voir les compétences",
   },
 ];

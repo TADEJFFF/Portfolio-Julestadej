@@ -27,7 +27,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Jules TADEJ — Portfolio BUT GEA GEMA",
+  title: "Jules TADEJ, Portfolio BUT GEA GEMA",
   description:
     "Portfolio académique et professionnel de Jules TADEJ, étudiant en BUT GEA parcours GEMA à l'IUT de Paris – Rives de Seine. Erasmus+ Sofia, Stage UFIDF/FFF, Breathe&Go (Prix de l'entrepreneuriat).",
   keywords: [

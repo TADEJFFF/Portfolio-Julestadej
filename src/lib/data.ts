@@ -1,5 +1,5 @@
-// ─── DONNÉES PERSONNELLES DE JULES TADEJ ────────────────────────────────────
-// Générées depuis PORTFOLIO_CONTENU — ne pas modifier manuellement les données
+﻿// ─── DONNÉES PERSONNELLES DE JULES TADEJ ────────────────────────────────────
+// Générées depuis PORTFOLIO_CONTENU, ne pas modifier manuellement les données
 // extraites des documents officiels.
 
 export const personal = {
@@ -11,7 +11,7 @@ export const personal = {
   location: "Vitry-sur-Seine (94), France",
   linkedin: "https://www.linkedin.com/in/jules-tadej-107612295",
   formation: "BUT Gestion des Entreprises et des Administrations",
-  parcours: "GEMA — Management, Entrepreneuriat et Management d'Activités",
+  parcours: "GEMA, Management, Entrepreneuriat et Management d'Activités",
   iut: "IUT de Paris – Rives de Seine",
   universite: "Université Paris Cité",
   yearGrad: "2026",
@@ -41,13 +41,13 @@ export const navLinks = [
 
 export const parcours = [
   {
-    periode: "2020 — 2023",
+    periode: "2020, 2023",
     label: "Baccalauréat STMG · Option Mercatique",
     lieu: "Lycée Victor Hugo, Poitiers (86)",
     events: [
       "**Baccalauréat STMG** mention Assez Bien",
-      "Stage — Concession **Citroën/DS Stellantis**, Poitiers",
-      "Stage — **Radio FG**, Paris",
+      "Stage, Concession **Citroën/DS Stellantis**, Poitiers",
+      "Stage, **Radio FG**, Paris",
       "Décision : quitter Poitiers pour intégrer un **BUT GEA à Paris**",
     ],
     releves: [
@@ -57,12 +57,12 @@ export const parcours = [
     current: false,
   },
   {
-    periode: "2023 — 2024",
+    periode: "2023, 2024",
     label: "BUT 1 · S1 – S2",
     lieu: "IUT de Paris – Rives de Seine",
     events: [
       "Fondements GEA : **comptabilité, économie, management**",
-      "**Stage Radio FG** — mars/avril 2024",
+      "**Stage Radio FG**, mars/avril 2024",
       "**60 crédits ECTS** validés",
     ],
     releves: [
@@ -73,14 +73,14 @@ export const parcours = [
     current: false,
   },
   {
-    periode: "2024 — 2025",
+    periode: "2024, 2025",
     label: "BUT 2 · S3 – S4 · Parcours GEMA",
     lieu: "IUT de Paris – Rives de Seine",
     events: [
       "Spécialisation GEMA : **entrepreneuriat, marketing, management**",
       "**Breathe&Go** → **Prix de l'entrepreneuriat** + 1ᵉʳ Prix de l'innovation",
       "**Fashion DAY** : organisation et animation du défilé de mode",
-      "**Stage Caroll** — Assistant Marketing Opérationnel (Janv.–Fév. 2025)",
+      "**Stage Caroll**, Assistant Marketing Opérationnel (Janv.–Fév. 2025)",
     ],
     releves: [
       { label: "Relevé S3", url: "/releves/semestre-3.pdf" },
@@ -90,9 +90,9 @@ export const parcours = [
     current: false,
   },
   {
-    periode: "Oct. 2025 — Janv. 2026",
+    periode: "Oct. 2025, Janv. 2026",
     label: "Erasmus+ · Semestre 5",
-    lieu: "Sofia University St. Kliment Ohridski — Bulgarie",
+    lieu: "Sofia University St. Kliment Ohridski, Bulgarie",
     events: [
       "Cours **intégralement en anglais** (FEBA)",
       "**34 ECTS validés** · 5 mentions A sur 6 matières",
@@ -106,7 +106,7 @@ export const parcours = [
     current: false,
   },
   {
-    periode: "Fév. — Juil. 2026",
+    periode: "Fév., Juil. 2026",
     label: "BUT 3 · S6 · Stage + SAEs",
     lieu: "IUT de Paris – Rives de Seine + UFIDF/FFF (Paris)",
     events: [
@@ -186,7 +186,7 @@ export const stageFFF = {
   fede: "Fédération des Fromagers de France",
   fedeAbr: "FFF",
   repartition: "80 % UFIDF · 20 % FFF",
-  lieu: "Paris — Châtelet",
+  lieu: "Paris, Châtelet",
   tuteur: "David Bazergue",
   periode: "1ᵉʳ avril – 10 juillet 2026",
   statut: "Stage en cours",
@@ -208,7 +208,7 @@ export const stageFFF = {
   livrables: [
     "**Liste qualifiée** des entreprises de crèmerie-fromagerie en France",
     "Tableau comparatif benchmark CGAD (synthèse + **recommandations**)",
-    "**Présentation au CA FFF** — 18 mai 2026",
+    "**Présentation au CA FFF**, 18 mai 2026",
     "Calendrier et rapports de **visites terrain**",
     "**Cartographie interactive membres** (Python + Leaflet.js)",
     "Synthèse globale et **restitution finale** (10 juillet 2026)",
@@ -268,7 +268,7 @@ export const projets = [
   {
     id: "clariane",
     but: "BUT 3",
-    nom: "Plan de comm — Clariane",
+    nom: "Plan de comm, Clariane",
     categorie: "SAE S6 · Communication corporate",
     logo: "/logos/logo-clariane.png",
     description:
@@ -289,7 +289,7 @@ export const projets = [
       "Stage de fin de BUT GEA GEMA au sein de l'**UFIDF** (80 %) et de la **FFF** (20 %). **Prospection B2B** des crèmeries-fromageries, **cartographie interactive**, animation réseau adhérents, soutien au **Salon du Fromage** et au **concours MAF**.",
     resultats: [
       "Cartographie interactive Python + Leaflet.js",
-      "Présentation au CA FFF — 18 mai 2026",
+      "Présentation au CA FFF, 18 mai 2026",
       "Benchmark CGAD livré avec recommandations",
     ],
     lien: "https://tadejfff.github.io/MAPIDFC/",
@@ -335,7 +335,7 @@ export const projets = [
   {
     id: "ultratonic",
     but: "BUT 3",
-    nom: "Innovation — UltraTonic USA",
+    nom: "Innovation, UltraTonic USA",
     categorie: "SAE S6 · Management de l'innovation",
     logo: "/logos/logo-ultratonic.png",
     description:
@@ -385,7 +385,7 @@ export const competencesBUT = [
   },
 ];
 
-// ─── RÉFÉRENTIEL BUT GEA GEMA — 5 COMPÉTENCES OFFICIELLES ──────────────────
+// ─── RÉFÉRENTIEL BUT GEA GEMA, 5 COMPÉTENCES OFFICIELLES ──────────────────
 
 export type Niveau = "apprentissage" | "acquis" | "maitrise";
 
@@ -448,12 +448,12 @@ export const competences5: Competence5[] = [
     ],
     progression: {
       but1: "Premiers outils d'analyse : **cartographie des processus**, comptabilité, économie.",
-      but2: "Évaluation des processus en **stage Caroll** — benchmarks web, physique et newsletters. **Analyse comportement client** (Power BI, ClientFit).",
+      but2: "Évaluation des processus en **stage Caroll**, benchmarks web, physique et newsletters. **Analyse comportement client** (Power BI, ClientFit).",
       but3: "**Benchmark CGAD** livré avec recommandations stratégiques au **CA FFF** (mai 2026). Amélioration des processus d'adhésion UFIDF.",
     },
     preuves: [
-      "**Benchmark CGAD/UFIDF** — recommandations remises au CA FFF (2026)",
-      "**Analyse concurrentielle Caroll** — Power BI + ClientFit",
+      "**Benchmark CGAD/UFIDF**, recommandations remises au CA FFF (2026)",
+      "**Analyse concurrentielle Caroll**, Power BI + ClientFit",
       "**Enquête satisfaction adhérents** UFIDF pilotée de A à Z",
     ],
   },
@@ -498,11 +498,11 @@ export const competences5: Competence5[] = [
     progression: {
       but1: "Identification des outils d'aide à la décision. **Stage Radio FG** : premières **recommandations stratégiques** remises seul au PDG.",
       but2: "Évaluation des décisions marketing chez **Caroll**. **Business Plan Breathe&Go** : arbitrages stratégiques et choix d'investissement.",
-      but3: "**Présentation au CA FFF — 18 mai 2026** — avec recommandations concrètes devant les élus nationaux.",
+      but3: "**Présentation au CA FFF, 18 mai 2026**, avec recommandations concrètes devant les élus nationaux.",
     },
     preuves: [
-      "**Présentation CA FFF** — 18 mai 2026 (élus nationaux)",
-      "**Business Plan Breathe&Go** — arbitrages financiers & stratégiques",
+      "**Présentation CA FFF**, 18 mai 2026 (élus nationaux)",
+      "**Business Plan Breathe&Go**, arbitrages financiers & stratégiques",
       "**Stratégie réseaux sociaux** remise au PDG de Radio FG (BUT 1)",
     ],
   },
@@ -543,15 +543,15 @@ export const competences5: Competence5[] = [
       },
     ],
     progression: {
-      but1: "**Cartographie des parties prenantes** en SAE — identification des acteurs clés.",
+      but1: "**Cartographie des parties prenantes** en SAE, identification des acteurs clés.",
       but2: "**Fashion DAY** : coordination équipe + **speaker/présentateur** devant public. Coordination pluripartenariale **Breathe&Go**.",
       but3: "**Animation réseau adhérents FFF**. SAE UltraTonic : **mapping Mitchell**. Erasmus : coordination en contexte international.",
     },
     preuves: [
-      "**Animation réseau adhérents FFF** — boucles WhatsApp + événements",
-      "**Mapping parties prenantes Mitchell** — SAE UltraTonic USA",
+      "**Animation réseau adhérents FFF**, boucles WhatsApp + événements",
+      "**Mapping parties prenantes Mitchell**, SAE UltraTonic USA",
       "**Fashion DAY** : coordination équipe + animation en public (BUT 2)",
-      "**Clariane** : plan de communication interne RH — employee advocacy",
+      "**Clariane** : plan de communication interne RH, employee advocacy",
     ],
   },
   {
@@ -588,9 +588,9 @@ export const competences5: Competence5[] = [
       but3: "**SAE UltraTonic** (expansion USA), **FEBA Social Room** (Sofia, en anglais). Prospection B2B FFF pour pérenniser le réseau adhérents.",
     },
     preuves: [
-      "**Breathe&Go** — Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation (BUT 2)",
-      "**FEBA Social Room** — projet entrepreneurial mené en anglais à Sofia",
-      "**Note de synthèse UltraTonic** — expansion Boston & Philadelphie",
+      "**Breathe&Go**, Prix de l'entrepreneuriat + 1ᵉʳ Prix de l'innovation (BUT 2)",
+      "**FEBA Social Room**, projet entrepreneurial mené en anglais à Sofia",
+      "**Note de synthèse UltraTonic**, expansion Boston & Philadelphie",
     ],
   },
   {
@@ -625,12 +625,12 @@ export const competences5: Competence5[] = [
     ],
     progression: {
       but1: "Compréhension des **mécanismes de création de valeur** en cours théoriques.",
-      but2: "**Stage Caroll** : développement de la chaîne de valeur marketing — **benchmark**, analyse concurrentielle, optimisation des actions commerciales.",
-      but3: "Optimisation de la **chaîne de valeur adhérents UFIDF** — **prospection B2B**, **cartographie Python/Leaflet.js**, enrichissement base de données.",
+      but2: "**Stage Caroll** : développement de la chaîne de valeur marketing, **benchmark**, analyse concurrentielle, optimisation des actions commerciales.",
+      but3: "Optimisation de la **chaîne de valeur adhérents UFIDF**, **prospection B2B**, **cartographie Python/Leaflet.js**, enrichissement base de données.",
     },
     preuves: [
-      "**Cartographie interactive membres UFIDF** — Python + Leaflet.js",
-      "**Stage Caroll** — mapping concurrentiel + optimisation marketing opérationnel",
+      "**Cartographie interactive membres UFIDF**, Python + Leaflet.js",
+      "**Stage Caroll**, mapping concurrentiel + optimisation marketing opérationnel",
       "**Prospection B2B** 100+ crèmeries-fromageries IDF (UFIDF/FFF)",
     ],
   },
@@ -653,5 +653,5 @@ export const skills = {
     "Accompagnement du changement",
     "Organisation événementielle",
   ],
-  langues: ["Français — Langue maternelle", "Anglais — C1", "Espagnol — A2"],
+  langues: ["Français, Langue maternelle", "Anglais, C1", "Espagnol, A2"],
 };

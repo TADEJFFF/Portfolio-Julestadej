@@ -1,4 +1,4 @@
-"use server";
+﻿"use server";
 
 import nodemailer from "nodemailer";
 
@@ -30,7 +30,7 @@ export async function sendEmail(formData: FormData) {
       from: `"Portfolio Jules TADEJ" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       replyTo: email,
-      subject: `📬 Nouveau message de ${nom} — Portfolio`,
+      subject: `📬 Nouveau message de ${nom}, Portfolio`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #111111; border-bottom: 2px solid #FFD300; padding-bottom: 8px;">
