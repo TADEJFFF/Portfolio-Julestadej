@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, Instrument_Serif } from "next/font/google";
+import { Syne, Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -16,6 +16,13 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -44,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${syne.variable} ${instrumentSerif.variable}`}
+      className={`${syne.variable} ${instrumentSerif.variable} ${inter.variable}`}
     >
       <body className="bg-white text-[#111111] antialiased min-h-screen flex flex-col">
         <Navbar />

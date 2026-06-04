@@ -124,7 +124,7 @@ export default function SectionCards() {
                 </h3>
 
                 {/* Texte */}
-                <p className="font-serif italic text-[#555555] text-sm leading-relaxed flex-1 mb-5">
+                <p className="text-[#555555] text-sm leading-relaxed flex-1 mb-5" style={{ fontFamily: "var(--font-inter)" }}>
                   {card.texte}
                 </p>
 
