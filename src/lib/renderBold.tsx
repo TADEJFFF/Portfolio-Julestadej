@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 /**
  * Parse **texte** dans une chaîne et retourne des ReactNodes

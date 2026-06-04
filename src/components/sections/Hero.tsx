@@ -78,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="font-serif italic text-[#222222] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
+          className="font-serif text-[#222222] text-base md:text-lg max-w-2xl leading-relaxed mb-7"
         >
           &ldquo;{personal.accroche}&rdquo;
         </motion.p>

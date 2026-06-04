@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef } from "react";
 import { personal } from "@/lib/data";
@@ -37,7 +37,7 @@ export default function Contact() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Me contacter
           </h2>
-          <p className="font-serif italic text-[#444444] text-lg max-w-lg mx-auto">
+          <p className="font-serif text-[#444444] text-lg max-w-lg mx-auto">
             Diplômé BUT GEA GEMA en juillet 2026, ouvert aux opportunités en freelance.
           </p>
         </AnimatedSection>

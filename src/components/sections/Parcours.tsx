@@ -17,7 +17,7 @@ export default function Parcours() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Mon parcours
           </h2>
-          <p className="font-serif italic text-[#444444] text-lg max-w-xl">
+          <p className="font-serif text-[#444444] text-lg max-w-xl">
             Trois années de BUT GEA GEMA, un Erasmus+ en Bulgarie et un stage dans
             une fédération professionnelle nationale.
           </p>

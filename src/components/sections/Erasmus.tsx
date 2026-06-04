@@ -25,7 +25,7 @@ export default function Erasmus() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Sofia, Bulgarie
           </h2>
-          <p className="font-serif italic text-[#444444] text-lg max-w-xl">
+          <p className="font-serif text-[#444444] text-lg max-w-xl">
             Un semestre d&apos;études intégralement en anglais, au sein d&apos;une
             université internationale reconnue.
           </p>

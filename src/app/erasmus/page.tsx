@@ -1,4 +1,4 @@
-import Erasmus from "@/components/sections/Erasmus";
+﻿import Erasmus from "@/components/sections/Erasmus";
 
 export default function ErasmusPage() {
   return <Erasmus />;

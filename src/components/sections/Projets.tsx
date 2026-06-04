@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -38,7 +38,7 @@ export default function Projets() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             Projets académiques
           </h2>
-          <p className="font-serif italic text-[#444444] text-lg max-w-xl">
+          <p className="font-serif text-[#444444] text-lg max-w-xl">
             Stages, SAEs et projets collectifs — de l&apos;entrepreneuriat à la
             communication corporate.
           </p>
