@@ -193,7 +193,7 @@ export const stageFFF = {
     "Stage de fin de BUT GEA GEMA visant à renforcer le développement commercial et la structuration du réseau des crémiers-fromagers en Île-de-France, et à soutenir les actions fédérales de la FFF au niveau national.",
   missions: [
     "**Prospection et qualification B2B** des crèmeries-fromageries IDF",
-    "Prises de contact ciblées (email, LinkedIn, **visites terrain**)",
+    "Prises de contact ciblées (email, phoning, **visites terrain**)",
     "**Recensement et cartographie** des boutiques et marchés parisiens",
     "Actualisation et enrichissement de la **base de données adhérents**",
     "**Benchmark** des organisations professionnelles CGAD IDF",
