@@ -209,7 +209,7 @@ export const stageFFF = {
     "Tableau comparatif benchmark CGAD (synthèse + **recommandations**)",
     "**Présentation au CA FFF**, 18 mai 2026",
     "Calendrier et rapports de **visites terrain**",
-    "**Cartographie interactive membres** (Python + Leaflet.js)",
+    "**Cartographie interactive membres**",
     "Synthèse globale et **restitution finale** (10 juillet 2026)",
     "**Enquête de satisfaction** adhérents UFIDF/FFF 2026",
   ],
