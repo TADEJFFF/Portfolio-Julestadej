@@ -253,7 +253,7 @@ export default function Competences() {
             Compétences
           </h2>
           <p className="font-serif text-[#444444] text-lg max-w-2xl">
-            Les 5 compétences officielles du référentiel BUT GEA GEMA, avec chaque apprentissage critique évalué honnêtement, de BUT 1 à BUT 3.
+            Les 5 compétences officielles du référentiel BUT GEA GEMA, avec chaque apprentissage, de BUT 1 à BUT 3.
           </p>
         </AnimatedSection>
 
