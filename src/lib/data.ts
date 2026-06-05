@@ -197,7 +197,7 @@ export const stageFFF = {
     "**Recensement et cartographie** des boutiques et marchés parisiens",
     "Actualisation et enrichissement de la **base de données adhérents**",
     "**Benchmark** des organisations professionnelles CGAD IDF",
-    "Analyse des services aux adhérents UFIDF",
+    "Analyse et préconisation des services aux adhérents UFIDF",
     "**Présentation au Conseil d'Administration FFF** (18 mai 2026)",
     "Animation des **boucles WhatsApp** membres et événements FFF",
     "Organisation du **concours MAF** (Meilleur Apprenti de France)",
