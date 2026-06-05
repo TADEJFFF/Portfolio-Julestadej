@@ -17,7 +17,7 @@ export default function StageFFF() {
           <h2 className="font-display font-extrabold text-4xl md:text-5xl text-[#111111] mb-4">
             UFIDF / Fédération des Fromagers de France
           </h2>
-          <p className="font-serif text-[#444444] text-lg max-w-2xl">
+          <p className="font-serif text-[#444444] text-lg max-w-3xl">
             Développement commercial B2B et animation
             du réseau fromager d&apos;Île-de-France.
           </p>
