@@ -22,7 +22,6 @@ export const personal = {
 
 export const stats = [
   { value: "3 ans", label: "BUT GEA GEMA" },
-  { value: "34 ECTS", label: "Erasmus Sofia" },
   { value: "4", label: "Expériences pro" },
   { value: "6+", label: "Projets académiques" },
 ];
