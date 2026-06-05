@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="7" fill="#111111"/>
-  <text x="7" y="23" font-family="Arial, sans-serif" font-weight="900" font-size="17" fill="#FFD300">J</text>
-  <text x="17" y="23" font-family="Arial, sans-serif" font-weight="900" font-size="17" fill="#ffffff">T</text>
+  <text text-anchor="middle" x="16" y="22" font-family="Arial, sans-serif" font-weight="900" font-size="12" letter-spacing="0.5">
+    <tspan fill="#FFD300">T</tspan><tspan fill="#ffffff">DJ</tspan>
+  </text>
 </svg>
